@@ -1,0 +1,29 @@
+import React from 'react';
+import { Box } from '@chakra-ui/react';
+import Header from './components/Header.tsx';
+import Hero from './components/Hero.tsx';
+import About from './components/About.tsx';
+import Services from './components/Services.tsx';
+import Faq from './components/Faq.tsx';
+import Contact from './components/Contact.tsx';
+import Footer from './components/Footer.tsx';
+import WhatsAppButton from './components/WhatsAppButton.tsx';
+
+const App: React.FC = () => {
+  return (
+    <Box>
+      <Header />
+      <Box as="main">
+        <Hero id="home" />
+        <About id="about" />
+        <Services id="services" />
+        <Faq id="faq" />
+        <Contact id="contact" />
+      </Box>
+      <Footer />
+      <WhatsAppButton />
+    </Box>
+  );
+};
+
+export default App;
