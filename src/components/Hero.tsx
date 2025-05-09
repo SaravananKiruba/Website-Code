@@ -96,7 +96,7 @@ const Hero: React.FC<HeroProps> = ({ id }) => {
               </Text>
             </Heading>
             <Text color={'gray.500'}>
-              With over 15 years of experience, we provide expert advice and services for all your insurance needs. 
+              With over 25 years of experience, we provide expert advice and services for all your insurance needs. 
               We're committed to helping you secure your future and protect what matters most.
             </Text>
             <Stack 

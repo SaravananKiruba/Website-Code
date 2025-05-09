@@ -163,14 +163,14 @@ const About: React.FC<AboutProps> = ({ id }) => {
 
             <Text fontSize={'lg'} color={'gray.600'} pt={2}>
               Our experienced insurance agents at Your Policy Saathi have been helping families and individuals secure their futures 
-              with the right insurance plans for over 15 years. For any insurance queries, you can 
+              with the right insurance plans for over 25 years. For any insurance queries, you can 
               directly contact our agents via WhatsApp.
             </Text>
 
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
               <Feature
                 icon={<Icon as={FaMedal} w={5} h={5} />}
-                title={'15+ Years Experience'}
+                title={'25+ Years Experience'}
                 text={'Helping families and individuals secure their future with the right insurance plans.'}
               />
               <Feature

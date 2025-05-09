@@ -105,7 +105,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
             </VStack>
             
             <Link
-              href="mailto:agent@licinsurance.com"
+              href="mailto:alwaysjigarlic@gmail.com"
               display="flex"
               alignItems="center"
               color="brand.900"
@@ -114,7 +114,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
               _hover={{ textDecoration: 'none', color: 'brand.800' }}
             >
               <EmailIcon mr={3} />
-              <Text>agent@licinsurance.com</Text>
+              <Text>alwaysjigarlic@gmail.com</Text>
             </Link>
             
             <HStack alignItems="flex-start">

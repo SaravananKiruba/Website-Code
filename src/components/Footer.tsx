@@ -11,7 +11,7 @@ import {
   Flex,
   Heading,
 } from '@chakra-ui/react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
 
 const ListHeader = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -48,17 +48,8 @@ const Footer: React.FC = () => {
               Providing expert guidance and personalized insurance solutions.
             </Text>
             <Stack direction={'row'} spacing={6}>
-              <Link href="#" isExternal>
-                <Icon as={FaFacebook} w={6} h={6} _hover={{ color: 'brand.500' }} />
-              </Link>
-              <Link href="#" isExternal>
-                <Icon as={FaTwitter} w={6} h={6} _hover={{ color: 'brand.500' }} />
-              </Link>
-              <Link href="#" isExternal>
+              <Link href="https://www.instagram.com/your_policy_saathi" isExternal>
                 <Icon as={FaInstagram} w={6} h={6} _hover={{ color: 'brand.500' }} />
-              </Link>
-              <Link href="#" isExternal>
-                <Icon as={FaLinkedin} w={6} h={6} _hover={{ color: 'brand.500' }} />
               </Link>
             </Stack>
           </Stack>

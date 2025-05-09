@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box } from '@chakra-ui/react';
 import Header from './components/Header.tsx';
+import Home from './components/Home.tsx';
 import Hero from './components/Hero.tsx';
 import About from './components/About.tsx';
 import Services from './components/Services.tsx';
@@ -15,7 +16,7 @@ const App: React.FC = () => {
     <Box>
       <Header />
       <Box as="main">
-        <Hero id="home" />
+        <Home id="home" />
         <About id="about" />
         <Services id="services" />
         <Partners id="partners" />

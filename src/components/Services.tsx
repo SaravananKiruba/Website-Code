@@ -12,6 +12,7 @@ import {
   Flex,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { keyframes } from '@emotion/react';
 import { FaShieldAlt, FaHeartbeat, FaCar, FaMotorcycle, FaPlane, FaHome, FaCheckCircle, FaMoneyBillWave } from 'react-icons/fa';
 
 interface ServiceCardProps {
@@ -36,6 +37,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, text, icon, features }
         transform: 'translateY(-5px)',
         boxShadow: 'xl',
       }}
+      border="1px solid"
+      borderColor="gray.100"
+      position="relative"
+      zIndex={1}
     >
       <Stack align={'center'} spacing={5}>
         <Flex
@@ -63,7 +68,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, text, icon, features }
         <Stack spacing={3} w={'full'} mt={2}>
           {features.map((feature, index) => (
             <HStack key={index} spacing={2} align={'start'}>
-              <Icon as={FaCheckCircle} color={'brand.500'} w={5} h={5} mt={1} />
+              <Icon as={FaCheckCircle} color={'accent.500'} w={5} h={5} mt={1} />
               <Text fontSize={'sm'}>{feature}</Text>
             </HStack>
           ))}
@@ -78,14 +83,45 @@ interface ServicesProps {
 }
 
 const Services: React.FC<ServicesProps> = ({ id }) => {
+  // Yellow theme animation
+  const yellowPulse = keyframes`
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  `;
+
+  const yellowAnimation = `${yellowPulse} 15s ease infinite`;
+
   return (
-    <Box id={id} as="section" py={16}>
-      <Container maxW={'7xl'}>
+    <Box 
+      id={id} 
+      as="section" 
+      py={24}
+      position="relative"
+      overflow="hidden"
+      minH="100vh"
+      _before={{
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        bgGradient: 'linear(to-r, gray.50, white, gray.50)',
+        backgroundSize: '200% 200%',
+        opacity: 0.8,
+        animation: yellowAnimation,
+        zIndex: 0,
+      }}
+    >
+      <Container maxW={'7xl'} position="relative" zIndex={1}>
         <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'} mb={16}>
           <Heading
             fontSize={{ base: '3xl', sm: '4xl' }}
             fontWeight={'bold'}
-            color={'brand.900'}
+            bgGradient="linear(to-r, brand.900, brand.700)"
+            bgClip="text"
+            mb={4}
           >
             Our Services
           </Heading>
@@ -94,7 +130,13 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
           </Text>
         </Stack>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10} px={{ base: 2, md: 4 }} justifyItems="center">
+        <SimpleGrid 
+          columns={{ base: 1, md: 2, lg: 3 }} 
+          spacing={10} 
+          px={{ base: 2, md: 4 }} 
+          justifyItems="center"
+          mb={16}
+        >
           <ServiceCard
             icon={<Icon as={FaShieldAlt} w={10} h={10} />}
             title={'Life Insurance (LIC)'}
