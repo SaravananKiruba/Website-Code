@@ -81,8 +81,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                 p={6}
                 rounded={'lg'}
               >
-                <Flex 
-                  direction="column"
+                <VStack 
                   align="center"
                   spacing={4}
                 >
@@ -92,7 +91,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       'https://via.placeholder.com/150'
                     }
                     mb={4}
-                    alt={'Your Policy Saathi Agent'}
+                    name={'Your Policy Saathi Agent'}
                   />
                   <VStack spacing={2} align="center">
                     <Heading
@@ -101,7 +100,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       color={'brand.900'}
                       textAlign="center"
                     >
-                      Your Policy Saathi
+                      Ashok Kumar
                     </Heading>
                     <Text fontSize={'md'} color={'gray.500'} textAlign="center">
                       Experienced Insurance Agent
@@ -115,7 +114,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       </Link>
                     </HStack>
                   </VStack>
-                </Flex>
+                </VStack>
               </Box>
               
               {/* Agent 2 */}
@@ -125,8 +124,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                 p={6}
                 rounded={'lg'}
               >
-                <Flex 
-                  direction="column"
+                <VStack 
                   align="center"
                   spacing={4}
                 >
@@ -136,7 +134,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       'https://via.placeholder.com/150'
                     }
                     mb={4}
-                    alt={'Your Policy Saathi Team'}
+                    name={'Your Policy Saathi Team'}
                   />
                   <VStack spacing={2} align="center">
                     <Heading
@@ -145,10 +143,10 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       color={'brand.900'}
                       textAlign="center"
                     >
-                      Policy Advisor
+                      Jigar
                     </Heading>
                     <Text fontSize={'md'} color={'gray.500'} textAlign="center">
-                      Experienced Insurance Expert
+                       Insurance Agent
                     </Text>
                     <HStack spacing={2} mt={2}>
                       <Link href={`https://wa.me/918248633617`} isExternal>
@@ -159,7 +157,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       </Link>
                     </HStack>
                   </VStack>
-                </Flex>
+                </VStack>
               </Box>
             </Grid>
 

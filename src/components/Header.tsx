@@ -59,10 +59,10 @@ const Header: React.FC<HeaderProps> = () => {
           <Flex alignItems="center">
             <Box 
               position="relative" 
-              mr={2}
+              mr={3}
               borderRadius="full"
-              p={1.5}
-              bg="rgba(173, 216, 230, 0.3)"
+              p={2}
+              bg="blue"
               backdropFilter="auto"
               backdropBlur="8px"
             >
