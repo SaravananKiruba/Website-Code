@@ -21,11 +21,12 @@ import CompanyLogo from '../Images/Company_Logo.PNG';
 
 type HeaderProps = {};
 
-const Links = ['Home', 'About', 'Services', 'FAQ', 'Contact'];
+const Links = ['Home', 'About', 'Services', 'Partners', 'FAQ', 'Contact'];
 const NavLinks = {
   'Home': '#home',
   'About': '#about',
   'Services': '#services',
+  'Partners': '#partners',
   'FAQ': '#faq',
   'Contact': '#contact'
 };
@@ -62,7 +63,6 @@ const Header: React.FC<HeaderProps> = () => {
               mr={3}
               borderRadius="full"
               p={2}
-              bg="blue"
               backdropFilter="auto"
               backdropBlur="8px"
             >

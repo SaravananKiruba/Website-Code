@@ -12,7 +12,7 @@ import {
   Flex,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { FaShieldAlt, FaHeartbeat, FaCar, FaMotorcycle, FaPlane, FaHome, FaCheckCircle } from 'react-icons/fa';
+import { FaShieldAlt, FaHeartbeat, FaCar, FaMotorcycle, FaPlane, FaHome, FaCheckCircle, FaMoneyBillWave } from 'react-icons/fa';
 
 interface ServiceCardProps {
   title: string;
@@ -87,7 +87,7 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
             fontWeight={'bold'}
             color={'brand.900'}
           >
-            Our Insurance Services
+            Our Services
           </Heading>
           <Text color={'gray.600'} fontSize={'xl'}>
             We offer a comprehensive range of insurance solutions to protect you, your family, and your assets.
@@ -162,6 +162,21 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
             ]}
           />
         </SimpleGrid>
+        
+        {/* Center-aligned LIC Loan Services card */}
+        <Box display="flex" justifyContent="center" w="full" mt={10}>
+          <ServiceCard
+            icon={<Icon as={FaMoneyBillWave} w={10} h={10} />}
+            title={'LIC Loan Services'}
+            text={'Access flexible loan options backed by LIC policies with competitive interest rates.'}
+            features={[
+              'Loan against LIC policies',
+              'Attractive interest rates',
+              'Quick approval process',
+              'Flexible repayment options'
+            ]}
+          />
+        </Box>
       </Container>
     </Box>
   );

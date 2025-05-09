@@ -4,6 +4,7 @@ import Header from './components/Header.tsx';
 import Hero from './components/Hero.tsx';
 import About from './components/About.tsx';
 import Services from './components/Services.tsx';
+import Partners from './components/Partners.tsx';
 import Faq from './components/Faq.tsx';
 import Contact from './components/Contact.tsx';
 import Footer from './components/Footer.tsx';
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Hero id="home" />
         <About id="about" />
         <Services id="services" />
+        <Partners id="partners" />
         <Faq id="faq" />
         <Contact id="contact" />
       </Box>
