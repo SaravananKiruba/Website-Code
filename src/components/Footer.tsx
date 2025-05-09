@@ -24,7 +24,6 @@ const ListHeader = ({ children }: { children: React.ReactNode }) => {
 const Footer: React.FC = () => {
   const phoneNumbers = [
     { number: '9843430099', display: '98434 30099' },
-    { number: '9047797975', display: '90477 97975' },
     { number: '8248633617', display: '82486 33617' },
   ];
 
@@ -83,7 +82,7 @@ const Footer: React.FC = () => {
             ))}
             <Link href="mailto:agent@licinsurance.com" display="flex" alignItems="center">
               <Icon as={FaEnvelope} mr={2} />
-              <Text>agent@licinsurance.com</Text>
+              <Text>alwaysjigarlic@gmail.com</Text>
             </Link>
             <Flex align={'center'}>
               <Icon as={FaMapMarkerAlt} mr={2} />

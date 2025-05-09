@@ -100,10 +100,10 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       color={'brand.900'}
                       textAlign="center"
                     >
-                      Ashok Kumar
+                      S. Ashok Kumar
                     </Heading>
                     <Text fontSize={'md'} color={'gray.500'} textAlign="center">
-                      Experienced Insurance Agent
+                      CM CLUB MEMBER & SENIOR SALES MANAGER 
                     </Text>
                     <HStack spacing={2} mt={2}>
                       <Link href={`https://wa.me/919843430099`} isExternal>
@@ -143,7 +143,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       color={'brand.900'}
                       textAlign="center"
                     >
-                      Jigar
+                      A. Jigar
                     </Heading>
                     <Text fontSize={'md'} color={'gray.500'} textAlign="center">
                        Insurance Agent

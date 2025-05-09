@@ -37,12 +37,10 @@ const WhatsAppButton: React.FC = () => {
             <Icon as={FaInstagram} w={6} h={6} />
           </Box>
         </Link>
-      </Tooltip>
-
-      {/* WhatsApp Button */}
+      </Tooltip>      {/* WhatsApp Button */}
       <Tooltip label="Contact Ashok Kumar via WhatsApp" placement="left">
         <Link
-          href="https://wa.me/919843430099?text=Hello,%20I'm%20interested%20in%20LIC%20services"
+          href="https://wa.me/918248633617?text=Hello,%20I'm%20interested%20in%20LIC%20services"
           isExternal
         >
           <Box

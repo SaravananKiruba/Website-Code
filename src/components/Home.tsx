@@ -13,9 +13,10 @@ import {
   Image,
   VStack,
   HStack,
+  Link,
 } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
-import { FaShieldAlt, FaHeartbeat, FaHome, FaPhone } from 'react-icons/fa';
+import { FaShieldAlt, FaHeartbeat, FaHome, FaPhone, FaHeadset, FaUserClock, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 
 // Fix the image imports with the correct paths
 import CompanyLogo from '../Images/Company_Logo.PNG';
@@ -78,23 +79,29 @@ const Home: React.FC<HomeProps> = ({ id }) => {
               bgGradient="linear(to-r, brand.900, brand.700)"
               bgClip="text"
             >
-              Your Trusted Partner for All Insurance Needs
+              Let's Secure Your Future with us.
             </Heading>
             <Text fontSize="xl" mb={8} color="gray.700">
               We provide comprehensive insurance solutions to protect what matters most to you. From life to health, we've got you covered.
-            </Text>
-            <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
+            </Text>            <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
               <Button 
+                as={Link}
+                href="https://wa.me/918248633617?text=Hello,%20I'm%20interested%20in%20LIC%20services"
+                isExternal
                 size="lg" 
                 variant="primary" 
                 px={8}
                 rounded="full"
                 _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
                 transition="all 0.3s"
+                leftIcon={<FaWhatsapp />}
               >
-                Get a Quote
+                WhatsApp Us
               </Button>
               <Button 
+                as={Link}
+                href="https://www.instagram.com/your_policy_saathi"
+                isExternal
                 size="lg" 
                 variant="outline" 
                 color="brand.900" 
@@ -103,8 +110,9 @@ const Home: React.FC<HomeProps> = ({ id }) => {
                 rounded="full"
                 _hover={{ bg: 'brand.50', transform: 'translateY(-2px)' }}
                 transition="all 0.3s"
+                leftIcon={<FaInstagram />}
               >
-                Learn More
+                Chat on Insta
               </Button>
             </Stack>
           </Box>
@@ -191,9 +199,8 @@ const Home: React.FC<HomeProps> = ({ id }) => {
                 icon: FaHome, 
                 title: 'Home Security', 
                 description: 'Safeguard your property with our specialized policies' 
-              },
-              { 
-                icon: FaPhone, 
+              },              { 
+                icon: FaHeadset, 
                 title: '24/7 Support', 
                 description: 'Always available to assist with your insurance needs' 
               }

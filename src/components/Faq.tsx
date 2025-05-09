@@ -37,7 +37,7 @@ const Faq: React.FC<FaqProps> = ({ id }) => {
       questions: [
         {
           question: 'What is covered under Star Health Insurance?',
-          answer: 'Star Health Insurance typically covers hospitalization expenses, pre and post hospitalization costs, daycare procedures, ambulance charges, and more. Specific coverage varies by plan, but most plans include coverage for room rent, doctor fees, diagnostic tests, and medicines.'
+          answer: 'Star Health Insurance typically covers hospitalization expenses, pre and post hospitalization costs, and more. Specific coverage varies by plan, but most plans include coverage for room rent, doctor fees, diagnostic tests, and medicines.'
         },
         {
           question: 'Is there a waiting period for pre-existing diseases?',
@@ -60,10 +60,9 @@ const Faq: React.FC<FaqProps> = ({ id }) => {
     },
     {
       category: 'Travel & Building Insurance',
-      questions: [
-        {
-          question: 'Do I need travel insurance for domestic trips?',
-          answer: 'While not mandatory, travel insurance for domestic trips can be beneficial as it covers trip cancellations, lost baggage, medical emergencies, and more. Domestic travel insurance is typically more affordable than international coverage and provides peace of mind during your travels within the country.'
+      questions: [        {
+          question: 'Why is international travel insurance essential for overseas trips?',
+          answer: 'International travel insurance is highly recommended for overseas trips as it provides crucial coverage for medical emergencies, which can be extremely expensive in foreign countries. It also covers trip cancellations, lost passports, baggage delays, flight cancellations, and even emergency evacuations. Many countries and visa applications now require proof of travel insurance with adequate medical coverage before entry is granted.'
         },
         {
           question: 'What perils are covered under building insurance?',

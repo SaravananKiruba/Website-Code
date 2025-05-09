@@ -1,10 +1,16 @@
 {
   "files": {
-    "main.js": "/Website-Code/static/js/main.2859561a.js",
+    "main.js": "/Website-Code/static/js/main.d1309c50.js",
+    "static/media/NEW INDIA ASSURANCE.png": "/Website-Code/static/media/NEW INDIA ASSURANCE.8ad7f6d95eeddfabdf29.png",
+    "static/media/Home Section.jpg": "/Website-Code/static/media/Home Section.98b95c99d6b07b0d22f1.jpg",
+    "static/media/Company_Logo.PNG": "/Website-Code/static/media/Company_Logo.067644446f30ea44505d.PNG",
+    "static/media/LIC HFL.png": "/Website-Code/static/media/LIC HFL.5fc3bf89f8c297304d92.png",
+    "static/media/LIC LOGO.png": "/Website-Code/static/media/LIC LOGO.bdef93a1c3f28c23dcfa.png",
+    "static/media/STAR HEALTH.png": "/Website-Code/static/media/STAR HEALTH.b5db42042171d6d4df9c.png",
     "index.html": "/Website-Code/index.html",
-    "main.2859561a.js.map": "/Website-Code/static/js/main.2859561a.js.map"
+    "main.d1309c50.js.map": "/Website-Code/static/js/main.d1309c50.js.map"
   },
   "entrypoints": [
-    "static/js/main.2859561a.js"
+    "static/js/main.d1309c50.js"
   ]
 }

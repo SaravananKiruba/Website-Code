@@ -1,15 +1,15 @@
-import React from 'react';
-import { Box } from '@chakra-ui/react';
-import Header from './components/Header.tsx';
-import Home from './components/Home.tsx';
-import Hero from './components/Hero.tsx';
-import About from './components/About.tsx';
-import Services from './components/Services.tsx';
-import Partners from './components/Partners.tsx';
-import Faq from './components/Faq.tsx';
-import Contact from './components/Contact.tsx';
-import Footer from './components/Footer.tsx';
-import WhatsAppButton from './components/WhatsAppButton.tsx';
+import React from "react";
+import { Box } from "@chakra-ui/react";
+import Header from "./components/Header.tsx";
+import Home from "./components/Home.tsx";
+import Hero from "./components/Hero.tsx";
+import About from "./components/About.tsx";
+import Services from "./components/Services.tsx";
+import Partners from "./components/Partners.tsx";
+import Faq from "./components/Faq.tsx";
+import Contact from "./components/Contact.tsx";
+import Footer from "./components/Footer.tsx";
+import WhatsAppButton from "./components/WhatsAppButton.tsx";
 
 const App: React.FC = () => {
   return (
@@ -18,8 +18,8 @@ const App: React.FC = () => {
       <Box as="main">
         <Home id="home" />
         <About id="about" />
-        <Services id="services" />
         <Partners id="partners" />
+        <Services id="services" />
         <Faq id="faq" />
         <Contact id="contact" />
       </Box>

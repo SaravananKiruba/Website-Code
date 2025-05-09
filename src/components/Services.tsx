@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   Container,
@@ -11,9 +11,18 @@ import {
   VStack,
   Flex,
   useColorModeValue,
-} from '@chakra-ui/react';
-import { keyframes } from '@emotion/react';
-import { FaShieldAlt, FaHeartbeat, FaCar, FaMotorcycle, FaPlane, FaHome, FaCheckCircle, FaMoneyBillWave } from 'react-icons/fa';
+} from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
+import {
+  FaShieldAlt,
+  FaHeartbeat,
+  FaCar,
+  FaMotorcycle,
+  FaPlane,
+  FaHome,
+  FaCheckCircle,
+  FaMoneyBillWave,
+} from "react-icons/fa";
 
 interface ServiceCardProps {
   title: string;
@@ -22,55 +31,60 @@ interface ServiceCardProps {
   features: string[];
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, text, icon, features }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  title,
+  text,
+  icon,
+  features,
+}) => {
   return (
     <Box
-      maxW={'330px'}
-      w={'full'}
-      bg={useColorModeValue('white', 'gray.800')}
-      boxShadow={'2xl'}
-      rounded={'lg'}
+      maxW={"330px"}
+      w={"full"}
+      bg={useColorModeValue("white", "gray.800")}
+      boxShadow={"2xl"}
+      rounded={"lg"}
       p={6}
-      overflow={'hidden'}
+      overflow={"hidden"}
       transition="all 0.3s"
       _hover={{
-        transform: 'translateY(-5px)',
-        boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)',
-        borderColor: 'whiteAlpha.300',
+        transform: "translateY(-5px)",
+        boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)",
+        borderColor: "whiteAlpha.300",
       }}
       border="1px solid"
       borderColor="whiteAlpha.200"
       position="relative"
       zIndex={1}
     >
-      <Stack align={'center'} spacing={5}>
+      <Stack align={"center"} spacing={5}>
         <Flex
           w={16}
           h={16}
-          align={'center'}
-          justify={'center'}
-          color={'white'}
-          rounded={'full'}
-          bg={'#315098'}
+          align={"center"}
+          justify={"center"}
+          color={"white"}
+          rounded={"full"}
+          bg={"#315098"}
           mb={1}
         >
           {icon}
         </Flex>
         <Heading
-          color={useColorModeValue('gray.700', 'white')}
-          fontSize={'2xl'}
-          fontFamily={'body'}
+          color={useColorModeValue("gray.700", "white")}
+          fontSize={"2xl"}
+          fontFamily={"body"}
         >
           {title}
         </Heading>
-        <Text color={'gray.500'} fontSize={'sm'} textAlign={'center'}>
+        <Text color={"gray.500"} fontSize={"sm"} textAlign={"center"}>
           {text}
         </Text>
-        <Stack spacing={3} w={'full'} mt={2}>
+        <Stack spacing={3} w={"full"} mt={2}>
           {features.map((feature, index) => (
-            <HStack key={index} spacing={2} align={'start'}>
-              <Icon as={FaCheckCircle} color={'#FFD700'} w={5} h={5} mt={1} />
-              <Text fontSize={'sm'}>{feature}</Text>
+            <HStack key={index} spacing={2} align={"start"}>
+              <Icon as={FaCheckCircle} color={"#FFD700"} w={5} h={5} mt={1} />
+              <Text fontSize={"sm"}>{feature}</Text>
             </HStack>
           ))}
         </Stack>
@@ -94,9 +108,9 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
   const yellowAnimation = `${yellowPulse} 15s ease infinite`;
 
   return (
-    <Box 
-      id={id} 
-      as="section" 
+    <Box
+      id={id}
+      as="section"
       py={24}
       position="relative"
       overflow="hidden"
@@ -104,7 +118,7 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
       backgroundColor="#315098"
       _before={{
         content: '""',
-        position: 'absolute',
+        position: "absolute",
         top: 0,
         left: 0,
         right: 0,
@@ -113,110 +127,112 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
         zIndex: 0,
       }}
     >
-      <Container maxW={'7xl'} position="relative" zIndex={1}>
-        <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'} mb={16}>
+      <Container maxW={"7xl"} position="relative" zIndex={1}>
+        <Stack
+          spacing={4}
+          as={Container}
+          maxW={"3xl"}
+          textAlign={"center"}
+          mb={16}
+        >
           <Heading
-            fontSize={{ base: '3xl', sm: '4xl' }}
-            fontWeight={'bold'}
+            fontSize={{ base: "3xl", sm: "4xl" }}
+            fontWeight={"bold"}
             color="white"
             mb={4}
           >
             Our Services
           </Heading>
-          <Text color={'whiteAlpha.900'} fontSize={'xl'}>
-            We offer a comprehensive range of insurance solutions to protect you, your family, and your assets.
+          <Text color={"whiteAlpha.900"} fontSize={"xl"}>
+            We offer a comprehensive range of insurance solutions to protect
+            you, your family, and your assets.
           </Text>
         </Stack>
 
-        <SimpleGrid 
-          columns={{ base: 1, md: 2, lg: 3 }} 
-          spacing={10} 
-          px={{ base: 2, md: 4 }} 
+        <SimpleGrid
+          columns={{ base: 1, md: 2, lg: 3 }}
+          spacing={10}
+          px={{ base: 2, md: 4 }}
           justifyItems="center"
           mb={16}
         >
           <ServiceCard
             icon={<Icon as={FaShieldAlt} w={10} h={10} />}
-            title={'Life Insurance (LIC)'}
-            text={'Secure your family\'s future with comprehensive life insurance plans from LIC.'}
+            title={"LIFE INSURANCE"}
+            text={"Secure your family's future with life insurance plans"}
             features={[
-              'Various plan types to suit your needs',
-              'Tax benefits under Section 80C',
-              'Maturity benefits and bonuses',
-              'Hassle-free claim settlement'
+              "Various plan types to suit your needs",
+              "Tax benefits under Section 80C",
+              "Maturity benefits and bonuses",
             ]}
           />
           <ServiceCard
             icon={<Icon as={FaHeartbeat} w={10} h={10} />}
-            title={'Health Insurance (Star Health)'}
-            text={'Quality healthcare coverage for you and your family with Star Health Insurance.'}
+            title={"HEALTH INSURANCE"}
+            text={
+              "Quality healthcare coverage for you and your family with Star Health Insurance."
+            }
             features={[
-              'Individual and family floater plans',
-              'Cashless treatment at 10,000+ hospitals',
-              'Coverage for pre and post hospitalization',
-              'No medical check-up up to 45 years'
+              "Individual and family floater plans",
+              "Cashless treatment at 10,000+ hospitals",
+              "Coverage for pre and post hospitalization",
+            ]}
+          />
+          <ServiceCard
+            icon={<Icon as={FaMoneyBillWave} w={10} h={10} />}
+            title={"HOUSING LOAN FINANCE"}
+            text={
+              "Access flexible loan options with competitive interest rates."
+            }
+            features={[
+              "Attractive interest rates",
+              "Quick approval process",
+              "Flexible repayment options",
             ]}
           />
           <ServiceCard
             icon={<Icon as={FaCar} w={10} h={10} />}
-            title={'Car Insurance'}
-            text={'Protect your vehicle with comprehensive or third-party insurance coverage.'}
+            title={"VEHICLE INSURANCE"}
+            text={
+              "Protect your vehicle with comprehensive or third-party insurance coverage."
+            }
             features={[
-              'Comprehensive vs third-party options',
-              'No-claim bonus (NCB) benefits',
-              'Add-ons like zero-dep, roadside assistance',
-              'Quick claim settlement process'
+              "Comprehensive vs third-party options",
+              "No-claim bonus (NCB) benefits",
+              "Add-ons like zero-dep, roadside assistance",
+              "Personal accident cover",
+              "Insured Declared Value (IDV) protection",
+              "Quick claim settlement process",
             ]}
           />
-          <ServiceCard
-            icon={<Icon as={FaMotorcycle} w={10} h={10} />}
-            title={'Bike Insurance'}
-            text={'Affordable and reliable coverage for your two-wheeler with fast claim processing.'}
-            features={[
-              'Insured Declared Value (IDV) protection',
-              'Personal accident cover',
-              'Fast claim settlement process',
-              'Long-term policy options'
-            ]}
-          />
+
           <ServiceCard
             icon={<Icon as={FaPlane} w={10} h={10} />}
-            title={'Travel Insurance'}
-            text={'Worry-free travel with comprehensive coverage for domestic and international trips.'}
+            title={"TRAVEL INSURANCE"}
+            text={
+              "Worry-free travel with comprehensive coverage for domestic and international trips."
+            }
             features={[
-              'International and domestic coverage',
-              'Medical expenses and evacuation',
-              'Trip cancellation and delays',
-              'Lost luggage and passport assistance'
+              "International coverage",
+              "Medical expenses and evacuation",
+              "Trip cancellation and delays",
+              "Lost luggage and passport assistance",
             ]}
           />
           <ServiceCard
             icon={<Icon as={FaHome} w={10} h={10} />}
-            title={'Building Insurance'}
-            text={'Shield your property from unforeseen damages, natural disasters, and more.'}
+            title={"BUILDING INSURANCE"}
+            text={
+              "Shield your property from unforeseen damages, natural disasters, and more."
+            }
             features={[
-              'Protection against fire and theft',
-              'Natural disaster coverage',
-              'Third-party liability',
-              'Cost-effective premium options'
+              "Protection against fire and theft",
+              "Natural disaster coverage",
+              "Third-party liability",
+              "Cost-effective premium options",
             ]}
           />
         </SimpleGrid>
-        
-        {/* Center-aligned LIC Loan Services card */}
-        <Box display="flex" justifyContent="center" w="full" mt={10}>
-          <ServiceCard
-            icon={<Icon as={FaMoneyBillWave} w={10} h={10} />}
-            title={'LIC Loan Services'}
-            text={'Access flexible loan options backed by LIC policies with competitive interest rates.'}
-            features={[
-              'Loan against LIC policies',
-              'Attractive interest rates',
-              'Quick approval process',
-              'Flexible repayment options'
-            ]}
-          />
-        </Box>
       </Container>
     </Box>
   );

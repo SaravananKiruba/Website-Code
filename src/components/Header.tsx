@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Box,
   Flex,
@@ -17,32 +17,32 @@ import {
   Image,
   Icon,
   Tooltip,
-} from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import CompanyLogo from '../Images/Company_Logo.PNG';
+} from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import CompanyLogo from "../Images/Company_Logo.PNG";
 
 type HeaderProps = {};
 
-const Links = ['Home', 'About', 'Services', 'Partners', 'FAQ', 'Contact'];
+const Links = ["Home", "About", "Partners","Services", "FAQ", "Contact"];
 const NavLinks = {
-  'Home': '#home',
-  'About': '#about',
-  'Services': '#services',
-  'Partners': '#partners',
-  'FAQ': '#faq',
-  'Contact': '#contact'
+  Home: "#home",
+  About: "#about",
+  Partners: "#partners",
+  Services: "#services",
+  FAQ: "#faq",
+  Contact: "#contact",
 };
 
 const Header: React.FC<HeaderProps> = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  
+
   const handleClick = () => {
     if (isOpen) onClose();
   };
 
   return (
-    <Box 
+    <Box
       as="header"
       position="sticky"
       top={0}
@@ -51,41 +51,45 @@ const Header: React.FC<HeaderProps> = () => {
       boxShadow="md"
       zIndex={10}
     >
-      <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+      <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         <IconButton
-          size={'md'}
+          size={"md"}
           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          aria-label={'Open Menu'}
-          display={{ md: 'none' }}
+          aria-label={"Open Menu"}
+          display={{ md: "none" }}
           onClick={isOpen ? onClose : onOpen}
         />
-        <HStack spacing={8} alignItems={'center'}>
+        <HStack spacing={8} alignItems={"center"}>
           <Flex alignItems="center">
-            <Box 
-              position="relative" 
+            <Box
+              position="relative"
               mr={3}
               borderRadius="full"
               p={2}
               backdropFilter="auto"
               backdropBlur="8px"
             >
-              <Image src={CompanyLogo} alt="Your Policy Saathi Logo" boxSize="40px" borderRadius="full" />
+              <Image
+                src={CompanyLogo}
+                alt="Your Policy Saathi Logo"
+                boxSize="40px"
+                borderRadius="full"
+              />
             </Box>
-            <Box fontWeight="bold" fontSize="xl" color="brand.900">Your Policy Saathi</Box>
+            <Box fontWeight="bold" fontSize="xl" color="brand.900">
+              Your Policy Saathi
+            </Box>
           </Flex>
-          <HStack
-            as={'nav'}
-            spacing={6}
-            display={{ base: 'none', md: 'flex' }}>
+          <HStack as={"nav"} spacing={6} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
               <Link
                 key={link}
                 px={2}
                 py={1}
-                rounded={'md'}
+                rounded={"md"}
                 _hover={{
-                  textDecoration: 'none',
-                  color: 'brand.900',
+                  textDecoration: "none",
+                  color: "brand.900",
                 }}
                 href={NavLinks[link as keyof typeof NavLinks]}
               >
@@ -94,21 +98,21 @@ const Header: React.FC<HeaderProps> = () => {
             ))}
           </HStack>
         </HStack>
-        
+
         <HStack spacing={4}>
+          {" "}
           <Tooltip label="Contact us on WhatsApp" placement="bottom">
             <Link
-              href="https://wa.me/919843430099?text=Hello,%20I'm%20interested%20in%20LIC%20services"
+              href="https://wa.me/918248633617?text=Hello,%20I'm%20interested%20in%20LIC%20services"
               isExternal
               display="flex"
               alignItems="center"
               color="green.500"
-              _hover={{ color: 'green.600' }}
+              _hover={{ color: "green.600" }}
             >
               <Icon as={FaWhatsapp} w={5} h={5} />
             </Link>
           </Tooltip>
-          
           <Tooltip label="Follow us on Instagram" placement="bottom">
             <Link
               href="https://www.instagram.com/your_policy_saathi"
@@ -116,7 +120,7 @@ const Header: React.FC<HeaderProps> = () => {
               display="flex"
               alignItems="center"
               color="brand.900"
-              _hover={{ color: 'brand.700' }}
+              _hover={{ color: "brand.700" }}
             >
               <Icon as={FaInstagram} w={5} h={5} />
             </Link>
@@ -131,16 +135,16 @@ const Header: React.FC<HeaderProps> = () => {
           <DrawerHeader color="brand.900">Your Policy Saathi</DrawerHeader>
 
           <DrawerBody>
-            <Stack as={'nav'} spacing={4}>
+            <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
                 <Link
                   key={link}
                   px={2}
                   py={1}
-                  rounded={'md'}
+                  rounded={"md"}
                   _hover={{
-                    textDecoration: 'none',
-                    bg: 'brand.100',
+                    textDecoration: "none",
+                    bg: "brand.100",
                   }}
                   href={NavLinks[link as keyof typeof NavLinks]}
                   onClick={handleClick}
@@ -148,7 +152,7 @@ const Header: React.FC<HeaderProps> = () => {
                   {link}
                 </Link>
               ))}
-              
+
               <HStack spacing={4} pt={4}>
                 <Link
                   href="https://wa.me/919843430099?text=Hello,%20I'm%20interested%20in%20LIC%20services"
@@ -159,7 +163,7 @@ const Header: React.FC<HeaderProps> = () => {
                 >
                   <Icon as={FaWhatsapp} w={5} h={5} mr={2} /> WhatsApp
                 </Link>
-                
+
                 <Link
                   href="https://www.instagram.com/your_policy_saathi"
                   isExternal
