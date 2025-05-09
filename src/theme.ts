@@ -2,11 +2,11 @@ import { extendTheme } from "@chakra-ui/react";
 
 const colors = {
   brand: {
-    900: "#0b7e7f", // darkest
-    800: "#13947d",
-    700: "#1ba37d",
-    600: "#20ae7c",
-    500: "#35bc88", // lightest
+    900: "#10126d", // dark blue
+    800: "#2619d8", // blue
+    700: "#4893ed", // light blue
+    600: "#f6c445", // yellow
+    500: "#e7d42a", // light yellow
   }
 };
 

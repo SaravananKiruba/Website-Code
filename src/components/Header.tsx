@@ -14,8 +14,10 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
+  Image,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import CompanyLogo from '../Images/Company_Logo.PNG';
 
 type HeaderProps = {};
 
@@ -54,7 +56,10 @@ const Header: React.FC<HeaderProps> = () => {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={'center'}>
-          <Box fontWeight="bold" fontSize="xl" color="brand.900">LIC Insurance Agent</Box>
+          <Flex alignItems="center">
+            <Image src={CompanyLogo} alt="Your Policy Saathi Logo" boxSize="40px" mr={2} />
+            <Box fontWeight="bold" fontSize="xl" color="brand.900">Your Policy Saathi</Box>
+          </Flex>
           <HStack
             as={'nav'}
             spacing={6}
@@ -82,7 +87,7 @@ const Header: React.FC<HeaderProps> = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader color="brand.900">Menu</DrawerHeader>
+          <DrawerHeader color="brand.900">Your Policy Saathi</DrawerHeader>
 
           <DrawerBody>
             <Stack as={'nav'} spacing={4}>
