@@ -88,7 +88,11 @@ const Hero: React.FC<HeroProps> = ({ id }) => {
               fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}
             >
               <Text as={'span'} color={'brand.900'}>
-                Your Trusted LIC Insurance Agent
+                Your Policy Saathi
+              </Text>
+              <br />
+              <Text as={'span'} color={'brand.800'}>
+                Your Trusted Insurance Partner
               </Text>
             </Heading>
             <Text color={'gray.500'}>

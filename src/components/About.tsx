@@ -10,8 +10,12 @@ import {
   useColorModeValue,
   SimpleGrid,
   Icon,
+  Grid,
+  VStack,
+  HStack,
+  Link,
 } from '@chakra-ui/react';
-import { FaMedal, FaHandshake, FaBullseye } from 'react-icons/fa';
+import { FaMedal, FaHandshake, FaBullseye, FaWhatsapp, FaPhone } from 'react-icons/fa';
 
 interface FeatureProps {
   title: string;
@@ -69,45 +73,101 @@ const About: React.FC<AboutProps> = ({ id }) => {
             flex={1} 
             spacing={8}
           >
-            <Box 
-              bg={useColorModeValue('white', 'gray.700')}
-              boxShadow={'lg'}
-              p={8}
-              rounded={'lg'}
-            >
-              <Flex 
-                direction={{ base: 'column', md: 'row' }}
-                align={{ base: 'center', md: 'flex-start' }}
-                spacing={4}
+            <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={6}>
+              {/* Agent 1 */}
+              <Box 
+                bg={useColorModeValue('white', 'gray.700')}
+                boxShadow={'lg'}
+                p={6}
+                rounded={'lg'}
               >
-                <Avatar
-                  size={'xl'}
-                  src={
-                    'https://via.placeholder.com/150'
-                  }
-                  mb={{ base: 4, md: 0 }}
-                  mr={{ md: 4 }}
-                  alt={'Agent Name'}
-                />
-                <Stack spacing={2}>
-                  <Heading
-                    fontSize={{ base: '2xl', sm: '3xl' }}
-                    fontWeight={500}
-                    color={'brand.900'}
-                  >
-                    Experienced LIC Agent
-                  </Heading>
-                  <Text fontSize={'lg'} color={'gray.500'}>
-                    As a trusted LIC Insurance Agent since 2010, I bring over 15 years of experience in the insurance industry. 
-                    My mission is to provide personalized insurance solutions that protect what matters most to you.
-                  </Text>
-                  <Text fontSize={'lg'} color={'gray.500'} pt={2}>
-                    My expertise spans across a wide range of insurance products, from life and health insurance to property and vehicle coverage. 
-                    I believe in building long-term relationships with my clients based on trust, transparency, and excellent service.
-                  </Text>
-                </Stack>
-              </Flex>
-            </Box>
+                <Flex 
+                  direction="column"
+                  align="center"
+                  spacing={4}
+                >
+                  <Avatar
+                    size={'xl'}
+                    src={
+                      'https://via.placeholder.com/150'
+                    }
+                    mb={4}
+                    alt={'Your Policy Saathi Agent'}
+                  />
+                  <VStack spacing={2} align="center">
+                    <Heading
+                      fontSize={{ base: 'xl', sm: '2xl' }}
+                      fontWeight={500}
+                      color={'brand.900'}
+                      textAlign="center"
+                    >
+                      Your Policy Saathi
+                    </Heading>
+                    <Text fontSize={'md'} color={'gray.500'} textAlign="center">
+                      Experienced Insurance Agent
+                    </Text>
+                    <HStack spacing={2} mt={2}>
+                      <Link href={`https://wa.me/919843430099`} isExternal>
+                        <HStack color="green.500">
+                          <Icon as={FaWhatsapp} />
+                          <Text>98434 30099</Text>
+                        </HStack>
+                      </Link>
+                    </HStack>
+                  </VStack>
+                </Flex>
+              </Box>
+              
+              {/* Agent 2 */}
+              <Box 
+                bg={useColorModeValue('white', 'gray.700')}
+                boxShadow={'lg'}
+                p={6}
+                rounded={'lg'}
+              >
+                <Flex 
+                  direction="column"
+                  align="center"
+                  spacing={4}
+                >
+                  <Avatar
+                    size={'xl'}
+                    src={
+                      'https://via.placeholder.com/150'
+                    }
+                    mb={4}
+                    alt={'Your Policy Saathi Team'}
+                  />
+                  <VStack spacing={2} align="center">
+                    <Heading
+                      fontSize={{ base: 'xl', sm: '2xl' }}
+                      fontWeight={500}
+                      color={'brand.900'}
+                      textAlign="center"
+                    >
+                      Policy Advisor
+                    </Heading>
+                    <Text fontSize={'md'} color={'gray.500'} textAlign="center">
+                      Experienced Insurance Expert
+                    </Text>
+                    <HStack spacing={2} mt={2}>
+                      <Link href={`https://wa.me/918248633617`} isExternal>
+                        <HStack color="green.500">
+                          <Icon as={FaWhatsapp} />
+                          <Text>82486 33617</Text>
+                        </HStack>
+                      </Link>
+                    </HStack>
+                  </VStack>
+                </Flex>
+              </Box>
+            </Grid>
+
+            <Text fontSize={'lg'} color={'gray.600'} pt={2}>
+              Our experienced insurance agents at Your Policy Saathi have been helping families and individuals secure their futures 
+              with the right insurance plans for over 15 years. For any insurance queries, you can 
+              directly contact our agents via WhatsApp.
+            </Text>
 
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
               <Feature

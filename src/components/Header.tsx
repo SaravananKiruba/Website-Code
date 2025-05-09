@@ -57,7 +57,17 @@ const Header: React.FC<HeaderProps> = () => {
         />
         <HStack spacing={8} alignItems={'center'}>
           <Flex alignItems="center">
-            <Image src={CompanyLogo} alt="Your Policy Saathi Logo" boxSize="40px" mr={2} />
+            <Box 
+              position="relative" 
+              mr={2}
+              borderRadius="full"
+              p={1.5}
+              bg="rgba(173, 216, 230, 0.3)"
+              backdropFilter="auto"
+              backdropBlur="8px"
+            >
+              <Image src={CompanyLogo} alt="Your Policy Saathi Logo" boxSize="40px" />
+            </Box>
             <Box fontWeight="bold" fontSize="xl" color="brand.900">Your Policy Saathi</Box>
           </Flex>
           <HStack

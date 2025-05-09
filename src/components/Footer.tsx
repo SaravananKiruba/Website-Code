@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
         >
           <Stack spacing={6}>
             <Box>
-              <Heading as="h2" size="lg">LIC Insurance Agent</Heading>
+              <Heading as="h2" size="lg">Your Policy Saathi</Heading>
             </Box>
             <Text fontSize={'sm'}>
               Your trusted advisor for all insurance needs since 2010. 
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Text>© {new Date().getFullYear()} LIC Insurance Agent. All rights reserved</Text>
+          <Text>© {new Date().getFullYear()} Your Policy Saathi. All rights reserved</Text>
           <Stack direction={'row'} spacing={6}>
             <Link href={'#'}>Privacy Policy</Link>
             <Link href={'#'}>Terms of Use</Link>

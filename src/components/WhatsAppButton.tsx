@@ -4,9 +4,9 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton: React.FC = () => {
   return (
-    <Tooltip label="Contact via WhatsApp" placement="left">
+    <Tooltip label="Contact Ashok Kumar via WhatsApp" placement="left">
       <Link
-        href="https://wa.me/919843430099"
+        href="https://wa.me/919843430099?text=Hello,%20I'm%20interested%20in%20LIC%20services"
         isExternal
         position="fixed"
         bottom="30px"
