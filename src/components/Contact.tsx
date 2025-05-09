@@ -27,7 +27,13 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
   ];
 
   return (
-    <Box id={id} as="section" py={16}>
+    <Box 
+      id={id} 
+      as="section" 
+      py={16} 
+      bgGradient="linear(to-br, white, #e3ad26, blue.500)"
+      boxShadow="md"
+    >
       <Container maxW={'7xl'}>
         <VStack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'} mb={16}>
           <Heading

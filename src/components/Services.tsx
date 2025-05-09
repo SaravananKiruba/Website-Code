@@ -35,10 +35,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, text, icon, features }
       transition="all 0.3s"
       _hover={{
         transform: 'translateY(-5px)',
-        boxShadow: 'xl',
+        boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)',
+        borderColor: 'whiteAlpha.300',
       }}
       border="1px solid"
-      borderColor="gray.100"
+      borderColor="whiteAlpha.200"
       position="relative"
       zIndex={1}
     >
@@ -50,7 +51,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, text, icon, features }
           justify={'center'}
           color={'white'}
           rounded={'full'}
-          bg={'brand.800'}
+          bg={'#315098'}
           mb={1}
         >
           {icon}
@@ -68,7 +69,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, text, icon, features }
         <Stack spacing={3} w={'full'} mt={2}>
           {features.map((feature, index) => (
             <HStack key={index} spacing={2} align={'start'}>
-              <Icon as={FaCheckCircle} color={'accent.500'} w={5} h={5} mt={1} />
+              <Icon as={FaCheckCircle} color={'#FFD700'} w={5} h={5} mt={1} />
               <Text fontSize={'sm'}>{feature}</Text>
             </HStack>
           ))}
@@ -100,6 +101,7 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
       position="relative"
       overflow="hidden"
       minH="100vh"
+      backgroundColor="#315098"
       _before={{
         content: '""',
         position: 'absolute',
@@ -107,10 +109,7 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
         left: 0,
         right: 0,
         bottom: 0,
-        bgGradient: 'linear(to-r, gray.50, white, gray.50)',
-        backgroundSize: '200% 200%',
-        opacity: 0.8,
-        animation: yellowAnimation,
+        opacity: 0.9,
         zIndex: 0,
       }}
     >
@@ -119,13 +118,12 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
           <Heading
             fontSize={{ base: '3xl', sm: '4xl' }}
             fontWeight={'bold'}
-            bgGradient="linear(to-r, brand.900, brand.700)"
-            bgClip="text"
+            color="white"
             mb={4}
           >
             Our Services
           </Heading>
-          <Text color={'gray.600'} fontSize={'xl'}>
+          <Text color={'whiteAlpha.900'} fontSize={'xl'}>
             We offer a comprehensive range of insurance solutions to protect you, your family, and your assets.
           </Text>
         </Stack>

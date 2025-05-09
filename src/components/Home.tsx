@@ -19,6 +19,7 @@ import { FaShieldAlt, FaHeartbeat, FaHome, FaPhone } from 'react-icons/fa';
 
 // Fix the image imports with the correct paths
 import CompanyLogo from '../Images/Company_Logo.PNG';
+import HomeSection from '../Images/Home Section.jpg';
 
 interface HomeProps {
   id?: string;
@@ -117,47 +118,47 @@ const Home: React.FC<HomeProps> = ({ id }) => {
             <Box
               w="100%"
               h="350px"
-              bg={gradientBg}
               borderRadius="xl"
               boxShadow="xl"
               overflow="hidden"
               position="relative"
-              _before={{
-                content: '""',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                bgGradient: 'linear(to-r, accent.400, accent.300, accent.500)',
-                opacity: 0.1,
-                backgroundSize: '200% 200%',
-                animation: yellowAnimation,
-                zIndex: 0,
-              }}
             >
-              <Flex 
-                h="100%" 
-                align="center" 
-                justify="center" 
-                color="white" 
-                p={8}
-                direction="column"
-                position="relative"
-                zIndex={1}
+              <Image
+                src={HomeSection}
+                alt="Insurance Services"
+                objectFit="cover"
+                w="100%"
+                h="100%"
+              />
+              <Box
+                position="absolute"
+                top="0"
+                left="0"
+                right="0"
+                bottom="0"
+                bg="rgba(0,0,0,0.4)"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
+                color="white"
+                padding={6}
+                textAlign="center"
               >
-                
-                  <Image 
+                <Image 
                   src={CompanyLogo} 
                   alt="Your Policy Saathi Logo" 
                   boxSize="125px" 
-                  borderRadius="full" 
+                  borderRadius="full"
+                  bg="white"
+                  p={2}
+                  mb={4}
                 />
                 <Heading size="lg" mb={4}>Your Policy Saathi</Heading>
-                <Text fontSize="lg" textAlign="center">
+                <Text fontSize="lg">
                   Protecting your future with reliable insurance solutions
                 </Text>
-              </Flex>
+              </Box>
             </Box>
           </Flex>
         </Flex>

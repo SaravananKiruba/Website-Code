@@ -17,6 +17,7 @@ import {
 } from '@chakra-ui/react';
 import { PhoneIcon } from '@chakra-ui/icons';
 import { FaShieldAlt, FaHeartbeat, FaCar, FaMotorcycle, FaPlane, FaHome } from 'react-icons/fa';
+import HomeSection from '../Images/Home Section.jpg';
 
 interface FeatureCardProps {
   title: string;
@@ -164,13 +165,44 @@ const Hero: React.FC<HeroProps> = ({ id }) => {
               boxShadow={'2xl'}
               width={'full'}
               overflow={'hidden'}
-              bg="gray.100" 
               height="300px"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
             >
-              <Text fontSize="lg" color="gray.500">Agent Logo/Image</Text>
+              <Image
+                src={HomeSection}
+                alt="Insurance Services" 
+                objectFit="cover"
+                w="100%"
+                h="100%"
+              />
+              <Box
+                position="absolute"
+                top="0"
+                left="0"
+                right="0"
+                bottom="0"
+                bg="rgba(0,0,0,0.5)"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
+                p={6}
+              >
+                <Heading
+                  size="lg"
+                  color="white"
+                  mb={2}
+                  textAlign="center"
+                >
+                  Expert Insurance Guidance
+                </Heading>
+                <Text
+                  color="white"
+                  fontSize="md"
+                  textAlign="center"
+                >
+                  Protecting what matters most to you
+                </Text>
+              </Box>
             </Box>
           </Flex>
         </Stack>

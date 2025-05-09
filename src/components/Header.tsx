@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = () => {
       as="header"
       position="sticky"
       top={0}
-      bg={useColorModeValue('white', 'gray.900')}
+      bg="#f6c445"
       px={4}
       boxShadow="md"
       zIndex={10}
