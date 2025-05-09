@@ -11,7 +11,7 @@ import {
   Flex,
   Heading,
 } from '@chakra-ui/react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
+import { FaHeadset, FaEnvelope, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
 
 const ListHeader = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -66,8 +66,7 @@ const Footer: React.FC = () => {
             <ListHeader>Insurance Products</ListHeader>
             <Link href="#services">Life Insurance</Link>
             <Link href="#services">Health Insurance</Link>
-            <Link href="#services">Car Insurance</Link>
-            <Link href="#services">Bike Insurance</Link>
+            <Link href="#services">Vehicle Insurance</Link>
             <Link href="#services">Travel Insurance</Link>
             <Link href="#services">Building Insurance</Link>
           </Stack>
@@ -76,7 +75,7 @@ const Footer: React.FC = () => {
             <ListHeader>Contact Us</ListHeader>
             {phoneNumbers.map((phone, index) => (
               <Link key={index} href={`tel:${phone.number}`} display="flex" alignItems="center">
-                <Icon as={FaPhone} mr={2} />
+                <Icon as={FaHeadset} mr={2} />
                 <Text>{phone.display}</Text>
               </Link>
             ))}
@@ -86,7 +85,7 @@ const Footer: React.FC = () => {
             </Link>
             <Flex align={'center'}>
               <Icon as={FaMapMarkerAlt} mr={2} />
-              <Text>123 Insurance Building, Main Street</Text>
+              <Text>school lane, 8/65, Pandiya Velalar St, Periyar, Madurai Main, Madurai, Tamil Nadu 625001</Text>
             </Flex>
           </Stack>
         </SimpleGrid>

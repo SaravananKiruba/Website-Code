@@ -126,9 +126,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
             <HStack alignItems="flex-start">
               <Icon as={FaMapMarkerAlt} color="brand.900" mt={1.5} mr={3} />
               <Text fontSize="lg">
-                123 Insurance Building,<br />
-                Main Street, City,<br />
-                State - 600001
+                school lane, 8/65, Pandiya Velalar St, Periyar, Madurai Main, Madurai, Tamil Nadu 625001
               </Text>
             </HStack>
           </VStack>

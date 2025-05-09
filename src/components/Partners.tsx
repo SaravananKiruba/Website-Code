@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Box,
   Container,
@@ -7,6 +7,12 @@ import {
   useColorModeValue,
   Flex,
   Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
 
@@ -37,6 +43,16 @@ const Partners: React.FC<PartnersProps> = ({ id }) => {
 
   const marqueeRef = useRef<HTMLDivElement>(null);
   const cardBgColor = useColorModeValue('white', 'gray.800');
+  
+  // State for storing the selected image for the modal
+  const [selectedImage, setSelectedImage] = useState<{ src: string, alt: string } | null>(null);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  
+  // Function to handle image click
+  const handleImageClick = (src: string, alt: string) => {
+    setSelectedImage({ src, alt });
+    onOpen();
+  };
   
   // Define marquee animation
   const marqueeAnimation = keyframes`
@@ -100,7 +116,8 @@ const Partners: React.FC<PartnersProps> = ({ id }) => {
                 _hover={{
                   transform: 'scale(1.05)',
                   boxShadow: 'lg',
-                  zIndex: 1
+                  zIndex: 1,
+                  cursor: 'pointer'
                 }}
               >
                 <Image
@@ -109,11 +126,32 @@ const Partners: React.FC<PartnersProps> = ({ id }) => {
                   maxH={{ base: "150px", md: "170px" }}
                   maxW={{ base: "150px", md: "220px" }}
                   objectFit="contain"
+                  onClick={() => handleImageClick(partner.logo, partner.alt)}
                 />
               </Flex>
             ))}
           </Flex>
         </Box>
+        
+        {/* Image Zoom Modal */}
+        <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
+          <ModalOverlay backgroundColor="rgba(0, 0, 0, 0.75)" />
+          <ModalContent bg="transparent" boxShadow="none" maxW="90vw">
+            <ModalCloseButton color="white" size="lg" top={-10} right={-10} />
+            <ModalBody p={0} display="flex" justifyContent="center" alignItems="center">
+              {selectedImage && (
+                <Image
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  maxH="80vh"
+                  maxW="90vw"
+                  objectFit="contain"
+                  borderRadius="md"
+                />
+              )}
+            </ModalBody>
+          </ModalContent>
+        </Modal>
       </Container>
     </Box>
   );
