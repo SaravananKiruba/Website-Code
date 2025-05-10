@@ -202,7 +202,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                   >
                     <Avatar
                       size={'2xl'}
-                      src={require('../Images/Jigar.jpg')}
+                      src={require('../Images/Jigar.JPG')}
                       name={'A. Jigar'}
                       border="3px solid white"
                     />
