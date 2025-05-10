@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Website-Code/static/css/main.6b92a700.css",
-    "main.js": "/Website-Code/static/js/main.12c5439a.js",
-    "static/media/NEW INDIA ASSURANCE.png": "/Website-Code/static/media/NEW INDIA ASSURANCE.7e423cad456605d78880.png",
-    "static/media/Jigar.jpg": "/Website-Code/static/media/Jigar.7a9b6b6b4677cf1c1b2c.jpg",
-    "static/media/LIC HFL.png": "/Website-Code/static/media/LIC HFL.1c15793ccdad3554064d.png",
-    "static/media/Home Section.jpg": "/Website-Code/static/media/Home Section.98b95c99d6b07b0d22f1.jpg",
-    "static/media/Ashok Kumar.jpg": "/Website-Code/static/media/Ashok Kumar.84197037b9a0c40c9b59.jpg",
-    "static/media/Company_Logo.PNG": "/Website-Code/static/media/Company_Logo.067644446f30ea44505d.PNG",
-    "static/media/LIC LOGO.png": "/Website-Code/static/media/LIC LOGO.bc93ef359fb428c4177e.png",
-    "static/media/Jackie.jpg": "/Website-Code/static/media/Jackie.5d778cd592737562442f.jpg",
-    "static/media/STAR HEALTH.png": "/Website-Code/static/media/STAR HEALTH.d22e1331f24eea225507.png",
-    "index.html": "/Website-Code/index.html",
-    "main.12c5439a.js.map": "/Website-Code/static/js/main.12c5439a.js.map"
+    "main.css": "/static/css/main.6b92a700.css",
+    "main.js": "/static/js/main.bf45061a.js",
+    "static/media/NEW INDIA ASSURANCE.png": "/static/media/NEW INDIA ASSURANCE.7e423cad456605d78880.png",
+    "static/media/Jigar.jpg": "/static/media/Jigar.7a9b6b6b4677cf1c1b2c.jpg",
+    "static/media/LIC HFL.png": "/static/media/LIC HFL.1c15793ccdad3554064d.png",
+    "static/media/Home Section.jpg": "/static/media/Home Section.98b95c99d6b07b0d22f1.jpg",
+    "static/media/Ashok Kumar.jpg": "/static/media/Ashok Kumar.84197037b9a0c40c9b59.jpg",
+    "static/media/Company_Logo.PNG": "/static/media/Company_Logo.067644446f30ea44505d.PNG",
+    "static/media/LIC LOGO.png": "/static/media/LIC LOGO.bc93ef359fb428c4177e.png",
+    "static/media/Jackie.jpg": "/static/media/Jackie.5d778cd592737562442f.jpg",
+    "static/media/STAR HEALTH.png": "/static/media/STAR HEALTH.d22e1331f24eea225507.png",
+    "index.html": "/index.html",
+    "main.bf45061a.js.map": "/static/js/main.bf45061a.js.map"
   },
   "entrypoints": [
     "static/css/main.6b92a700.css",
-    "static/js/main.12c5439a.js"
+    "static/js/main.bf45061a.js"
   ]
 }
