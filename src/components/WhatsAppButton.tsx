@@ -36,11 +36,9 @@ const WhatsAppButton: React.FC = () => {
           >
             <Icon as={FaInstagram} w={6} h={6} />
           </Box>
-        </Link>
-      </Tooltip>      {/* WhatsApp Button */}
-      <Tooltip label="Contact Ashok Kumar via WhatsApp" placement="left">
+        </Link>      </Tooltip>      {/* WhatsApp Button */}      <Tooltip label="Contact our agents via WhatsApp" placement="left">
         <Link
-          href="https://wa.me/918248633617?text=Hello,%20I'm%20interested%20in%20LIC%20services"
+          href="https://wa.me/918248633617?text=Hi%20Jigar!%20I'm%20interested%20in%20learning%20more%20about%20your%20insurance%20services.%20Can%20you%20please%20share%20some%20details?%20What%20types%20of%20insurance%20do%20you%20offer,%20and%20how%20can%20I%20get%20a%20quote%20or%20more%20information?%20Looking%20forward%20to%20hearing%20back%20from%20you!"
           isExternal
         >
           <Box

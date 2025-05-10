@@ -20,10 +20,10 @@ interface ContactProps {
   id: string;
 }
 
-const Contact: React.FC<ContactProps> = ({ id }) => {
-  const phoneNumbers = [
+const Contact: React.FC<ContactProps> = ({ id }) => {  const phoneNumbers = [
     { number: "9843430099", display: "98434 30099", name: "S. Ashok Kumar" },
     { number: "8248633617", display: "82486 33617", name: "A. Jigar" },
+    { number: "9047797975", display: "90477 97975", name: "G. Jackie Kumar" },
   ];
 
   return (

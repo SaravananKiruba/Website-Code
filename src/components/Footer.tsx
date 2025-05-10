@@ -26,10 +26,10 @@ const ListHeader = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const Footer: React.FC = () => {
-  const phoneNumbers = [
+const Footer: React.FC = () => {  const phoneNumbers = [
     { number: "9843430099", display: "98434 30099" },
     { number: "8248633617", display: "82486 33617" },
+    { number: "9047797975", display: "90477 97975" },
   ];
 
   return (

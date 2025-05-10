@@ -72,8 +72,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
           <Stack 
             flex={1} 
             spacing={8}
-          >
-            <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={6}>
+          >            <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={6}>
               {/* Agent 1 */}              <Box 
                 bg="#fbe7ab"
                 boxShadow={'lg'}
@@ -124,8 +123,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       </Link>
                     </HStack>
                   </VStack>
-                </VStack>
-              </Box>
+                </VStack>              </Box>
               
               {/* Agent 2 */}              <Box 
                 bg= "#fbe7ab"
@@ -173,6 +171,58 @@ const About: React.FC<AboutProps> = ({ id }) => {
                         <HStack color="green.500">
                           <Icon as={FaWhatsapp} />
                           <Text>82486 33617</Text>
+                        </HStack>
+                      </Link>
+                    </HStack>                  </VStack>
+                </VStack>
+              </Box>
+              
+              {/* Agent 3 */}              <Box 
+                bg= "#fbe7ab"
+                boxShadow={'lg'}
+                p={6}
+                rounded={'lg'}
+              >
+                <VStack 
+                  align="center"
+                  spacing={4}
+                >
+                  <Box
+                    position="relative"
+                    borderRadius="full"
+                    p={1.5}
+                    bgGradient="linear(to-tr, brand.700, brand.500, accent.500, accent.700)"
+                    boxShadow="0 0 15px rgba(6, 68, 63, 0.5)"
+                    transition="all 0.3s ease"
+                    _hover={{ 
+                      transform: "scale(1.05)",
+                      boxShadow: "0 0 20px rgba(6, 68, 63, 0.7)"
+                    }}
+                  >
+                    <Avatar
+                      size={'2xl'}
+                      src={require('../Images/Jackie.jpg')}
+                      name={'G. Jackie Kumar'}
+                      border="3px solid white"
+                    />
+                  </Box>
+                  <VStack spacing={2} align="center">
+                    <Heading
+                      fontSize={{ base: 'xl', sm: '2xl' }}
+                      fontWeight={500}
+                      color={'brand.900'}
+                      textAlign="center"
+                    >
+                      G. Jackie Kumar
+                    </Heading>
+                    <Text fontSize={'md'} color="#06443f" textAlign="center">
+                       Insurance Agent
+                    </Text>
+                    <HStack spacing={2} mt={2}>
+                      <Link href={`https://wa.me/919047797975`} isExternal>
+                        <HStack color="green.500">
+                          <Icon as={FaWhatsapp} />
+                          <Text>90477 97975</Text>
                         </HStack>
                       </Link>
                     </HStack>
