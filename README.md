@@ -52,18 +52,6 @@ The website uses a custom green color palette:
    npm run build
    ```
 
-## Hosting Information
-
-This website is hosted on Vercel with custom domain:
-- Domain: [yourpolicysaathi.in](https://yourpolicysaathi.in)
-- Hosting: [Vercel](https://vercel.com)
-
-### DNS Configuration (GoDaddy)
-For the custom domain to work properly, the following DNS records are configured in GoDaddy:
-- A Record: @ points to 76.76.21.21 (Vercel's IP address)
-- Optional CNAME Record: www points to cname.vercel-dns.com
-
-## Contact Information
 
 The website displays the following agent contact numbers:
 - 98434 30099
