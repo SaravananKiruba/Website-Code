@@ -60,8 +60,7 @@ const Header: React.FC<HeaderProps> = () => {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={"center"}>
-          <Flex alignItems="center">
-            <Box
+          <Flex alignItems="center">            <Box
               position="relative"
               mr={3}
               borderRadius="full"
@@ -76,7 +75,17 @@ const Header: React.FC<HeaderProps> = () => {
                 borderRadius="full"
               />
             </Box>
-            <Box fontWeight="bold" fontSize="xl" color="brand.900">
+            <Box 
+              fontWeight="600" 
+              fontSize="2xl" 
+              color="brand.900"
+              letterSpacing="wide"
+              fontFamily="'Montserrat', sans-serif"
+              textShadow="0px 1px 2px rgba(0,0,0,0.1)"
+              sx={{
+                textTransform: "capitalize"
+              }}
+            >
               Your Policy Saathi
             </Box>
           </Flex>
@@ -130,9 +139,15 @@ const Header: React.FC<HeaderProps> = () => {
 
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader color="brand.900">Your Policy Saathi</DrawerHeader>
+        <DrawerContent>          <DrawerCloseButton />
+          <DrawerHeader 
+            color="brand.900" 
+            fontFamily="'Montserrat', sans-serif"
+            letterSpacing="wide"
+            textShadow="0px 1px 2px rgba(0,0,0,0.1)"
+          >
+            Your Policy Saathi
+          </DrawerHeader>
 
           <DrawerBody>
             <Stack as={"nav"} spacing={4}>
