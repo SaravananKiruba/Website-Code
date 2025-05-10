@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '@fontsource/berkshire-swash';
 import {
   Box,
   Flex,
@@ -17,6 +18,7 @@ import {
   Image,
   Icon,
   Tooltip,
+  Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
@@ -59,35 +61,37 @@ const Header: React.FC<HeaderProps> = () => {
           display={{ md: "none" }}
           onClick={isOpen ? onClose : onOpen}
         />
-        <HStack spacing={8} alignItems={"center"}>
-          <Flex alignItems="center">            <Box
+        <HStack spacing={{ base: 2, sm: 4, md: 8 }} alignItems={"center"}>
+          <Flex alignItems="center" flexWrap="nowrap">
+            <Box
               position="relative"
-              mr={3}
+              mr={{ base: 1, sm: 2, md: 3 }}
               borderRadius="full"
-              p={2}
+              p={{ base: 1, md: 2 }}
               backdropFilter="auto"
               backdropBlur="8px"
             >
               <Image
                 src={CompanyLogo}
                 alt="Your Policy Saathi Logo"
-                boxSize="40px"
+                boxSize={{ base: "30px", md: "40px" }}
                 borderRadius="full"
               />
             </Box>
-            <Box 
+            <Text 
               fontWeight="600" 
-              fontSize="2xl" 
+              fontSize={{ base: "md", sm: "lg", md: "2xl" }} 
               color="brand.900"
               letterSpacing="wide"
-              fontFamily="'Montserrat', sans-serif"
+              fontFamily="'Berkshire Swash', serif"
               textShadow="0px 1px 2px rgba(0,0,0,0.1)"
+              whiteSpace="nowrap"
               sx={{
                 textTransform: "capitalize"
               }}
             >
               Your Policy Saathi
-            </Box>
+            </Text>
           </Flex>
           <HStack as={"nav"} spacing={6} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
@@ -108,8 +112,7 @@ const Header: React.FC<HeaderProps> = () => {
           </HStack>
         </HStack>
 
-        <HStack spacing={4}>
-          {" "}
+        <HStack spacing={{ base: 2, md: 4 }}>
           <Tooltip label="Contact us on WhatsApp" placement="bottom">
             <Link
               href="https://wa.me/918248633617?text=Hello,%20I'm%20interested%20in%20LIC%20services"
@@ -119,7 +122,7 @@ const Header: React.FC<HeaderProps> = () => {
               color="green.500"
               _hover={{ color: "green.600" }}
             >
-              <Icon as={FaWhatsapp} w={5} h={5} />
+              <Icon as={FaWhatsapp} w={{ base: 4, md: 5 }} h={{ base: 4, md: 5 }} />
             </Link>
           </Tooltip>
           <Tooltip label="Follow us on Instagram" placement="bottom">
@@ -131,7 +134,7 @@ const Header: React.FC<HeaderProps> = () => {
               color="brand.900"
               _hover={{ color: "brand.700" }}
             >
-              <Icon as={FaInstagram} w={5} h={5} />
+              <Icon as={FaInstagram} w={{ base: 4, md: 5 }} h={{ base: 4, md: 5 }} />
             </Link>
           </Tooltip>
         </HStack>
