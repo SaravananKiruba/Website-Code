@@ -1,0 +1,22 @@
+/* Import a Google Font as a temporary replacement for Fabrica */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/* Once you have Fabrica font files, uncomment this section
+@font-face {
+  font-family: 'Fabrica';
+  src: url('./fonts/Fabrica.woff2') format('woff2'),
+       url('./fonts/Fabrica.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fabrica';
+  src: url('./fonts/Fabrica-Bold.woff2') format('woff2'),
+       url('./fonts/Fabrica-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+*/

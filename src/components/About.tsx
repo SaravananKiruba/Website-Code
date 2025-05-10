@@ -125,59 +125,8 @@ const About: React.FC<AboutProps> = ({ id }) => {
                   </VStack>
                 </VStack>              </Box>
               
-              {/* Agent 2 */}              <Box 
-                bg= "#fbe7ab"
-                boxShadow={'lg'}
-                p={6}
-                rounded={'lg'}
-              >
-                <VStack 
-                  align="center"
-                  spacing={4}
-                >
-                  <Box
-                    position="relative"
-                    borderRadius="full"
-                    p={1.5}
-                    bgGradient="linear(to-bl, accent.700, accent.500, brand.500, brand.700)"
-                    boxShadow="0 0 15px rgba(246, 196, 69, 0.5)"
-                    transition="all 0.3s ease"
-                    _hover={{ 
-                      transform: "scale(1.05)",
-                      boxShadow: "0 0 20px rgba(246, 196, 69, 0.7)"
-                    }}
-                  >
-                    <Avatar
-                      size={'2xl'}
-                      src={require('../Images/Jigar.jpg')}
-                      name={'A. Jigar'}
-                      border="3px solid white"
-                    />
-                  </Box>
-                  <VStack spacing={2} align="center">
-                    <Heading
-                      fontSize={{ base: 'xl', sm: '2xl' }}
-                      fontWeight={500}
-                      color={'brand.900'}
-                      textAlign="center"
-                    >
-                      A. Jigar
-                    </Heading>
-                    <Text fontSize={'md'} color="#06443f" textAlign="center">
-                       Insurance Agent
-                    </Text>
-                    <HStack spacing={2} mt={2}>
-                      <Link href={`https://wa.me/918248633617`} isExternal>
-                        <HStack color="green.500">
-                          <Icon as={FaWhatsapp} />
-                          <Text>82486 33617</Text>
-                        </HStack>
-                      </Link>
-                    </HStack>                  </VStack>
-                </VStack>
-              </Box>
               
-              {/* Agent 3 */}              <Box 
+              {/* Agent 2 */}              <Box 
                 bg= "#fbe7ab"
                 boxShadow={'lg'}
                 p={6}
@@ -229,6 +178,58 @@ const About: React.FC<AboutProps> = ({ id }) => {
                   </VStack>
                 </VStack>
               </Box>
+              {/* Agent 3 */}              <Box 
+                bg= "#fbe7ab"
+                boxShadow={'lg'}
+                p={6}
+                rounded={'lg'}
+              >
+                <VStack 
+                  align="center"
+                  spacing={4}
+                >
+                  <Box
+                    position="relative"
+                    borderRadius="full"
+                    p={1.5}
+                    bgGradient="linear(to-bl, accent.700, accent.500, brand.500, brand.700)"
+                    boxShadow="0 0 15px rgba(246, 196, 69, 0.5)"
+                    transition="all 0.3s ease"
+                    _hover={{ 
+                      transform: "scale(1.05)",
+                      boxShadow: "0 0 20px rgba(246, 196, 69, 0.7)"
+                    }}
+                  >
+                    <Avatar
+                      size={'2xl'}
+                      src={require('../Images/Jigar.jpg')}
+                      name={'A. Jigar'}
+                      border="3px solid white"
+                    />
+                  </Box>
+                  <VStack spacing={2} align="center">
+                    <Heading
+                      fontSize={{ base: 'xl', sm: '2xl' }}
+                      fontWeight={500}
+                      color={'brand.900'}
+                      textAlign="center"
+                    >
+                      A. Jigar
+                    </Heading>
+                    <Text fontSize={'md'} color="#06443f" textAlign="center">
+                       Insurance Agent
+                    </Text>
+                    <HStack spacing={2} mt={2}>
+                      <Link href={`https://wa.me/918248633617`} isExternal>
+                        <HStack color="green.500">
+                          <Icon as={FaWhatsapp} />
+                          <Text>82486 33617</Text>
+                        </HStack>
+                      </Link>
+                    </HStack>                  </VStack>
+                </VStack>
+              </Box>
+              
             </Grid>
 
             <Text fontSize={'lg'} color={'gray.600'} pt={2}>

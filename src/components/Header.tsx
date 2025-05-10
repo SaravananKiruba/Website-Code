@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '@fontsource/berkshire-swash';
+// Fabrica font will be loaded from global CSS or theme
 import {
   Box,
   Flex,
@@ -77,13 +77,11 @@ const Header: React.FC<HeaderProps> = () => {
                 boxSize={{ base: "30px", md: "40px" }}
                 borderRadius="full"
               />
-            </Box>
-            <Text 
-              fontWeight="600" 
+            </Box>            <Text              fontWeight="700" 
               fontSize={{ base: "md", sm: "lg", md: "2xl" }} 
               color="brand.900"
               letterSpacing="wide"
-              fontFamily="'Berkshire Swash', serif"
+              fontFamily="'Rajdhani', sans-serif"
               textShadow="0px 1px 2px rgba(0,0,0,0.1)"
               whiteSpace="nowrap"
               sx={{
@@ -142,10 +140,9 @@ const Header: React.FC<HeaderProps> = () => {
 
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay />
-        <DrawerContent>          <DrawerCloseButton />
-          <DrawerHeader 
+        <DrawerContent>          <DrawerCloseButton />          <DrawerHeader 
             color="brand.900" 
-            fontFamily="'Montserrat', sans-serif"
+            fontFamily="'Rajdhani', sans-serif"
             letterSpacing="wide"
             textShadow="0px 1px 2px rgba(0,0,0,0.1)"
           >

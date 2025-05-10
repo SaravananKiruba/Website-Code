@@ -40,10 +40,10 @@ const colors = {
 };
 
 const theme = extendTheme({
-  colors,
-  fonts: {
+  colors,  fonts: {
     heading: "system-ui, sans-serif",
     body: "system-ui, sans-serif",
+    fabrica: "'Rajdhani', sans-serif", // Using Rajdhani as a replacement for Fabrica
   },
   styles: {
     global: {
