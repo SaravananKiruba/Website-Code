@@ -105,7 +105,7 @@ const Footer: React.FC = () => {  const phoneNumbers = [
             </Link>
             <Flex align={"center"}>
               <Icon as={FaMapMarkerAlt} mr={2} />
-              <Text>25, Pallikooda Street ,Madurai - 625001</Text>
+              <Text>25, Pallikooda Street Madurai - 625001</Text>
             </Flex>
           </Stack>
         </SimpleGrid>

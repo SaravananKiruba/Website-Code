@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Website-Code/static/css/main.9872986b.css",
-    "main.js": "/Website-Code/static/js/main.fccffc7a.js",
+    "main.css": "/Website-Code/static/css/main.6b92a700.css",
+    "main.js": "/Website-Code/static/js/main.29473162.js",
     "static/media/NEW INDIA ASSURANCE.png": "/Website-Code/static/media/NEW INDIA ASSURANCE.7e423cad456605d78880.png",
     "static/media/Jigar.jpg": "/Website-Code/static/media/Jigar.46fa593baf2235a3279b.jpg",
     "static/media/LIC HFL.png": "/Website-Code/static/media/LIC HFL.1c15793ccdad3554064d.png",
@@ -11,16 +11,11 @@
     "static/media/LIC LOGO.png": "/Website-Code/static/media/LIC LOGO.bc93ef359fb428c4177e.png",
     "static/media/Jackie.jpg": "/Website-Code/static/media/Jackie.5d778cd592737562442f.jpg",
     "static/media/STAR HEALTH.png": "/Website-Code/static/media/STAR HEALTH.d22e1331f24eea225507.png",
-    "static/media/berkshire-swash-latin-400-normal.woff": "/Website-Code/static/media/berkshire-swash-latin-400-normal.f838ec939c71e06daccd.woff",
-    "static/media/berkshire-swash-latin-400-normal.woff2": "/Website-Code/static/media/berkshire-swash-latin-400-normal.db627d1b3f010cc2a069.woff2",
-    "static/media/berkshire-swash-latin-ext-400-normal.woff": "/Website-Code/static/media/berkshire-swash-latin-ext-400-normal.4e25df03a8f1ac9c3a78.woff",
-    "static/media/berkshire-swash-latin-ext-400-normal.woff2": "/Website-Code/static/media/berkshire-swash-latin-ext-400-normal.480460cbad8fd410a9c2.woff2",
     "index.html": "/Website-Code/index.html",
-    "main.9872986b.css.map": "/Website-Code/static/css/main.9872986b.css.map",
-    "main.fccffc7a.js.map": "/Website-Code/static/js/main.fccffc7a.js.map"
+    "main.29473162.js.map": "/Website-Code/static/js/main.29473162.js.map"
   },
   "entrypoints": [
-    "static/css/main.9872986b.css",
-    "static/js/main.fccffc7a.js"
+    "static/css/main.6b92a700.css",
+    "static/js/main.29473162.js"
   ]
 }

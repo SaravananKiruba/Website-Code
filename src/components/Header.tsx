@@ -26,11 +26,12 @@ import CompanyLogo from "../Images/Company_Logo.PNG";
 
 type HeaderProps = {};
 
-const Links = ["Home", "About", "Partners","Services", "FAQ", "Contact"];
+const Links = ["Home", "About", "Partners", "Achievements", "Services", "FAQ", "Contact"];
 const NavLinks = {
   Home: "#home",
   About: "#about",
   Partners: "#partners",
+  Achievements: "#achievements",
   Services: "#services",
   FAQ: "#faq",
   Contact: "#contact",
