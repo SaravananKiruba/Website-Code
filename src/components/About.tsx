@@ -76,7 +76,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
             <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={6}>
               {/* Agent 1 */}
               <Box 
-                bg={useColorModeValue('white', 'gray.700')}
+                bg="#fbe7ab"
                 boxShadow={'lg'}
                 p={6}
                 rounded={'lg'}
@@ -84,14 +84,11 @@ const About: React.FC<AboutProps> = ({ id }) => {
                 <VStack 
                   align="center"
                   spacing={4}
-                >
-                  <Avatar
-                    size={'xl'}
-                    src={
-                      'https://via.placeholder.com/150'
-                    }
+                >                  <Avatar
+                    size={'2xl'}
+                    src={require('../Images/Ashok Kumar.jpg')}
                     mb={4}
-                    name={'Your Policy Saathi Agent'}
+                    name={'S. Ashok Kumar'}
                   />
                   <VStack spacing={2} align="center">
                     <Heading
@@ -102,7 +99,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                     >
                       S. Ashok Kumar
                     </Heading>
-                    <Text fontSize={'md'} color={'gray.500'} textAlign="center">
+                    <Text fontSize={'md'} color="#06443f" textAlign="center">
                       CM CLUB MEMBER & SENIOR SALES MANAGER 
                     </Text>
                     <HStack spacing={2} mt={2}>
@@ -119,7 +116,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
               
               {/* Agent 2 */}
               <Box 
-                bg={useColorModeValue('white', 'gray.700')}
+                bg= "#fbe7ab"
                 boxShadow={'lg'}
                 p={6}
                 rounded={'lg'}
@@ -127,14 +124,11 @@ const About: React.FC<AboutProps> = ({ id }) => {
                 <VStack 
                   align="center"
                   spacing={4}
-                >
-                  <Avatar
-                    size={'xl'}
-                    src={
-                      'https://via.placeholder.com/150'
-                    }
+                >                  <Avatar
+                    size={'2xl'}
+                    src={require('../Images/Jigar.jpg')}
                     mb={4}
-                    name={'Your Policy Saathi Team'}
+                    name={'A. Jigar'}
                   />
                   <VStack spacing={2} align="center">
                     <Heading
@@ -145,7 +139,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                     >
                       A. Jigar
                     </Heading>
-                    <Text fontSize={'md'} color={'gray.500'} textAlign="center">
+                    <Text fontSize={'md'} color="#06443f" textAlign="center">
                        Insurance Agent
                     </Text>
                     <HStack spacing={2} mt={2}>
