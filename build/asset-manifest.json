@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.6b92a700.css",
-    "main.js": "/static/js/main.bf45061a.js",
+    "main.js": "/static/js/main.5e038119.js",
     "static/media/NEW INDIA ASSURANCE.png": "/static/media/NEW INDIA ASSURANCE.7e423cad456605d78880.png",
-    "static/media/Jigar.jpg": "/static/media/Jigar.7a9b6b6b4677cf1c1b2c.jpg",
     "static/media/LIC HFL.png": "/static/media/LIC HFL.1c15793ccdad3554064d.png",
     "static/media/Home Section.jpg": "/static/media/Home Section.98b95c99d6b07b0d22f1.jpg",
     "static/media/Ashok Kumar.jpg": "/static/media/Ashok Kumar.84197037b9a0c40c9b59.jpg",
     "static/media/Company_Logo.PNG": "/static/media/Company_Logo.067644446f30ea44505d.PNG",
     "static/media/LIC LOGO.png": "/static/media/LIC LOGO.bc93ef359fb428c4177e.png",
+    "static/media/Jigar.jpg": "/static/media/Jigar.f860446973e3547af808.jpg",
     "static/media/Jackie.jpg": "/static/media/Jackie.5d778cd592737562442f.jpg",
     "static/media/STAR HEALTH.png": "/static/media/STAR HEALTH.d22e1331f24eea225507.png",
     "index.html": "/index.html",
-    "main.bf45061a.js.map": "/static/js/main.bf45061a.js.map"
+    "main.5e038119.js.map": "/static/js/main.5e038119.js.map"
   },
   "entrypoints": [
     "static/css/main.6b92a700.css",
-    "static/js/main.bf45061a.js"
+    "static/js/main.5e038119.js"
   ]
 }
