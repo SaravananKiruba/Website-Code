@@ -14,7 +14,7 @@ const WhatsAppButton: React.FC = () => {
       {/* Instagram Button */}
       <Tooltip label="Follow us on Instagram" placement="left">
         <Link
-          href="https://www.instagram.com/your_policy_saathi"
+          href="https://www.instagram.com/your__policy__saathi?igsh=MWxzdzZ1cW94ZGx2bQ%3D%3D&utm_source=qr"
           isExternal
         >
           <Box

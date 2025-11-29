@@ -100,7 +100,7 @@ const Home: React.FC<HomeProps> = ({ id }) => {
               </Button>
               <Button 
                 as={Link}
-                href="https://www.instagram.com/your_policy_saathi"
+                href="https://www.instagram.com/your__policy__saathi?igsh=MWxzdzZ1cW94ZGx2bQ%3D%3D&utm_source=qr"
                 isExternal
                 size="lg" 
                 variant="outline" 
