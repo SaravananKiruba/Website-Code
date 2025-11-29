@@ -126,7 +126,7 @@ const Header: React.FC<HeaderProps> = () => {
           </Tooltip>
           <Tooltip label="Follow us on Instagram" placement="bottom">
             <Link
-              href="https://www.instagram.com/your_policy_saathi"
+              href="https://www.instagram.com/your__policy__saathi?igsh=MWxzdzZ1cW94ZGx2bQ%3D%3D&utm_source=qr"
               isExternal
               display="flex"
               alignItems="center"
@@ -181,7 +181,7 @@ const Header: React.FC<HeaderProps> = () => {
                 </Link>
 
                 <Link
-                  href="https://www.instagram.com/your_policy_saathi"
+                  href="https://www.instagram.com/your__policy__saathi?igsh=MWxzdzZ1cW94ZGx2bQ%3D%3D&utm_source=qr"
                   isExternal
                   display="flex"
                   alignItems="center"

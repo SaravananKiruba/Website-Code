@@ -48,7 +48,7 @@ const Footer: React.FC = () => {  const phoneNumbers = [
               </Heading>
             </Box>
             <Text fontSize={"sm"}>
-              Your trusted advisor for all insurance needs since 2010. Providing
+              Your trusted advisor for all insurance needs since 2005. Providing
               expert guidance and personalized insurance solutions.
             </Text>
             <Stack direction={"row"} spacing={6}>
