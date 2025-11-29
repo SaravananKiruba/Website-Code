@@ -16,6 +16,8 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaInstagram,
+  FaFacebook,
+  FaYoutube,
 } from "react-icons/fa";
 
 const ListHeader = ({ children }: { children: React.ReactNode }) => {
@@ -51,11 +53,33 @@ const Footer: React.FC = () => {  const phoneNumbers = [
             </Text>
             <Stack direction={"row"} spacing={6}>
               <Link
-                href="https://www.instagram.com/your_policy_saathi"
+                href="https://www.instagram.com/your__policy__saathi?igsh=MWxzdzZ1cW94ZGx2bQ%3D%3D&utm_source=qr"
                 isExternal
               >
                 <Icon
                   as={FaInstagram}
+                  w={6}
+                  h={6}
+                  _hover={{ color: "brand.500" }}
+                />
+              </Link>
+              <Link
+                href="https://www.facebook.com/share/15P4Rf1cspi/?mibextid=wwXIfr"
+                isExternal
+              >
+                <Icon
+                  as={FaFacebook}
+                  w={6}
+                  h={6}
+                  _hover={{ color: "brand.500" }}
+                />
+              </Link>
+              <Link
+                href="https://youtube.com/@your_policy_saathi?si=tErHURO14K7Rl1bZ"
+                isExternal
+              >
+                <Icon
+                  as={FaYoutube}
                   w={6}
                   h={6}
                   _hover={{ color: "brand.500" }}

@@ -165,7 +165,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       G. Jackie Kumar
                     </Heading>
                     <Text fontSize={'md'} color="#06443f" textAlign="center">
-                       Insurance Agent
+                       Insurance Advisor
                     </Text>
                     <HStack spacing={2} mt={2}>
                       <Link href={`https://wa.me/919047797975`} isExternal>
@@ -202,7 +202,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                   >
                     <Avatar
                       size={'2xl'}
-                      src={require('../Images/Jigar.JPG')}
+                      src={require('../Images/Jigar.jpg')}
                       name={'A. Jigar'}
                       border="3px solid white"
                     />
@@ -217,7 +217,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       A. Jigar
                     </Heading>
                     <Text fontSize={'md'} color="#06443f" textAlign="center">
-                       Insurance Agent
+                       Insurance Advisor
                     </Text>
                     <HStack spacing={2} mt={2}>
                       <Link href={`https://wa.me/918248633617`} isExternal>
@@ -234,14 +234,14 @@ const About: React.FC<AboutProps> = ({ id }) => {
 
             <Text fontSize={'lg'} color={'gray.600'} pt={2}>
               Our experienced insurance agents at Your Policy Saathi have been helping families and individuals secure their futures 
-              with the right insurance plans for over 25 years. For any insurance queries, you can 
+              with the right insurance plans for over 20 years. For any insurance queries, you can 
               directly contact our agents via WhatsApp.
             </Text>
 
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
               <Feature
                 icon={<Icon as={FaMedal} w={5} h={5} />}
-                title={'25+ Years Experience'}
+                title={'20+ Years Experience'}
                 text={'Helping families and individuals secure their future with the right insurance plans.'}
               />
               <Feature

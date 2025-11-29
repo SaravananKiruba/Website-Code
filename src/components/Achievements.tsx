@@ -127,7 +127,7 @@ const Achievements: React.FC<AchievementsProps> = ({ id }) => {
               "No. 1 Agent in South Zone completing 1646 policies in 2011-12",
               "Chairman's Club Member",
               "MDRT Member since 2008",
-              "LIAFI Agent Association EC Member"
+              "LIAFI Agent Association EC Member since 2005"
             ]}
           />
 
@@ -136,7 +136,7 @@ const Achievements: React.FC<AchievementsProps> = ({ id }) => {
             title="Senior Sales Manager"
             organization="STAR Health Insurance"
             points={[
-              "Senior Sales Manager since 2018",
+              "Senior Sales Manager since 2008",
               "Consistently exceeding sales targets",
               "Leading team performance in the region",
               "Expert in health insurance solutions"
