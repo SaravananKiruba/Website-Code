@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // Fabrica font will be loaded from global CSS or theme
 import {
   Box,
@@ -7,7 +7,6 @@ import {
   Link,
   IconButton,
   useDisclosure,
-  useColorModeValue,
   Stack,
   Drawer,
   DrawerBody,
@@ -22,18 +21,20 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
-import CompanyLogo from "../Images/Company_Logo.PNG";
+import CompanyLogo from "../Images/Company_Logo.jpeg";
 
 type HeaderProps = {};
 
-const Links = ["Home", "About", "Partners", "Achievements", "Services", "FAQ", "Contact"];
+const Links = ["Home", "About", "Services", "Documents", "Book a Call", "FAQ", "Reviews", "Refer", "Contact"];
 const NavLinks = {
   Home: "#home",
   About: "#about",
-  Partners: "#partners",
-  Achievements: "#achievements",
   Services: "#services",
+  Documents: "#documents",
+  "Book a Call": "#book-a-call",
   FAQ: "#faq",
+  Reviews: "#reviews",
+  Refer: "#refer",
   Contact: "#contact",
 };
 
@@ -114,7 +115,7 @@ const Header: React.FC<HeaderProps> = () => {
         <HStack spacing={{ base: 2, md: 4 }}>
           <Tooltip label="Contact us on WhatsApp" placement="bottom">
             <Link
-              href="https://wa.me/918248633617?text=Hello,%20I'm%20interested%20in%20LIC%20services"
+              href="https://wa.me/919360533056?text=Hello,%20I'm%20interested%20in%20LIC%20services"
               isExternal
               display="flex"
               alignItems="center"
@@ -171,7 +172,7 @@ const Header: React.FC<HeaderProps> = () => {
 
               <HStack spacing={4} pt={4}>
                 <Link
-                  href="https://wa.me/919843430099?text=Hello,%20I'm%20interested%20in%20LIC%20services"
+                  href="https://wa.me/919360533056?text=Hello,%20I'm%20interested%20in%20LIC%20services"
                   isExternal
                   display="flex"
                   alignItems="center"

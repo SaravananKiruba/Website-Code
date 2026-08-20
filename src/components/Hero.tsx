@@ -68,9 +68,9 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ id }) => {
   const phoneNumbers = [
-    { number: '9843430099', display: '98434 30099' },
-    { number: '9047797975', display: '90477 97975' },
-    { number: '8248633617', display: '82486 33617' },
+    { number: '9360533056', display: '93605 33056' },
+    { number: '9360533056', display: '93605 33056' },
+    { number: '9360533056', display: '93605 33056' },
   ];
 
   return (

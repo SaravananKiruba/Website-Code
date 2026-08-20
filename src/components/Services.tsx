@@ -8,16 +8,13 @@ import {
   Text,
   Stack,
   HStack,
-  VStack,
   Flex,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { keyframes } from "@emotion/react";
 import {
   FaShieldAlt,
   FaHeartbeat,
   FaCar,
-  FaMotorcycle,
   FaPlane,
   FaHome,
   FaCheckCircle,
@@ -98,15 +95,6 @@ interface ServicesProps {
 }
 
 const Services: React.FC<ServicesProps> = ({ id }) => {
-  // Yellow theme animation
-  const yellowPulse = keyframes`
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  `;
-
-  const yellowAnimation = `${yellowPulse} 15s ease infinite`;
-
   return (
     <Box
       id={id}
@@ -115,7 +103,7 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
       position="relative"
       overflow="hidden"
       minH="100vh"
-      backgroundColor="#315098"
+      bgGradient="linear(to-br, #0a0c4e, #10126d, #1a2d8a)"
       _before={{
         content: '""',
         position: "absolute",
@@ -123,6 +111,7 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
         left: 0,
         right: 0,
         bottom: 0,
+        bgImage: "radial-gradient(circle at 20% 50%, rgba(72,147,237,0.15) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(246,196,69,0.08) 0%, transparent 50%)",
         opacity: 0.9,
         zIndex: 0,
       }}

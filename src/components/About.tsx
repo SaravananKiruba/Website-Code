@@ -7,15 +7,13 @@ import {
   Text,
   Stack,
   Avatar,
-  useColorModeValue,
   SimpleGrid,
   Icon,
   Grid,
   VStack,
-  HStack,
   Link,
 } from '@chakra-ui/react';
-import { FaMedal, FaHandshake, FaBullseye, FaWhatsapp, FaPhone } from 'react-icons/fa';
+import { FaMedal, FaHandshake, FaBullseye } from 'react-icons/fa';
 
 interface FeatureProps {
   title: string;
@@ -54,14 +52,17 @@ const About: React.FC<AboutProps> = ({ id }) => {
     <Box id={id} as="section" py={12} bg="gray.50">
       <Container maxW={'7xl'}>
         <Heading
-          mb={12}
+          mb={4}
           fontSize={{ base: '3xl', md: '4xl' }}
           textAlign={'center'}
           position={'relative'}
           color={'brand.900'}
         >
-          About Us
+          Meet Our Team
         </Heading>
+        <Text textAlign="center" color="gray.500" fontSize="lg" mb={12} maxW="2xl" mx="auto">
+          Experienced insurance professionals dedicated to securing your future.
+        </Text>
 
         <Stack 
           direction={{ base: 'column', lg: 'row' }} 
@@ -74,11 +75,18 @@ const About: React.FC<AboutProps> = ({ id }) => {
             spacing={8}
           >            <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={6}>
               {/* Agent 1 */}              <Box 
-                bg="#fbe7ab"
-                boxShadow={'lg'}
+                bg="white"
+                boxShadow={'xl'}
                 p={6}
-                rounded={'lg'}
+                rounded={'2xl'}
+                border="1px solid"
+                borderColor="gray.100"
+                transition="all 0.3s"
+                _hover={{ transform: 'translateY(-6px)', boxShadow: '2xl', borderColor: 'accent.400' }}
+                position="relative"
+                overflow="hidden"
               >
+                <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
                 <VStack 
                   align="center"
                   spacing={4}
@@ -114,24 +122,23 @@ const About: React.FC<AboutProps> = ({ id }) => {
                     <Text fontSize={'md'} color="#06443f" textAlign="center">
                       CM CLUB MEMBER & SENIOR SALES MANAGER 
                     </Text>
-                    <HStack spacing={2} mt={2}>
-                      <Link href={`https://wa.me/919843430099`} isExternal>
-                        <HStack color="green.500">
-                          <Icon as={FaWhatsapp} />
-                          <Text>98434 30099</Text>
-                        </HStack>
-                      </Link>
-                    </HStack>
                   </VStack>
                 </VStack>              </Box>
               
               
               {/* Agent 2 */}              <Box 
-                bg= "#fbe7ab"
-                boxShadow={'lg'}
+                bg="white"
+                boxShadow={'xl'}
                 p={6}
-                rounded={'lg'}
+                rounded={'2xl'}
+                border="1px solid"
+                borderColor="gray.100"
+                transition="all 0.3s"
+                _hover={{ transform: 'translateY(-6px)', boxShadow: '2xl', borderColor: 'accent.400' }}
+                position="relative"
+                overflow="hidden"
               >
+                <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
                 <VStack 
                   align="center"
                   spacing={4}
@@ -167,23 +174,22 @@ const About: React.FC<AboutProps> = ({ id }) => {
                     <Text fontSize={'md'} color="#06443f" textAlign="center">
                        Insurance Advisor
                     </Text>
-                    <HStack spacing={2} mt={2}>
-                      <Link href={`https://wa.me/919047797975`} isExternal>
-                        <HStack color="green.500">
-                          <Icon as={FaWhatsapp} />
-                          <Text>90477 97975</Text>
-                        </HStack>
-                      </Link>
-                    </HStack>
                   </VStack>
                 </VStack>
               </Box>
               {/* Agent 3 */}              <Box 
-                bg= "#fbe7ab"
-                boxShadow={'lg'}
+                bg="white"
+                boxShadow={'xl'}
                 p={6}
-                rounded={'lg'}
+                rounded={'2xl'}
+                border="1px solid"
+                borderColor="gray.100"
+                transition="all 0.3s"
+                _hover={{ transform: 'translateY(-6px)', boxShadow: '2xl', borderColor: 'accent.400' }}
+                position="relative"
+                overflow="hidden"
               >
+                <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
                 <VStack 
                   align="center"
                   spacing={4}
@@ -217,16 +223,9 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       A. Jigar
                     </Heading>
                     <Text fontSize={'md'} color="#06443f" textAlign="center">
-                       Insurance Advisor
+                      Founder, Your Policy Saathi
                     </Text>
-                    <HStack spacing={2} mt={2}>
-                      <Link href={`https://wa.me/918248633617`} isExternal>
-                        <HStack color="green.500">
-                          <Icon as={FaWhatsapp} />
-                          <Text>82486 33617</Text>
-                        </HStack>
-                      </Link>
-                    </HStack>                  </VStack>
+                  </VStack>
                 </VStack>
               </Box>
               
