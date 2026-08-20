@@ -29,9 +29,7 @@ const ListHeader = ({ children }: { children: React.ReactNode }) => {
 };
 
 const Footer: React.FC = () => {  const phoneNumbers = [
-    { number: "9843430099", display: "98434 30099" },
-    { number: "8248633617", display: "82486 33617" },
-    { number: "9047797975", display: "90477 97975" },
+    { number: "9360533056", display: "93605 33056" },
   ];
 
   return (
@@ -43,13 +41,16 @@ const Footer: React.FC = () => {  const phoneNumbers = [
         >
           <Stack spacing={6}>
             <Box>
-              <Heading as="h2" size="lg">
+              <Heading as="h2" size="lg" letterSpacing="tight">
                 Your Policy Saathi
               </Heading>
+              <Text fontSize="xs" color="accent.500" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" mt={1}>
+                Insurance Advisors
+              </Text>
             </Box>
-            <Text fontSize={"sm"}>
-              Your trusted advisor for all insurance needs since 2005. Providing
-              expert guidance and personalized insurance solutions.
+            <Text fontSize={"sm"} color="whiteAlpha.700" lineHeight="1.8">
+              Your trusted advisor for Life, Health, Vehicle & more.
+              Serving families across Tamil Nadu since 2005.
             </Text>
             <Stack direction={"row"} spacing={6}>
               <Link
@@ -120,12 +121,12 @@ const Footer: React.FC = () => {  const phoneNumbers = [
               </Link>
             ))}
             <Link
-              href="mailto:agent@licinsurance.com"
+              href="mailto:founderofyourpolicysaathi@gmail.com"
               display="flex"
               alignItems="center"
             >
               <Icon as={FaEnvelope} mr={2} />
-              <Text>alwaysjigarlic@gmail.com</Text>
+              <Text>founderofyourpolicysaathi@gmail.com</Text>
             </Link>
             <Flex align={"center"}>
               <Icon as={FaMapMarkerAlt} mr={2} />

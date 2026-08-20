@@ -14,7 +14,7 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
-import { FaTrophy, FaMedal, FaAward, FaStar, FaUserTie } from "react-icons/fa";
+import { FaTrophy, FaStar, FaUserTie } from "react-icons/fa";
 
 interface AchievementCardProps {
   title: string;

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import {
   Box,
   Container,
@@ -10,248 +10,297 @@ import {
   useColorModeValue,
   Button,
   Stack,
-  Image,
-  VStack,
-  HStack,
   Link,
+  HStack,
+  VStack,
+  Badge,
 } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
-import { FaShieldAlt, FaHeartbeat, FaHome, FaPhone, FaHeadset, FaUserClock, FaWhatsapp, FaInstagram } from 'react-icons/fa';
-
-// Fix the image imports with the correct paths
-import CompanyLogo from '../Images/Company_Logo.PNG';
+import {
+  FaShieldAlt,
+  FaHeadset,
+  FaWhatsapp,
+  FaPhone,
+  FaCheckCircle,
+  FaUsers,
+  FaHandshake,
+} from 'react-icons/fa';
 import HomeSection from '../Images/Home Section.jpg';
+
+const fadeInUp = keyframes`
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+`;
+
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to   { opacity: 1; }
+`;
+
+const STATS = [
+  { value: '500+', label: 'Happy Clients' },
+  { value: '20+',  label: 'Years Experience' },
+  { value: '10+',  label: 'Insurance Partners' },
+  { value: '24/7', label: 'Expert Support' },
+];
+
+const FEATURES = [
+  { icon: FaShieldAlt, title: 'Comprehensive Coverage',  desc: 'Life, Health, Vehicle & more under one trusted roof.' },
+  { icon: FaHandshake, title: 'Personalized Guidance',   desc: 'One-on-one expert advice tailored to your exact needs.' },
+  { icon: FaHeadset,   title: '24/7 Expert Support',     desc: 'Our team is always available when you need us most.' },
+  { icon: FaUsers,     title: 'Trusted by Families',     desc: '500+ satisfied clients across Tamil Nadu rely on us.' },
+];
+
+const TRUST = ['Claim Settlement Support', 'Policy Renewal Reminders', 'Zero Hidden Charges'];
 
 interface HomeProps {
   id?: string;
 }
 
 const Home: React.FC<HomeProps> = ({ id }) => {
-  // Modern color gradient backgrounds
-  const gradientBg = 'linear-gradient(135deg, #10126d 0%, #4893ed 100%)';
   const cardBg = useColorModeValue('white', 'gray.700');
-  const cardHoverBg = useColorModeValue('gray.50', 'gray.600');
-  
-  // Yellow theme animation
-  const yellowPulse = keyframes`
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  `;
-
-  const yellowAnimation = `${yellowPulse} 15s ease infinite`;
 
   return (
-    <Box 
-      id={id} 
-      py={20} 
-      position="relative"
-      overflow="hidden"
-      bg="gray.50"
-      _before={{
-        content: '""',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        bgGradient: 'linear(to-r, accent.100, accent.200, accent.300, accent.200, accent.100)',
-        backgroundSize: '200% 200%',
-        opacity: 0.3,
-        animation: yellowAnimation,
-        zIndex: 0,
-      }}
-    >
-      {/* Main Content */}
-      <Container maxW="container.xl" position="relative" zIndex={1}>
-        <Flex 
-          direction={{ base: 'column', md: 'row' }} 
-          align="center" 
-          justify="space-between"
-          mb={16}
-          gap={8}
+    <>
+      {/* ── HERO ── */}
+      <Box
+        id={id}
+        as="section"
+        position="relative"
+        minH={{ base: '100vh', md: '95vh' }}
+        display="flex"
+        flexDirection="column"
+        overflow="hidden"
+      >
+        {/* Background image */}
+        <Box
+          position="absolute"
+          inset={0}
+          bgImage={`url(${HomeSection})`}
+          bgSize="cover"
+          bgPosition="center top"
+          bgRepeat="no-repeat"
+        />
+        {/* Dark gradient overlay — stronger on left for text legibility */}
+        <Box
+          position="absolute"
+          inset={0}
+          background="linear-gradient(105deg, rgba(16,18,109,0.94) 0%, rgba(16,18,109,0.80) 50%, rgba(16,18,109,0.40) 100%)"
+        />
+
+        {/* Hero content */}
+        <Container
+          maxW="7xl"
+          position="relative"
+          zIndex={1}
+          flex={1}
+          display="flex"
+          alignItems="center"
+          py={{ base: 28, md: 36 }}
         >
-          <Box flex={1}>
-            <Heading 
-              as="h1" 
-              size="2xl" 
-              mb={6} 
-              bgGradient="linear(to-r, brand.900, brand.700)"
-              bgClip="text"
+          <Box maxW={{ base: 'full', md: '640px' }}>
+            {/* Certification badges */}
+            <HStack spacing={2} mb={6} flexWrap="wrap" animation={`${fadeIn} 0.6s ease both`}>
+              {['IRDAI Registered', 'LIC of India', 'Star Health Partner'].map((label, i) => (
+                <Badge
+                  key={label}
+                  px={3}
+                  py={1}
+                  bg={i === 0 ? 'accent.500' : 'whiteAlpha.200'}
+                  color={i === 0 ? 'brand.900' : 'white'}
+                  rounded="full"
+                  fontSize="xs"
+                  fontWeight="bold"
+                  letterSpacing="wider"
+                  backdropFilter="blur(4px)"
+                >
+                  {label}
+                </Badge>
+              ))}
+            </HStack>
+
+            <Heading
+              as="h1"
+              fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
+              fontWeight="900"
+              color="white"
+              lineHeight="1.1"
+              mb={6}
+              animation={`${fadeInUp} 0.7s 0.1s ease both`}
             >
-              Let's Secure Your Future with us.
+              Protect What{' '}
+              <Box as="span" color="accent.400">
+                Matters Most
+              </Box>{' '}
+              to You
             </Heading>
-            <Text fontSize="xl" mb={8} color="gray.700">
-              We provide comprehensive insurance solutions to protect what matters most to you. From life to health, we've got you covered.
-            </Text>            <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
-              <Button 
+
+            <Text
+              fontSize={{ base: 'lg', md: 'xl' }}
+              color="whiteAlpha.900"
+              mb={10}
+              lineHeight="1.8"
+              maxW="520px"
+              animation={`${fadeInUp} 0.7s 0.2s ease both`}
+            >
+              Expert insurance guidance for Life, Health, Vehicle & more.
+              Trusted by 500+ families across Tamil Nadu for over 20 years.
+            </Text>
+
+            <Stack
+              direction={{ base: 'column', sm: 'row' }}
+              spacing={4}
+              flexWrap="wrap"
+              mb={10}
+              animation={`${fadeInUp} 0.7s 0.3s ease both`}
+            >
+              <Button
                 as={Link}
-                href="https://wa.me/918248633617?text=Hello,%20I'm%20interested%20in%20LIC%20services"
-                isExternal
-                size="lg" 
-                variant="primary" 
+                href="#book-a-call"
+                size="lg"
+                bg="accent.500"
+                color="brand.900"
                 px={8}
                 rounded="full"
-                _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
+                fontWeight="bold"
+                leftIcon={<Icon as={FaHeadset} />}
+                _hover={{ bg: 'accent.400', transform: 'translateY(-3px)', boxShadow: '0 10px 30px rgba(246,196,69,0.45)', textDecoration: 'none' }}
                 transition="all 0.3s"
-                leftIcon={<FaWhatsapp />}
+              >
+                Get a Free Quote
+              </Button>
+              <Button
+                as={Link}
+                href="tel:+919360533056"
+                size="lg"
+                bg="whiteAlpha.100"
+                color="white"
+                borderWidth={1}
+                borderColor="whiteAlpha.500"
+                px={8}
+                rounded="full"
+                fontWeight="bold"
+                leftIcon={<Icon as={FaPhone} />}
+                backdropFilter="blur(4px)"
+                _hover={{ bg: 'whiteAlpha.200', transform: 'translateY(-3px)', textDecoration: 'none' }}
+                transition="all 0.3s"
+              >
+                Book a Call
+              </Button>
+              <Button
+                as={Link}
+                href="https://wa.me/919360533056?text=Hello,%20I'm%20interested%20in%20LIC%20services"
+                isExternal
+                size="lg"
+                bg="green.500"
+                color="white"
+                px={8}
+                rounded="full"
+                fontWeight="bold"
+                leftIcon={<Icon as={FaWhatsapp} />}
+                _hover={{ bg: 'green.400', transform: 'translateY(-3px)', boxShadow: 'lg', textDecoration: 'none' }}
+                transition="all 0.3s"
               >
                 WhatsApp Us
               </Button>
-              <Button 
-                as={Link}
-                href="https://www.instagram.com/your__policy__saathi?igsh=MWxzdzZ1cW94ZGx2bQ%3D%3D&utm_source=qr"
-                isExternal
-                size="lg" 
-                variant="outline" 
-                color="brand.900" 
-                borderColor="brand.900"
-                px={8}
-                rounded="full"
-                _hover={{ bg: 'brand.50', transform: 'translateY(-2px)' }}
-                transition="all 0.3s"
-                leftIcon={<FaInstagram />}
-              >
-                Chat on Insta
-              </Button>
             </Stack>
-          </Box>
-          
-          <Flex 
-            flex={1} 
-            justify="center" 
-            align="center"
-            position="relative"
-          >
-            <Box
-              w="100%"
-              h="350px"
-              borderRadius="xl"
-              boxShadow="xl"
-              overflow="hidden"
-              position="relative"
-            >
-              <Image
-                src={HomeSection}
-                alt="Insurance Services"
-                objectFit="cover"
-                w="100%"
-                h="100%"
-              />
-              <Box
-                position="absolute"
-                top="0"
-                left="0"
-                right="0"
-                bottom="0"
-                bg="rgba(0,0,0,0.4)"
-                display="flex"
-                flexDirection="column"
-                alignItems="center"
-                justifyContent="center"
-                color="white"
-                padding={6}
-                textAlign="center"
-              >
-                <Image 
-                  src={CompanyLogo} 
-                  alt="Your Policy Saathi Logo" 
-                  boxSize="125px" 
-                  borderRadius="full"
-                  bg="white"
-                  p={2}
-                  mb={4}
-                />
-                <Heading size="lg" mb={4}>Your Policy Saathi</Heading>
-                <Text fontSize="lg">
-                  Protecting your future with reliable insurance solutions
-                </Text>
-              </Box>
-            </Box>
-          </Flex>
-        </Flex>
 
-        {/* Company Highlights */}
-        <Box mb={20} position="relative">
-          <Heading 
-            textAlign="center" 
-            mb={12} 
-            size="xl"
-            bgGradient="linear(to-r, brand.900, brand.700)"
-            bgClip="text"
-          >
-            Why Choose Us
-          </Heading>
-          
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={10}>
-            { [
-              { 
-                icon: FaShieldAlt, 
-                title: 'Comprehensive Coverage', 
-                description: 'Protection for all aspects of your life and assets' 
-              },
-              { 
-                icon: FaHeartbeat, 
-                title: 'Health First', 
-                description: 'Prioritizing your health with top-tier insurance plans' 
-              },
-              { 
-                icon: FaHome, 
-                title: 'Home Security', 
-                description: 'Safeguard your property with our specialized policies' 
-              },              { 
-                icon: FaHeadset, 
-                title: '24/7 Support', 
-                description: 'Always available to assist with your insurance needs' 
-              }
-            ].map((feature, index) => (
-              <Box 
-                key={index}
+            {/* Trust checkmarks */}
+            <HStack spacing={5} flexWrap="wrap" animation={`${fadeInUp} 0.7s 0.4s ease both`}>
+              {TRUST.map((item) => (
+                <HStack key={item} spacing={2} color="whiteAlpha.800">
+                  <Icon as={FaCheckCircle} color="accent.400" w={4} h={4} />
+                  <Text fontSize="sm">{item}</Text>
+                </HStack>
+              ))}
+            </HStack>
+          </Box>
+        </Container>
+
+        {/* Stats bar pinned to bottom of hero */}
+        <Box
+          position="relative"
+          zIndex={1}
+          bg="rgba(0,0,0,0.55)"
+          backdropFilter="blur(14px)"
+          borderTop="1px solid"
+          borderColor="whiteAlpha.100"
+        >
+          <Container maxW="7xl" py={{ base: 4, md: 5 }}>
+            <SimpleGrid columns={{ base: 2, md: 4 }}>
+              {STATS.map((stat, i) => (
+                <VStack
+                  key={stat.label}
+                  spacing={0}
+                  py={3}
+                  px={4}
+                  borderRight={i < STATS.length - 1 ? '1px solid' : 'none'}
+                  borderColor="whiteAlpha.200"
+                >
+                  <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="900" color="accent.400" lineHeight="1">
+                    {stat.value}
+                  </Text>
+                  <Text fontSize="2xs" color="whiteAlpha.700" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" mt={1}>
+                    {stat.label}
+                  </Text>
+                </VStack>
+              ))}
+            </SimpleGrid>
+          </Container>
+        </Box>
+      </Box>
+
+      {/* ── WHY CHOOSE US ── */}
+      <Box as="section" py={24} bg="white">
+        <Container maxW="7xl">
+          <VStack spacing={3} mb={16} textAlign="center">
+            <Text color="accent.700" fontWeight="bold" fontSize="xs" letterSpacing="widest" textTransform="uppercase">
+              Our Promise to You
+            </Text>
+            <Heading fontSize={{ base: '3xl', sm: '4xl' }} fontWeight="800" color="brand.900">
+              Why Choose Your Policy Saathi?
+            </Heading>
+            <Text color="gray.500" fontSize="lg" maxW="xl" lineHeight="1.8">
+              We don't just sell insurance — we build long-term relationships based on trust, transparency and expertise.
+            </Text>
+          </VStack>
+
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8}>
+            {FEATURES.map((feature) => (
+              <Box
+                key={feature.title}
+                p={8}
                 bg={cardBg}
-                p={6}
-                borderRadius="lg"
-                boxShadow="md"
-                transition="all 0.3s"
-                _hover={{
-                  transform: 'translateY(-5px)',
-                  boxShadow: 'xl',
-                  bg: cardHoverBg
-                }}
+                rounded="2xl"
+                boxShadow="lg"
+                border="1px solid"
+                borderColor="gray.100"
+                transition="all 0.35s"
                 position="relative"
                 overflow="hidden"
-                _after={{
-                  content: '""',
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  height: '3px',
-                  width: '100%',
-                  bgGradient: 'linear(to-r, accent.400, accent.600)',
-                }}
+                _hover={{ transform: 'translateY(-8px)', boxShadow: '0 24px 48px rgba(16,18,109,0.13)', borderColor: 'accent.400' }}
               >
+                {/* Gradient top accent bar */}
+                <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
                 <Flex
-                  w={12}
-                  h={12}
-                  align="center"
-                  justify="center"
-                  borderRadius="full"
-                  bg="brand.900"
+                  w={14} h={14}
+                  align="center" justify="center"
+                  rounded="xl"
+                  bgGradient="linear(135deg, brand.800, brand.600)"
                   color="white"
-                  mb={4}
+                  mb={5}
+                  boxShadow="0 8px 20px rgba(16,18,109,0.28)"
                 >
-                  <Icon as={feature.icon} w={6} h={6} />
+                  <Icon as={feature.icon} w={7} h={7} />
                 </Flex>
-                <Heading size="md" mb={3}>{feature.title}</Heading>
-                <Text color="gray.600">{feature.description}</Text>
+                <Heading size="md" mb={3} color="brand.900">{feature.title}</Heading>
+                <Text color="gray.500" fontSize="sm" lineHeight="1.7">{feature.desc}</Text>
               </Box>
             ))}
           </SimpleGrid>
-        </Box>
-
-        {/* Partner Logos Preview */}
-       
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </>
   );
 };
 

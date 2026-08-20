@@ -21,10 +21,7 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ id }) => {  const phoneNumbers = [
-    { number: "9843430099", display: "98434 30099", name: "S. Ashok Kumar" },
-    { number: "9047797975", display: "90477 97975", name: "G. Jackie Kumar" },
-    { number: "8248633617", display: "82486 33617", name: "A. Jigar" },
-
+    { number: "9360533056", display: "93605 33056", name: "Your Policy Saathi" },
   ];
 
   return (
@@ -126,7 +123,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {  const phoneNumbers = [
             </VStack>
 
             <Link
-              href="mailto:alwaysjigarlic@gmail.com"
+              href="mailto:founderofyourpolicysaathi@gmail.com"
               display="flex"
               alignItems="center"
               color="brand.900"
@@ -135,7 +132,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {  const phoneNumbers = [
               _hover={{ textDecoration: "none", color: "brand.800" }}
             >
               <EmailIcon mr={3} />
-              <Text>alwaysjigarlic@gmail.com</Text>
+              <Text>founderofyourpolicysaathi@gmail.com</Text>
             </Link>
 
             <HStack alignItems="flex-start">
