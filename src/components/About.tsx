@@ -11,7 +11,6 @@ import {
   Icon,
   Grid,
   VStack,
-  Link,
 } from '@chakra-ui/react';
 import { FaMedal, FaHandshake, FaBullseye } from 'react-icons/fa';
 
