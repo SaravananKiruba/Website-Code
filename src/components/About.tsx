@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   Box,
   Container,
@@ -13,6 +14,11 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { FaMedal, FaHandshake, FaBullseye } from 'react-icons/fa';
+
+const fadeUp    = { hidden: { opacity: 0, y: 40 },          show: { opacity: 1, y: 0,  transition: { duration: 0.6, ease: 'easeOut' as const } } };
+const cardPop   = { hidden: { opacity: 0, y: 30, scale: 0.96 }, show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: 'easeOut' as const } } };
+const staggerContainer = { hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } };
+const viewport  = { once: true, amount: 0.15 } as const;
 
 interface FeatureProps {
   title: string;
@@ -50,6 +56,8 @@ const About: React.FC<AboutProps> = ({ id }) => {
   return (
     <Box id={id} as="section" py={12} bg="gray.50">
       <Container maxW={'7xl'}>
+        <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={staggerContainer}>
+        <Box as={motion.div} variants={fadeUp}>
         <Heading
           mb={4}
           fontSize={{ base: '3xl', md: '4xl' }}
@@ -62,6 +70,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
         <Text textAlign="center" color="gray.500" fontSize="lg" mb={12} maxW="2xl" mx="auto">
           Experienced insurance professionals dedicated to securing your future.
         </Text>
+        </Box>
 
         <Stack 
           direction={{ base: 'column', lg: 'row' }} 
@@ -73,7 +82,9 @@ const About: React.FC<AboutProps> = ({ id }) => {
             flex={1} 
             spacing={8}
           >            <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={6}>
-              {/* Agent 1 */}              <Box 
+              {/* Agent 1 */}              <Box
+                as={motion.div}
+                variants={cardPop}
                 bg="white"
                 boxShadow={'xl'}
                 p={6}
@@ -125,7 +136,9 @@ const About: React.FC<AboutProps> = ({ id }) => {
                 </VStack>              </Box>
               
               
-              {/* Agent 2 */}              <Box 
+              {/* Agent 2 */}              <Box
+                as={motion.div}
+                variants={cardPop}
                 bg="white"
                 boxShadow={'xl'}
                 p={6}
@@ -171,12 +184,14 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       G. Jackie Kumar
                     </Heading>
                     <Text fontSize={'md'} color="#06443f" textAlign="center">
-                       Insurance Advisor
+                       Insurance Broker
                     </Text>
                   </VStack>
                 </VStack>
               </Box>
-              {/* Agent 3 */}              <Box 
+              {/* Agent 3 */}              <Box
+                as={motion.div}
+                variants={cardPop}
                 bg="white"
                 boxShadow={'xl'}
                 p={6}
@@ -260,6 +275,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
             </SimpleGrid>
           </Stack>
         </Stack>
+        </motion.div>
       </Container>
     </Box>
   );

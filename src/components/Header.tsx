@@ -59,8 +59,8 @@ const Header: React.FC<HeaderProps> = () => {
         <IconButton
           size={"md"}
           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          aria-label={"Open Menu"}
-          display={{ md: "none" }}
+          aria-label={'Open Menu'}
+          display={{ lg: 'none' }}
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={{ base: 2, sm: 4, md: 8 }} alignItems={"center"}>
@@ -93,7 +93,7 @@ const Header: React.FC<HeaderProps> = () => {
               Your Policy Saathi
             </Text>
           </Flex>
-          <HStack as={"nav"} spacing={6} display={{ base: "none", md: "flex" }}>
+          <HStack as={"nav"} spacing={3} display={{ base: "none", lg: "flex" }}>
             {Links.map((link) => (
               <Link
                 key={link}

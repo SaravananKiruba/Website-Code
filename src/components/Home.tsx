@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   Box,
   Container,
@@ -13,7 +14,6 @@ import {
   Link,
   HStack,
   VStack,
-  Badge,
 } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
 import {
@@ -27,28 +27,28 @@ import {
 } from 'react-icons/fa';
 import HomeSection from '../Images/Home Section.jpg';
 
+const fadeUp           = { hidden: { opacity: 0, y: 40 },              show: { opacity: 1, y: 0,    transition: { duration: 0.6, ease: 'easeOut' as const } } };
+const cardPop          = { hidden: { opacity: 0, y: 30, scale: 0.96 }, show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: 'easeOut' as const } } };
+const staggerContainer = { hidden: {},                                  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } };
+const viewport         = { once: true, amount: 0.15 } as const;
+
 const fadeInUp = keyframes`
   from { opacity: 0; transform: translateY(32px); }
   to   { opacity: 1; transform: translateY(0); }
 `;
 
-const fadeIn = keyframes`
-  from { opacity: 0; }
-  to   { opacity: 1; }
-`;
-
 const STATS = [
-  { value: '500+', label: 'Happy Clients' },
-  { value: '20+',  label: 'Years Experience' },
-  { value: '10+',  label: 'Insurance Partners' },
-  { value: '24/7', label: 'Expert Support' },
+  { value: '10,000+', label: 'Happy Families' },
+  { value: '15,000+', label: 'Policies Issued' },
+  { value: '100+',    label: 'Advisors' },
+  { value: '24/7',    label: 'Support' },
 ];
 
 const FEATURES = [
   { icon: FaShieldAlt, title: 'Comprehensive Coverage',  desc: 'Life, Health, Vehicle & more under one trusted roof.' },
   { icon: FaHandshake, title: 'Personalized Guidance',   desc: 'One-on-one expert advice tailored to your exact needs.' },
   { icon: FaHeadset,   title: '24/7 Expert Support',     desc: 'Our team is always available when you need us most.' },
-  { icon: FaUsers,     title: 'Trusted by Families',     desc: '500+ satisfied clients across Tamil Nadu rely on us.' },
+  { icon: FaUsers,     title: 'Trusted by Families',     desc: '10,000+ satisfied families across India rely on us.' },
 ];
 
 const TRUST = ['Claim Settlement Support', 'Policy Renewal Reminders', 'Zero Hidden Charges'];
@@ -99,25 +99,7 @@ const Home: React.FC<HomeProps> = ({ id }) => {
           py={{ base: 28, md: 36 }}
         >
           <Box maxW={{ base: 'full', md: '640px' }}>
-            {/* Certification badges */}
-            <HStack spacing={2} mb={6} flexWrap="wrap" animation={`${fadeIn} 0.6s ease both`}>
-              {['IRDAI Registered', 'LIC of India', 'Star Health Partner'].map((label, i) => (
-                <Badge
-                  key={label}
-                  px={3}
-                  py={1}
-                  bg={i === 0 ? 'accent.500' : 'whiteAlpha.200'}
-                  color={i === 0 ? 'brand.900' : 'white'}
-                  rounded="full"
-                  fontSize="xs"
-                  fontWeight="bold"
-                  letterSpacing="wider"
-                  backdropFilter="blur(4px)"
-                >
-                  {label}
-                </Badge>
-              ))}
-            </HStack>
+
 
             <Heading
               as="h1"
@@ -144,7 +126,7 @@ const Home: React.FC<HomeProps> = ({ id }) => {
               animation={`${fadeInUp} 0.7s 0.2s ease both`}
             >
               Expert insurance guidance for Life, Health, Vehicle & more.
-              Trusted by 500+ families across Tamil Nadu for over 20 years.
+              Trusted by 10,000+ families across India for over 20 years.
             </Text>
 
             <Stack
@@ -253,10 +235,11 @@ const Home: React.FC<HomeProps> = ({ id }) => {
       {/* ── WHY CHOOSE US ── */}
       <Box as="section" py={24} bg="white">
         <Container maxW="7xl">
-          <VStack spacing={3} mb={16} textAlign="center">
-            <Text color="accent.700" fontWeight="bold" fontSize="xs" letterSpacing="widest" textTransform="uppercase">
-              Our Promise to You
-            </Text>
+          <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={staggerContainer}>
+            <VStack spacing={3} mb={16} textAlign="center" as={motion.div} variants={fadeUp}>
+              <Text color="accent.700" fontWeight="bold" fontSize="xs" letterSpacing="widest" textTransform="uppercase">
+                Our Promise to You
+              </Text>
             <Heading fontSize={{ base: '3xl', sm: '4xl' }} fontWeight="800" color="brand.900">
               Why Choose Your Policy Saathi?
             </Heading>
@@ -266,11 +249,13 @@ const Home: React.FC<HomeProps> = ({ id }) => {
           </VStack>
 
           <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8}>
-            {FEATURES.map((feature) => (
-              <Box
-                key={feature.title}
-                p={8}
-                bg={cardBg}
+              {FEATURES.map((feature) => (
+                <Box
+                  as={motion.div}
+                  variants={cardPop}
+                  key={feature.title}
+                  p={8}
+                  bg={cardBg}
                 rounded="2xl"
                 boxShadow="lg"
                 border="1px solid"
@@ -294,10 +279,11 @@ const Home: React.FC<HomeProps> = ({ id }) => {
                   <Icon as={feature.icon} w={7} h={7} />
                 </Flex>
                 <Heading size="md" mb={3} color="brand.900">{feature.title}</Heading>
-                <Text color="gray.500" fontSize="sm" lineHeight="1.7">{feature.desc}</Text>
-              </Box>
-            ))}
-          </SimpleGrid>
+                  <Text color="gray.500" fontSize="sm" lineHeight="1.7">{feature.desc}</Text>
+                </Box>
+              ))}
+            </SimpleGrid>
+          </motion.div>
         </Container>
       </Box>
     </>

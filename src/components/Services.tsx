@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion } from 'framer-motion';
 import {
   Box,
   Container,
@@ -21,6 +22,11 @@ import {
   FaMoneyBillWave,
 } from "react-icons/fa";
 
+const fadeUp           = { hidden: { opacity: 0, y: 40 },              show: { opacity: 1, y: 0,    transition: { duration: 0.6, ease: 'easeOut' as const } } };
+const cardPop          = { hidden: { opacity: 0, y: 30, scale: 0.96 }, show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: 'easeOut' as const } } };
+const staggerContainer = { hidden: {},                                  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } };
+const viewport         = { once: true, amount: 0.15 } as const;
+
 interface ServiceCardProps {
   title: string;
   text: string;
@@ -34,8 +40,28 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   icon,
   features,
 }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = cardRef.current;
+    if (!el) return;
+    const { left, top, width, height } = el.getBoundingClientRect();
+    const x = (e.clientX - left) / width  - 0.5;
+    const y = (e.clientY - top)  / height - 0.5;
+    el.style.transform = `perspective(700px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) translateY(-8px) scale(1.02)`;
+    el.style.boxShadow = `${-x * 20}px ${y * 20}px 40px rgba(0,0,0,0.35)`;
+  };
+
+  const handleMouseLeave = () => {
+    const el = cardRef.current;
+    if (!el) return;
+    el.style.transform = 'perspective(700px) rotateY(0deg) rotateX(0deg) translateY(0) scale(1)';
+    el.style.boxShadow = '';
+  };
+
   return (
     <Box
+      ref={cardRef as any}
       maxW={"330px"}
       w={"full"}
       bg={useColorModeValue("white", "gray.800")}
@@ -43,16 +69,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       rounded={"lg"}
       p={6}
       overflow={"hidden"}
-      transition="all 0.3s"
-      _hover={{
-        transform: "translateY(-5px)",
-        boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)",
-        borderColor: "whiteAlpha.300",
-      }}
+      transition="transform 0.15s ease, box-shadow 0.15s ease"
       border="1px solid"
-      borderColor="whiteAlpha.200"
+      borderColor={"whiteAlpha.200"}
       position="relative"
       zIndex={1}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
       <Stack align={"center"} spacing={5}>
         <Flex
@@ -117,12 +140,15 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
       }}
     >
       <Container maxW={"7xl"} position="relative" zIndex={1}>
+        <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={staggerContainer}>
         <Stack
           spacing={4}
-          as={Container}
+          as={motion.div}
+          variants={fadeUp}
           maxW={"3xl"}
           textAlign={"center"}
           mb={16}
+          mx="auto"
         >
           <Heading
             fontSize={{ base: "3xl", sm: "4xl" }}
@@ -139,12 +165,15 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
         </Stack>
 
         <SimpleGrid
+          as={motion.div}
+          variants={staggerContainer}
           columns={{ base: 1, md: 2, lg: 3 }}
           spacing={10}
           px={{ base: 2, md: 4 }}
           justifyItems="center"
           mb={16}
         >
+          <motion.div variants={cardPop} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
           <ServiceCard
             icon={<Icon as={FaShieldAlt} w={10} h={10} />}
             title={"LIFE INSURANCE"}
@@ -155,6 +184,8 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
               "Maturity benefits and bonuses",
             ]}
           />
+          </motion.div>
+          <motion.div variants={cardPop} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
           <ServiceCard
             icon={<Icon as={FaHeartbeat} w={10} h={10} />}
             title={"HEALTH INSURANCE"}
@@ -167,6 +198,8 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
               "Coverage for pre and post hospitalization",
             ]}
           />
+          </motion.div>
+          <motion.div variants={cardPop} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
           <ServiceCard
             icon={<Icon as={FaMoneyBillWave} w={10} h={10} />}
             title={"HOUSING LOAN FINANCE"}
@@ -179,6 +212,8 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
               "Flexible repayment options",
             ]}
           />
+          </motion.div>
+          <motion.div variants={cardPop} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
           <ServiceCard
             icon={<Icon as={FaCar} w={10} h={10} />}
             title={"VEHICLE INSURANCE"}
@@ -194,7 +229,9 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
               "Quick claim settlement process",
             ]}
           />
+          </motion.div>
 
+          <motion.div variants={cardPop} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
           <ServiceCard
             icon={<Icon as={FaPlane} w={10} h={10} />}
             title={"TRAVEL INSURANCE"}
@@ -208,6 +245,8 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
               "Lost luggage and passport assistance",
             ]}
           />
+          </motion.div>
+          <motion.div variants={cardPop} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
           <ServiceCard
             icon={<Icon as={FaHome} w={10} h={10} />}
             title={"BUILDING INSURANCE"}
@@ -221,7 +260,9 @@ const Services: React.FC<ServicesProps> = ({ id }) => {
               "Cost-effective premium options",
             ]}
           />
+          </motion.div>
         </SimpleGrid>
+        </motion.div>
       </Container>
     </Box>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   Box,
   Container,
@@ -14,6 +15,11 @@ import {
   ListIcon,
 } from '@chakra-ui/react';
 import { FaHeart, FaShieldAlt, FaUserShield, FaCar, FaCheckCircle, FaPhone } from 'react-icons/fa';
+
+const fadeUp    = { hidden: { opacity: 0, y: 40 },          show: { opacity: 1, y: 0,  transition: { duration: 0.6, ease: 'easeOut' as const } } };
+const cardPop   = { hidden: { opacity: 0, y: 30, scale: 0.96 }, show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: 'easeOut' as const } } };
+const staggerContainer = { hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } };
+const viewport  = { once: true, amount: 0.15 } as const;
 
 interface Category {
   icon: React.ElementType;
@@ -35,7 +41,7 @@ const categories: Category[] = [
     borderColor: 'red.400',
     iconBg: 'red.50',
     docs: [
-      'Aadhaar / ID proof',
+      'Aadhaar card',
       'PAN card',
       'Passport-size photo',
       'Bank details',
@@ -52,7 +58,7 @@ const categories: Category[] = [
     borderColor: 'green.400',
     iconBg: 'green.50',
     docs: [
-      'Aadhaar / ID proof',
+      'Aadhaar card',
       'PAN card',
       'Passport-size photo',
       'Bank details',
@@ -70,7 +76,7 @@ const categories: Category[] = [
     borderColor: 'blue.400',
     iconBg: 'blue.50',
     docs: [
-      'Aadhaar / ID proof',
+      'Aadhaar card',
       'PAN card',
       'Passport-size photo',
       'Bank details',
@@ -88,11 +94,10 @@ const categories: Category[] = [
     borderColor: 'orange.400',
     iconBg: 'orange.50',
     docs: [
-      'RC (Registration Certificate)',
+      'Driving license',
       'Previous insurance policy',
-      'Vehicle registration number',
-      'ID / contact details',
-      'Vehicle details',
+      'PAN card',
+      'Passport-size photo',
     ],
     waMessage: 'Hi! I need help with Vehicle Insurance. Can you guide me through the required documents and book a consultation?',
   },
@@ -110,7 +115,8 @@ const DocumentsRequired: React.FC<DocumentsRequiredProps> = ({ id }) => {
   return (
     <Box id={id} as="section" py={24} bg="gray.50">
       <Container maxW="7xl">
-        <VStack spacing={4} mb={16} textAlign="center">
+        <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={staggerContainer}>
+        <VStack as={motion.div} variants={fadeUp} spacing={4} mb={16} textAlign="center">
           <Heading fontSize={{ base: '3xl', sm: '4xl' }} fontWeight="bold" color="brand.900">
             Documents Required
           </Heading>
@@ -119,9 +125,11 @@ const DocumentsRequired: React.FC<DocumentsRequiredProps> = ({ id }) => {
           </Text>
         </VStack>
 
-        <SimpleGrid columns={{ base: 1, md: 2, xl: 4 }} spacing={8}>
+        <SimpleGrid as={motion.div} variants={staggerContainer} columns={{ base: 1, md: 2, xl: 4 }} spacing={8}>
           {categories.map((cat) => (
             <Box
+              as={motion.div}
+              variants={cardPop}
               key={cat.label}
               bg="white"
               rounded="xl"
@@ -171,6 +179,7 @@ const DocumentsRequired: React.FC<DocumentsRequiredProps> = ({ id }) => {
             </Box>
           ))}
         </SimpleGrid>
+        </motion.div>
       </Container>
     </Box>
   );
