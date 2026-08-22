@@ -96,8 +96,7 @@ const categories: Category[] = [
     docs: [
       'Driving license',
       'Previous insurance policy',
-      'PAN card',
-      'Passport-size photo',
+      'Vehicle registration certificate',
     ],
     waMessage: 'Hi! I need help with Vehicle Insurance. Can you guide me through the required documents and book a consultation?',
   },

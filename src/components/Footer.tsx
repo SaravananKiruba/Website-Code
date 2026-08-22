@@ -45,13 +45,21 @@ const Footer: React.FC = () => {  const phoneNumbers = [
                 Your Policy Saathi
               </Heading>
               <Text fontSize="xs" color="accent.500" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" mt={1}>
-                Insurance Advisors
+                Insurance Broker
               </Text>
             </Box>
             <Text fontSize={"sm"} color="whiteAlpha.700" lineHeight="1.8">
               Your trusted advisor for Life, Health, Vehicle & more.
               Serving families across Tamil Nadu since 2005.
             </Text>
+            <Box>
+              <Text fontSize="sm" color="white" fontWeight="semibold" lineHeight="1.4">
+                G Jackie Kumar Jain
+              </Text>
+              <Text fontSize="xs" color="whiteAlpha.600">
+                Insurance Advisor
+              </Text>
+            </Box>
             <Stack direction={"row"} spacing={6}>
               <Link
                 href="https://www.instagram.com/your__policy__saathi?igsh=MWxzdzZ1cW94ZGx2bQ%3D%3D&utm_source=qr"
