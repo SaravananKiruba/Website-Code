@@ -38,17 +38,17 @@ const fadeIn = keyframes`
 `;
 
 const STATS = [
-  { value: '500+', label: 'Happy Clients' },
-  { value: '20+',  label: 'Years Experience' },
-  { value: '10+',  label: 'Insurance Partners' },
-  { value: '24/7', label: 'Expert Support' },
+  { value: '10,000+', label: 'Happy Families' },
+  { value: '15,000+', label: 'Policies Issued' },
+  { value: '100+',    label: 'Advisors' },
+  { value: '24/7',    label: 'Support' },
 ];
 
 const FEATURES = [
   { icon: FaShieldAlt, title: 'Comprehensive Coverage',  desc: 'Life, Health, Vehicle & more under one trusted roof.' },
   { icon: FaHandshake, title: 'Personalized Guidance',   desc: 'One-on-one expert advice tailored to your exact needs.' },
   { icon: FaHeadset,   title: '24/7 Expert Support',     desc: 'Our team is always available when you need us most.' },
-  { icon: FaUsers,     title: 'Trusted by Families',     desc: '500+ satisfied clients across Tamil Nadu rely on us.' },
+  { icon: FaUsers,     title: 'Trusted by Families',     desc: '10,000+ satisfied families across India rely on us.' },
 ];
 
 const TRUST = ['Claim Settlement Support', 'Policy Renewal Reminders', 'Zero Hidden Charges'];
@@ -99,25 +99,7 @@ const Home: React.FC<HomeProps> = ({ id }) => {
           py={{ base: 28, md: 36 }}
         >
           <Box maxW={{ base: 'full', md: '640px' }}>
-            {/* Certification badges */}
-            <HStack spacing={2} mb={6} flexWrap="wrap" animation={`${fadeIn} 0.6s ease both`}>
-              {['IRDAI Registered', 'LIC of India', 'Star Health Partner'].map((label, i) => (
-                <Badge
-                  key={label}
-                  px={3}
-                  py={1}
-                  bg={i === 0 ? 'accent.500' : 'whiteAlpha.200'}
-                  color={i === 0 ? 'brand.900' : 'white'}
-                  rounded="full"
-                  fontSize="xs"
-                  fontWeight="bold"
-                  letterSpacing="wider"
-                  backdropFilter="blur(4px)"
-                >
-                  {label}
-                </Badge>
-              ))}
-            </HStack>
+
 
             <Heading
               as="h1"
@@ -144,7 +126,7 @@ const Home: React.FC<HomeProps> = ({ id }) => {
               animation={`${fadeInUp} 0.7s 0.2s ease both`}
             >
               Expert insurance guidance for Life, Health, Vehicle & more.
-              Trusted by 500+ families across Tamil Nadu for over 20 years.
+              Trusted by 10,000+ families across India for over 20 years.
             </Text>
 
             <Stack

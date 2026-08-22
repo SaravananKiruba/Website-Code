@@ -22,10 +22,10 @@ const App: React.FC = () => {
       <Header />      <Box as="main">
         <Home id="home" />
         <About id="about" />
+        <DocumentsRequired id="documents" />
         <Partners id="partners" />
         <Achievements id="achievements" />
         <Services id="services" />
-        <DocumentsRequired id="documents" />
         <BookACall id="book-a-call" />
         <Faq id="faq" />
         <ReferAFriend id="refer" />

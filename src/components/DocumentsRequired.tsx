@@ -35,7 +35,7 @@ const categories: Category[] = [
     borderColor: 'red.400',
     iconBg: 'red.50',
     docs: [
-      'Aadhaar / ID proof',
+      'Aadhaar card',
       'PAN card',
       'Passport-size photo',
       'Bank details',
@@ -52,7 +52,7 @@ const categories: Category[] = [
     borderColor: 'green.400',
     iconBg: 'green.50',
     docs: [
-      'Aadhaar / ID proof',
+      'Aadhaar card',
       'PAN card',
       'Passport-size photo',
       'Bank details',
@@ -70,7 +70,7 @@ const categories: Category[] = [
     borderColor: 'blue.400',
     iconBg: 'blue.50',
     docs: [
-      'Aadhaar / ID proof',
+      'Aadhaar card',
       'PAN card',
       'Passport-size photo',
       'Bank details',
@@ -88,11 +88,10 @@ const categories: Category[] = [
     borderColor: 'orange.400',
     iconBg: 'orange.50',
     docs: [
-      'RC (Registration Certificate)',
+      'Driving license',
       'Previous insurance policy',
-      'Vehicle registration number',
-      'ID / contact details',
-      'Vehicle details',
+      'PAN card',
+      'Passport-size photo',
     ],
     waMessage: 'Hi! I need help with Vehicle Insurance. Can you guide me through the required documents and book a consultation?',
   },

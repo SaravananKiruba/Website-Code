@@ -171,7 +171,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                       G. Jackie Kumar
                     </Heading>
                     <Text fontSize={'md'} color="#06443f" textAlign="center">
-                       Insurance Advisor
+                       Insurance Broker
                     </Text>
                   </VStack>
                 </VStack>
