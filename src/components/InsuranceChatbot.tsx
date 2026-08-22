@@ -9,8 +9,8 @@ import {
   Flex,
   Link,
   Icon,
-  keyframes,
 } from '@chakra-ui/react';
+import { keyframes } from '@emotion/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaRobot, FaTimes, FaArrowLeft, FaWhatsapp, FaPhone } from 'react-icons/fa';
 
@@ -45,7 +45,7 @@ const FAQS: FaqItem[] = [
   {
     emoji: '??',
     q: 'How much health insurance should I have?',
-    a: 'A general rule is at least ?5–10 lakhs per family member. Given rising medical costs, a base plan of ?5 lakhs combined with a top-up of ?10–20 lakhs is widely recommended.',
+    a: 'A general rule is at least ?5ï¿½10 lakhs per family member. Given rising medical costs, a base plan of ?5 lakhs combined with a top-up of ?10ï¿½20 lakhs is widely recommended.',
   },
   {
     emoji: '??',
@@ -54,13 +54,13 @@ const FAQS: FaqItem[] = [
   },
   {
     emoji: '??',
-    q: "Term vs. Life insurance — what's the difference?",
+    q: "Term vs. Life insurance ï¿½ what's the difference?",
     a: 'Term insurance provides pure death benefit for a fixed period at low premiums. Life/endowment insurance covers you for a longer period and may include savings or investment components, with higher premiums.',
   },
   {
     emoji: '?',
     q: 'What is a waiting period in health insurance?',
-    a: 'A waiting period is a time frame after buying the policy during which certain illnesses are not covered. Initial waiting periods are usually 30 days; specific disease waiting periods can range from 1–4 years.',
+    a: 'A waiting period is a time frame after buying the policy during which certain illnesses are not covered. Initial waiting periods are usually 30 days; specific disease waiting periods can range from 1ï¿½4 years.',
   },
   {
     emoji: '??',
@@ -70,7 +70,7 @@ const FAQS: FaqItem[] = [
   {
     emoji: '???',
     q: 'What is a top-up health insurance policy?',
-    a: 'A top-up plan adds coverage above a set deductible. For example, a ?20 lakh top-up with ?5 lakh deductible pays for claims above ?5 lakhs — a cost-effective way to enhance existing coverage.',
+    a: 'A top-up plan adds coverage above a set deductible. For example, a ?20 lakh top-up with ?5 lakh deductible pays for claims above ?5 lakhs ï¿½ a cost-effective way to enhance existing coverage.',
   },
   {
     emoji: '???',
@@ -203,7 +203,7 @@ const InsuranceChatbot: React.FC = () => {
                     <HStack spacing={1.5} mt="1px">
                       <Box w="6px" h="6px" bg="green.300" rounded="full" />
                       <Text color="whiteAlpha.800" fontSize="2xs">
-                        Online · Here to help
+                        Online ï¿½ Here to help
                       </Text>
                     </HStack>
                   </Box>
