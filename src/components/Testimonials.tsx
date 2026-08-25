@@ -9,17 +9,14 @@ import {
   HStack,
   Icon,
   Button,
-  Avatar,
   Flex,
   Link,
-  Divider,
 } from '@chakra-ui/react';
 import {
   FaStar,
   FaInstagram,
   FaPlay,
   FaGoogle,
-  FaQuoteLeft,
   FaExternalLinkAlt,
 } from 'react-icons/fa';
 
@@ -55,45 +52,6 @@ const TESTIMONIAL_REELS: Reel[] = [
   },
 ];
 
-interface Review {
-  name: string;
-  initials: string;
-  rating: number;
-  text: string;
-  source?: string;
-}
-
-// Replace these with real customer reviews
-const REVIEWS: Review[] = [
-  {
-    name: 'Rajesh Kumar',
-    initials: 'RK',
-    rating: 5,
-    text: 'Got my LIC policy sorted in just two days! The team explained every option clearly and helped me choose the perfect plan for my family. Outstanding service.',
-    source: 'Google',
-  },
-  {
-    name: 'Priya Meenakshi',
-    initials: 'PM',
-    rating: 5,
-    text: 'Excellent guidance on health insurance. They compared multiple plans and found one that perfectly fit my budget. Always available to answer questions.',
-    source: 'Google',
-  },
-  {
-    name: 'Karthik Selvam',
-    initials: 'KS',
-    rating: 5,
-    text: 'Very professional service. They renewed my vehicle insurance without any hassle and even sent a reminder before the expiry date. Highly recommend!',
-    source: 'Google',
-  },
-  {
-    name: 'Deepa Nair',
-    initials: 'DN',
-    rating: 5,
-    text: 'Your Policy Saathi helped my family get the right term insurance. The process was smooth and the team was always patient and helpful throughout.',
-    source: 'Google',
-  },
-];
 
 const StarRating: React.FC<{ rating: number }> = ({ rating }) => (
   <HStack spacing={0.5}>
@@ -126,25 +84,32 @@ const ReelCard: React.FC<ReelCardProps> = ({ reel, featured }) => (
       borderColor="whiteAlpha.200"
       userSelect="none"
     >
-      {/* Instagram icon top-right */}
-      <Box position="absolute" top={3} right={3}>
-        <Icon as={FaInstagram} color="white" w={featured ? 6 : 5} h={featured ? 6 : 5} />
-      </Box>
+      {/* Large Instagram logo as thumbnail placeholder */}
+      <Icon
+        as={FaInstagram}
+        color="white"
+        w={featured ? 14 : 9}
+        h={featured ? 14 : 9}
+        opacity={0.9}
+        mb={featured ? 3 : 1.5}
+      />
 
-      {/* Play button */}
-      <Flex
-        w={featured ? 16 : 10}
-        h={featured ? 16 : 10}
-        bg="whiteAlpha.300"
-        rounded="full"
-        align="center"
-        justify="center"
-        backdropFilter="blur(4px)"
-        mb={featured ? 4 : 2}
-        flexShrink={0}
-      >
-        <Icon as={FaPlay} color="white" w={featured ? 6 : 3} h={featured ? 6 : 3} ml={1} />
-      </Flex>
+      {/* Play button badge bottom-right */}
+      <Box position="absolute" bottom={3} right={3}>
+        <Flex
+          w={featured ? 10 : 7}
+          h={featured ? 10 : 7}
+          bg="whiteAlpha.300"
+          rounded="full"
+          align="center"
+          justify="center"
+          backdropFilter="blur(4px)"
+          border="2px solid"
+          borderColor="whiteAlpha.400"
+        >
+          <Icon as={FaPlay} color="white" w={featured ? 4 : 2.5} h={featured ? 4 : 2.5} ml={1} />
+        </Flex>
+      </Box>
 
       <Text
         color="white"
@@ -240,40 +205,33 @@ const Testimonials: React.FC<TestimonialsProps> = ({ id }) => {
             </Text>
           </VStack>
 
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={6} mb={14}>
-            {REVIEWS.map((review) => (
-              <Flex
-                key={review.name}
-                direction="column"
-                bg="white"
-                rounded="xl"
-                p={6}
-                boxShadow="lg"
-                border="1px solid"
-                borderColor="gray.100"
-                transition="all 0.3s"
-                _hover={{ transform: 'translateY(-4px)', boxShadow: 'xl' }}
-              >
-                <Icon as={FaQuoteLeft} color="accent.400" w={6} h={6} mb={3} opacity={0.6} />
-
-                <Text color="gray.600" fontSize="sm" flex={1} lineHeight="1.8" mb={5}>
-                  "{review.text}"
-                </Text>
-
-                <Divider mb={4} />
-
-                <HStack spacing={3}>
-                  <Avatar name={review.name} size="sm" bg="brand.700" color="white" />
-                  <Box>
-                    <Text fontWeight="bold" color="brand.900" fontSize="sm" lineHeight="1.3">
-                      {review.name}
-                    </Text>
-                    <StarRating rating={review.rating} />
-                  </Box>
-                </HStack>
-              </Flex>
-            ))}
-          </SimpleGrid>
+          {/* Live Google Business location embed */}
+          <Box
+            rounded="2xl"
+            overflow="hidden"
+            boxShadow="xl"
+            border="1px solid"
+            borderColor="gray.200"
+            mb={10}
+            maxW="860px"
+            mx="auto"
+          >
+            <iframe
+              title="Your Policy Saathi on Google Maps"
+              src="https://maps.google.com/maps?q=Your+Policy+Saathi,+25+Pallikooda+Street,+Madurai+625001&output=embed&hl=en&z=16"
+              width="100%"
+              height="420"
+              style={{ border: 0, display: 'block' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </Box>
+          <VStack spacing={2} mb={10} textAlign="center">
+            <StarRating rating={5} />
+            <Text fontWeight="semibold" color="brand.900" fontSize="lg">Rated 5.0 on Google</Text>
+            <Text color="gray.500" fontSize="sm">Tap the button below to read all real reviews</Text>
+          </VStack>
 
           {/* Google Review CTA */}
           <VStack spacing={5} textAlign="center">
