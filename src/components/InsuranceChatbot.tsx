@@ -33,52 +33,52 @@ interface FaqItem {
 
 const FAQS: FaqItem[] = [
   {
-    emoji: '?',
+    emoji: '⏳',
     q: 'What is a PED waiting period?',
     a: 'A Pre-Existing Disease (PED) waiting period is the time you must wait before your health insurance covers treatments for conditions you had before taking the policy. This typically ranges from 2 to 4 years depending on the insurer and condition.',
   },
   {
-    emoji: '??',
+    emoji: '📈',
     q: 'What is a ULIP?',
     a: 'A Unit Linked Insurance Plan (ULIP) combines life insurance with market-linked investment. Part of your premium goes towards life coverage; the rest is invested in equity, debt, or balanced funds of your choice.',
   },
   {
-    emoji: '??',
+    emoji: '🤔',
     q: 'How much health insurance should I have?',
-    a: 'A general rule is at least ?5�10 lakhs per family member. Given rising medical costs, a base plan of ?5 lakhs combined with a top-up of ?10�20 lakhs is widely recommended.',
+    a: 'A general rule is at least ₹5-10 lakhs per family member. Given rising medical costs, a base plan of ₹5 lakhs combined with a top-up of ₹10-20 lakhs is widely recommended.',
   },
   {
-    emoji: '??',
+    emoji: '📋',
     q: 'What documents are required?',
     a: 'Documents vary by insurance type. Generally: Aadhaar/ID proof, PAN card, passport-size photo, and bank details. For health insurance, height & weight and medical reports may also be needed. Check the "Documents Required" section for full details.',
   },
   {
-    emoji: '??',
+    emoji: '⚖️',
     q: "Term vs. Life insurance � what's the difference?",
     a: 'Term insurance provides pure death benefit for a fixed period at low premiums. Life/endowment insurance covers you for a longer period and may include savings or investment components, with higher premiums.',
   },
   {
-    emoji: '?',
+    emoji: '⏰',
     q: 'What is a waiting period in health insurance?',
     a: 'A waiting period is a time frame after buying the policy during which certain illnesses are not covered. Initial waiting periods are usually 30 days; specific disease waiting periods can range from 1�4 years.',
   },
   {
-    emoji: '??',
+    emoji: '💳',
     q: 'What is a cashless claim?',
     a: 'A cashless claim lets you receive treatment at a network hospital without paying upfront. The insurer settles the bill directly with the hospital. You only pay amounts not covered by the policy.',
   },
   {
-    emoji: '???',
+    emoji: '🔝',
     q: 'What is a top-up health insurance policy?',
-    a: 'A top-up plan adds coverage above a set deductible. For example, a ?20 lakh top-up with ?5 lakh deductible pays for claims above ?5 lakhs � a cost-effective way to enhance existing coverage.',
+    a: 'A top-up plan adds coverage above a set deductible. For example, a ₹20 lakh top-up with ₹5 lakh deductible pays for claims above ₹5 lakhs - a cost-effective way to enhance existing coverage.',
   },
   {
-    emoji: '???',
+    emoji: '🏨',
     q: 'What is a room-rent limit?',
     a: 'Room-rent limit is the maximum your insurer pays for hospital room charges per day. If you choose a room above this limit, you may pay the difference and proportional costs of other services.',
   },
   {
-    emoji: '??',
+    emoji: '💰',
     q: 'What is a co-payment?',
     a: 'Co-payment (co-pay) is a fixed percentage of the claim you pay from your own pocket, while the insurer covers the rest. For example, a 10% co-pay means you pay 10% of every claim amount.',
   },
@@ -194,7 +194,7 @@ const InsuranceChatbot: React.FC = () => {
                     boxShadow="0 4px 12px rgba(0,0,0,0.2)"
                     flexShrink={0}
                   >
-                    ??
+                    <Icon as={FaRobot} color="brand.900" w={5} h={5} />
                   </Flex>
                   <Box>
                     <Text color="white" fontWeight="bold" fontSize="sm" lineHeight="1.2">
@@ -246,7 +246,7 @@ const InsuranceChatbot: React.FC = () => {
                         fontSize="xs"
                         flexShrink={0}
                       >
-                        ??
+                        <Icon as={FaRobot} color="white" w={3} h={3} />
                       </Flex>
                       <Box
                         bg="white"
@@ -258,7 +258,7 @@ const InsuranceChatbot: React.FC = () => {
                         maxW="85%"
                       >
                         <Text fontSize="sm" color="gray.700" lineHeight="1.55">
-                          ?? Hi! I'm{' '}
+                          👋 Hi! I'm{' '}
                           <Text as="span" fontWeight="bold" color="brand.900">
                             Saathi AI
                           </Text>
@@ -348,7 +348,7 @@ const InsuranceChatbot: React.FC = () => {
                           fontSize="2xs"
                           flexShrink={0}
                         >
-                          ??
+                          <Icon as={FaRobot} color="white" w={3} h={3} />
                         </Flex>
                         <TypingDots />
                       </HStack>
@@ -372,7 +372,7 @@ const InsuranceChatbot: React.FC = () => {
                             fontSize="2xs"
                             flexShrink={0}
                           >
-                            ??
+                            <Icon as={FaRobot} color="white" w={3} h={3} />
                           </Flex>
                           <Box
                             bg="white"
@@ -407,7 +407,7 @@ const InsuranceChatbot: React.FC = () => {
                             fontStyle="italic"
                             textAlign="center"
                           >
-                            Need personal guidance? We're here ??
+                            Need personal guidance? We're here 😊
                           </Text>
                           <HStack spacing={2} w="full">
                             <Button

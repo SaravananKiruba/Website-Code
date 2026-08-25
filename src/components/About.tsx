@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Box,
+  Badge,
   Container,
   Flex,
   Heading,
@@ -10,7 +11,6 @@ import {
   Avatar,
   SimpleGrid,
   Icon,
-  Grid,
   VStack,
 } from '@chakra-ui/react';
 import { FaMedal, FaHandshake, FaBullseye } from 'react-icons/fa';
@@ -81,169 +81,318 @@ const About: React.FC<AboutProps> = ({ id }) => {
           <Stack 
             flex={1} 
             spacing={8}
-          >            <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={6}>
-              {/* Agent 1 */}              <Box
-                as={motion.div}
-                variants={cardPop}
-                bg="white"
-                boxShadow={'xl'}
-                p={6}
-                rounded={'2xl'}
-                border="1px solid"
-                borderColor="gray.100"
-                transition="all 0.3s"
-                _hover={{ transform: 'translateY(-6px)', boxShadow: '2xl', borderColor: 'accent.400' }}
-                position="relative"
-                overflow="hidden"
-              >
-                <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
-                <VStack 
-                  align="center"
-                  spacing={4}
-                >
+          >
+            {/* ── Leadership Row ── */}
+            <Box>
+              <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={fadeUp}>
+                <Flex align="center" justify="center" mb={5} gap={3}>
+                  <Box h="1px" flex={1} bgGradient="linear(to-r, transparent, brand.700)" />
+                  <Text textTransform="uppercase" fontWeight="bold" letterSpacing="widest" fontSize="xs" color="brand.700" px={3} whiteSpace="nowrap">
+                    Leadership
+                  </Text>
+                  <Box h="1px" flex={1} bgGradient="linear(to-l, transparent, brand.700)" />
+                </Flex>
+              </motion.div>
+              <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={staggerContainer}>
+                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} maxW="2xl" mx="auto">
+
+                  {/* Jigar - Founder */}
                   <Box
+                    as={motion.div}
+                    variants={cardPop}
+                    bg="white"
+                    boxShadow={'xl'}
+                    p={6}
+                    rounded={'2xl'}
+                    border="2px solid"
+                    borderColor="brand.900"
+                    transition="all 0.3s"
+                    _hover={{ transform: 'translateY(-6px)', boxShadow: '2xl' }}
                     position="relative"
-                    borderRadius="full"
-                    p={1.5}
-                    bgGradient="linear(to-r, brand.700, brand.500, accent.500, accent.700)"
-                    boxShadow="0 0 15px rgba(38, 25, 216, 0.5)"
-                    transition="all 0.3s ease"
-                    _hover={{ 
-                      transform: "scale(1.05)",
-                      boxShadow: "0 0 20px rgba(38, 25, 216, 0.7)"
-                    }}
+                    overflow="hidden"
                   >
-                    <Avatar
-                      size={'2xl'}
-                      src={require('../Images/Ashok Kumar.jpg')}
-                      name={'S. Ashok Kumar'}
-                      border="3px solid white"
-                    />
+                    <Box position="absolute" top={0} left={0} right={0} h="4px" bgGradient="linear(to-r, brand.900, accent.500)" />
+                    <VStack align="center" spacing={4}>
+                      <Box
+                        borderRadius="full"
+                        p={1.5}
+                        bgGradient="linear(to-bl, accent.700, accent.500, brand.500, brand.700)"
+                        boxShadow="0 0 20px rgba(246, 196, 69, 0.6)"
+                        transition="all 0.3s ease"
+                        _hover={{ transform: 'scale(1.05)', boxShadow: '0 0 25px rgba(246, 196, 69, 0.8)' }}
+                      >
+                        <Avatar size={'2xl'} src={require('../Images/Jigar.jpg')} name={'A. Jigar'} border="3px solid white" />
+                      </Box>
+                      <VStack spacing={1} align="center">
+                        <Badge colorScheme="yellow" fontSize="xs" px={3} py={0.5} borderRadius="full" textTransform="uppercase" letterSpacing="wider">
+                          Founder
+                        </Badge>
+                        <Heading fontSize={{ base: 'xl', sm: '2xl' }} fontWeight={600} color={'brand.900'} textAlign="center">
+                          A. Jigar
+                        </Heading>
+                        <Text fontSize={'sm'} color="#06443f" textAlign="center">
+                          Your Policy Saathi
+                        </Text>
+                      </VStack>
+                    </VStack>
                   </Box>
-                  <VStack spacing={2} align="center">
-                    <Heading
-                      fontSize={{ base: 'xl', sm: '2xl' }}
-                      fontWeight={500}
-                      color={'brand.900'}
-                      textAlign="center"
-                    >
-                      S. Ashok Kumar
-                    </Heading>
-                    <Text fontSize={'md'} color="#06443f" textAlign="center">
-                      CM CLUB MEMBER & SENIOR SALES MANAGER 
-                    </Text>
-                  </VStack>
-                </VStack>              </Box>
-              
-              
-              {/* Agent 2 */}              <Box
-                as={motion.div}
-                variants={cardPop}
-                bg="white"
-                boxShadow={'xl'}
-                p={6}
-                rounded={'2xl'}
-                border="1px solid"
-                borderColor="gray.100"
-                transition="all 0.3s"
-                _hover={{ transform: 'translateY(-6px)', boxShadow: '2xl', borderColor: 'accent.400' }}
-                position="relative"
-                overflow="hidden"
-              >
-                <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
-                <VStack 
-                  align="center"
-                  spacing={4}
-                >
+
+                  {/* Ashok Kumar - Senior Manager */}
                   <Box
+                    as={motion.div}
+                    variants={cardPop}
+                    bg="white"
+                    boxShadow={'xl'}
+                    p={6}
+                    rounded={'2xl'}
+                    border="2px solid"
+                    borderColor="brand.700"
+                    transition="all 0.3s"
+                    _hover={{ transform: 'translateY(-6px)', boxShadow: '2xl' }}
                     position="relative"
-                    borderRadius="full"
-                    p={1.5}
-                    bgGradient="linear(to-tr, brand.700, brand.500, accent.500, accent.700)"
-                    boxShadow="0 0 15px rgba(6, 68, 63, 0.5)"
-                    transition="all 0.3s ease"
-                    _hover={{ 
-                      transform: "scale(1.05)",
-                      boxShadow: "0 0 20px rgba(6, 68, 63, 0.7)"
-                    }}
+                    overflow="hidden"
                   >
-                    <Avatar
-                      size={'2xl'}
-                      src={require('../Images/Jackie.jpg')}
-                      name={'G. Jackie Kumar'}
-                      border="3px solid white"
-                    />
+                    <Box position="absolute" top={0} left={0} right={0} h="4px" bgGradient="linear(to-r, brand.700, brand.900)" />
+                    <VStack align="center" spacing={4}>
+                      <Box
+                        borderRadius="full"
+                        p={1.5}
+                        bgGradient="linear(to-r, brand.700, brand.500, accent.500, accent.700)"
+                        boxShadow="0 0 20px rgba(38, 25, 216, 0.5)"
+                        transition="all 0.3s ease"
+                        _hover={{ transform: 'scale(1.05)', boxShadow: '0 0 25px rgba(38, 25, 216, 0.7)' }}
+                      >
+                        <Avatar size={'2xl'} src={require('../Images/Ashok Kumar.jpg')} name={'S. Ashok Kumar'} border="3px solid white" />
+                      </Box>
+                      <VStack spacing={1} align="center">
+                        <Badge colorScheme="blue" fontSize="xs" px={3} py={0.5} borderRadius="full" textTransform="uppercase" letterSpacing="wider">
+                          Senior Manager
+                        </Badge>
+                        <Heading fontSize={{ base: 'xl', sm: '2xl' }} fontWeight={600} color={'brand.900'} textAlign="center">
+                          S. Ashok Kumar
+                        </Heading>
+                        <Text fontSize={'sm'} color="#06443f" textAlign="center">
+                          CM Club Member & Senior Sales Manager
+                        </Text>
+                      </VStack>
+                    </VStack>
                   </Box>
-                  <VStack spacing={2} align="center">
-                    <Heading
-                      fontSize={{ base: 'xl', sm: '2xl' }}
-                      fontWeight={500}
-                      color={'brand.900'}
-                      textAlign="center"
-                    >
-                      G. Jackie Kumar
-                    </Heading>
-                    <Text fontSize={'md'} color="#06443f" textAlign="center">
-                       Insurance Broker
-                    </Text>
-                  </VStack>
-                </VStack>
-              </Box>
-              {/* Agent 3 */}              <Box
-                as={motion.div}
-                variants={cardPop}
-                bg="white"
-                boxShadow={'xl'}
-                p={6}
-                rounded={'2xl'}
-                border="1px solid"
-                borderColor="gray.100"
-                transition="all 0.3s"
-                _hover={{ transform: 'translateY(-6px)', boxShadow: '2xl', borderColor: 'accent.400' }}
-                position="relative"
-                overflow="hidden"
-              >
-                <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
-                <VStack 
-                  align="center"
-                  spacing={4}
+
+                </SimpleGrid>
+              </motion.div>
+            </Box>
+
+            {/* ── Animated Hierarchy Connector ── */}
+            <Box py={2}>
+              <Flex justify="center">
+                <motion.div
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35 }}
+                  style={{ width: '2px', height: '28px', background: 'linear-gradient(to bottom, #06443f, #2619d8)', transformOrigin: 'top' }}
+                />
+              </Flex>
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: 0.35 }}
+                style={{ height: '2px', background: 'linear-gradient(to right, transparent, #06443f, #2619d8, #f6c445, #2619d8, #06443f, transparent)', transformOrigin: 'center' }}
+              />
+              <Flex justify="center" mt={2}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: 0.9 }}
                 >
-                  <Box
-                    position="relative"
-                    borderRadius="full"
-                    p={1.5}
-                    bgGradient="linear(to-bl, accent.700, accent.500, brand.500, brand.700)"
-                    boxShadow="0 0 15px rgba(246, 196, 69, 0.5)"
-                    transition="all 0.3s ease"
-                    _hover={{ 
-                      transform: "scale(1.05)",
-                      boxShadow: "0 0 20px rgba(246, 196, 69, 0.7)"
-                    }}
-                  >
-                    <Avatar
-                      size={'2xl'}
-                      src={require('../Images/Jigar.jpg')}
-                      name={'A. Jigar'}
-                      border="3px solid white"
-                    />
-                  </Box>
-                  <VStack spacing={2} align="center">
-                    <Heading
-                      fontSize={{ base: 'xl', sm: '2xl' }}
-                      fontWeight={500}
-                      color={'brand.900'}
-                      textAlign="center"
-                    >
-                      A. Jigar
-                    </Heading>
-                    <Text fontSize={'md'} color="#06443f" textAlign="center">
-                      Founder, Your Policy Saathi
+                  <Box px={5} py={1.5} borderRadius="full" bgGradient="linear(to-r, brand.900, brand.700)" boxShadow="md">
+                    <Text fontSize="xs" fontWeight="bold" color="white" textTransform="uppercase" letterSpacing="widest">
+                      Insurance Advisors
                     </Text>
+                  </Box>
+                </motion.div>
+              </Flex>
+              <Flex justify="center" mt={2}>
+                <motion.div
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: 1.25 }}
+                  style={{ width: '2px', height: '28px', background: 'linear-gradient(to bottom, #2619d8, #06443f)', transformOrigin: 'top' }}
+                />
+              </Flex>
+            </Box>
+
+            {/* ── Team Advisors Grid ── */}
+            <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={staggerContainer}>
+              <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} spacing={5}>
+
+                {/* G. Jackie Kumar Jain */}
+                <Box
+                  as={motion.div}
+                  variants={cardPop}
+                  bg="white"
+                  boxShadow={'lg'}
+                  p={5}
+                  rounded={'2xl'}
+                  border="1px solid"
+                  borderColor="gray.100"
+                  transition="all 0.3s"
+                  _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl', borderColor: 'accent.400' }}
+                  position="relative"
+                  overflow="hidden"
+                >
+                  <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
+                  <VStack align="center" spacing={3}>
+                    <Box borderRadius="full" p={1.5} bgGradient="linear(to-tr, brand.700, accent.500)" boxShadow="0 0 10px rgba(38,25,216,0.3)">
+                      <Avatar size={'xl'} src={require('../Images/G jackie Kumar jain.jpg')} name={'G. Jackie Kumar Jain'} border="3px solid white" />
+                    </Box>
+                    <VStack spacing={1} align="center">
+                      <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">G. Jackie Kumar Jain</Heading>
+                      <Text fontSize={'xs'} color="#06443f" textAlign="center">Insurance Advisor</Text>
+                    </VStack>
                   </VStack>
-                </VStack>
-              </Box>
-              
-            </Grid>
+                </Box>
+
+                {/* Piyush Kumar Jain */}
+                <Box
+                  as={motion.div}
+                  variants={cardPop}
+                  bg="white"
+                  boxShadow={'lg'}
+                  p={5}
+                  rounded={'2xl'}
+                  border="1px solid"
+                  borderColor="gray.100"
+                  transition="all 0.3s"
+                  _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl', borderColor: 'accent.400' }}
+                  position="relative"
+                  overflow="hidden"
+                >
+                  <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
+                  <VStack align="center" spacing={3}>
+                    <Box borderRadius="full" p={1.5} bgGradient="linear(to-r, accent.500, brand.700)" boxShadow="0 0 10px rgba(246,196,69,0.4)">
+                      <Avatar size={'xl'} src={require('../Images/Piyush Kumar Jain.jpg')} name={'Piyush Kumar Jain'} border="3px solid white" />
+                    </Box>
+                    <VStack spacing={1} align="center">
+                      <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">Piyush Kumar Jain</Heading>
+                      <Text fontSize={'xs'} color="#06443f" textAlign="center">Insurance Advisor</Text>
+                    </VStack>
+                  </VStack>
+                </Box>
+
+                {/* Prince Kumar Jain */}
+                <Box
+                  as={motion.div}
+                  variants={cardPop}
+                  bg="white"
+                  boxShadow={'lg'}
+                  p={5}
+                  rounded={'2xl'}
+                  border="1px solid"
+                  borderColor="gray.100"
+                  transition="all 0.3s"
+                  _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl', borderColor: 'accent.400' }}
+                  position="relative"
+                  overflow="hidden"
+                >
+                  <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
+                  <VStack align="center" spacing={3}>
+                    <Box borderRadius="full" p={1.5} bgGradient="linear(to-bl, brand.500, accent.700)" boxShadow="0 0 10px rgba(6,68,63,0.3)">
+                      <Avatar size={'xl'} src={require('../Images/Prince Kumar Jain.jpg')} name={'Prince Kumar Jain'} border="3px solid white" />
+                    </Box>
+                    <VStack spacing={1} align="center">
+                      <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">Prince Kumar Jain</Heading>
+                      <Text fontSize={'xs'} color="#06443f" textAlign="center">Insurance Advisor</Text>
+                    </VStack>
+                  </VStack>
+                </Box>
+
+                {/* Raveena Kumari Jain */}
+                <Box
+                  as={motion.div}
+                  variants={cardPop}
+                  bg="white"
+                  boxShadow={'lg'}
+                  p={5}
+                  rounded={'2xl'}
+                  border="1px solid"
+                  borderColor="gray.100"
+                  transition="all 0.3s"
+                  _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl', borderColor: 'accent.400' }}
+                  position="relative"
+                  overflow="hidden"
+                >
+                  <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
+                  <VStack align="center" spacing={3}>
+                    <Box borderRadius="full" p={1.5} bgGradient="linear(to-tl, accent.700, brand.500)" boxShadow="0 0 10px rgba(246,196,69,0.4)">
+                      <Avatar size={'xl'} src={require('../Images/Raveena Kumari Jain.jpeg')} name={'Raveena Kumari Jain'} border="3px solid white" />
+                    </Box>
+                    <VStack spacing={1} align="center">
+                      <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">Raveena Kumari Jain</Heading>
+                      <Text fontSize={'xs'} color="#06443f" textAlign="center">Insurance Advisor</Text>
+                    </VStack>
+                  </VStack>
+                </Box>
+
+                {/* S. Nemichand Jain */}
+                <Box
+                  as={motion.div}
+                  variants={cardPop}
+                  bg="white"
+                  boxShadow={'lg'}
+                  p={5}
+                  rounded={'2xl'}
+                  border="1px solid"
+                  borderColor="gray.100"
+                  transition="all 0.3s"
+                  _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl', borderColor: 'accent.400' }}
+                  position="relative"
+                  overflow="hidden"
+                >
+                  <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
+                  <VStack align="center" spacing={3}>
+                    <Box borderRadius="full" p={1.5} bgGradient="linear(to-tr, brand.900, accent.400)" boxShadow="0 0 10px rgba(38,25,216,0.3)">
+                      <Avatar size={'xl'} src={require('../Images/S Nemichand Jain.jpg')} name={'S. Nemichand Jain'} border="3px solid white" />
+                    </Box>
+                    <VStack spacing={1} align="center">
+                      <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">S. Nemichand Jain</Heading>
+                      <Text fontSize={'xs'} color="#06443f" textAlign="center">Insurance Advisor</Text>
+                    </VStack>
+                  </VStack>
+                </Box>
+
+                {/* Yash */}
+                <Box
+                  as={motion.div}
+                  variants={cardPop}
+                  bg="white"
+                  boxShadow={'lg'}
+                  p={5}
+                  rounded={'2xl'}
+                  border="1px solid"
+                  borderColor="gray.100"
+                  transition="all 0.3s"
+                  _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl', borderColor: 'accent.400' }}
+                  position="relative"
+                  overflow="hidden"
+                >
+                  <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
+                  <VStack align="center" spacing={3}>
+                    <Box borderRadius="full" p={1.5} bgGradient="linear(to-br, brand.700, accent.500)" boxShadow="0 0 10px rgba(6,68,63,0.3)">
+                      <Avatar size={'xl'} src={require('../Images/Yash.PNG')} name={'Yash'} border="3px solid white" />
+                    </Box>
+                    <VStack spacing={1} align="center">
+                      <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">Yash</Heading>
+                      <Text fontSize={'xs'} color="#06443f" textAlign="center">Insurance Advisor</Text>
+                    </VStack>
+                  </VStack>
+                </Box>
+
+              </SimpleGrid>
+            </motion.div>
 
             <Text fontSize={'lg'} color={'gray.600'} pt={2}>
               Our experienced insurance agents at Your Policy Saathi have been helping families and individuals secure their futures 

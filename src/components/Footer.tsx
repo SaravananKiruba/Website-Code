@@ -54,10 +54,10 @@ const Footer: React.FC = () => {  const phoneNumbers = [
             </Text>
             <Box>
               <Text fontSize="sm" color="white" fontWeight="semibold" lineHeight="1.4">
-                G Jackie Kumar Jain
+                A. Jigar
               </Text>
               <Text fontSize="xs" color="whiteAlpha.600">
-                Insurance Advisor
+                Founder, Your Policy Saathi
               </Text>
             </Box>
             <Stack direction={"row"} spacing={6}>
