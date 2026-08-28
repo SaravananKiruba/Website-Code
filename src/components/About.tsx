@@ -274,7 +274,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                   <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
                   <VStack align="center" spacing={3}>
                     <Box borderRadius="full" p={1.5} bgGradient="linear(to-r, accent.500, brand.700)" boxShadow="0 0 10px rgba(246,196,69,0.4)">
-                      <Avatar size={'xl'} src={require('../Images/Piyush Kumar Jain.jpg')} name={'Piyush Kumar Jain'} border="3px solid white" />
+                      <Avatar size={'xl'} src={require('../Images/Piyush Kumar Jain.png')} name={'Piyush Kumar Jain'} border="3px solid white" />
                     </Box>
                     <VStack spacing={1} align="center">
                       <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">Piyush Kumar Jain</Heading>
@@ -301,7 +301,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                   <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
                   <VStack align="center" spacing={3}>
                     <Box borderRadius="full" p={1.5} bgGradient="linear(to-bl, brand.500, accent.700)" boxShadow="0 0 10px rgba(6,68,63,0.3)">
-                      <Avatar size={'xl'} src={require('../Images/Prince Kumar Jain.jpg')} name={'Prince Kumar Jain'} border="3px solid white" />
+                      <Avatar size={'xl'} src={require('../Images/Prince Kumar Jain.png')} name={'Prince Kumar Jain'} border="3px solid white" />
                     </Box>
                     <VStack spacing={1} align="center">
                       <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">Prince Kumar Jain</Heading>
@@ -328,7 +328,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                   <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
                   <VStack align="center" spacing={3}>
                     <Box borderRadius="full" p={1.5} bgGradient="linear(to-tl, accent.700, brand.500)" boxShadow="0 0 10px rgba(246,196,69,0.4)">
-                      <Avatar size={'xl'} src={require('../Images/Raveena Kumari Jain.jpeg')} name={'Raveena Kumari Jain'} border="3px solid white" />
+                      <Avatar size={'xl'} src={require('../Images/Raveena Kumari Jain.png')} name={'Raveena Kumari Jain'} border="3px solid white" />
                     </Box>
                     <VStack spacing={1} align="center">
                       <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">Raveena Kumari Jain</Heading>
@@ -355,7 +355,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                   <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
                   <VStack align="center" spacing={3}>
                     <Box borderRadius="full" p={1.5} bgGradient="linear(to-tr, brand.900, accent.400)" boxShadow="0 0 10px rgba(38,25,216,0.3)">
-                      <Avatar size={'xl'} src={require('../Images/S Nemichand Jain.jpg')} name={'S. Nemichand Jain'} border="3px solid white" />
+                      <Avatar size={'xl'} src={require('../Images/S Nemichand Jain.png')} name={'S. Nemichand Jain'} border="3px solid white" />
                     </Box>
                     <VStack spacing={1} align="center">
                       <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">S. Nemichand Jain</Heading>
@@ -382,7 +382,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                   <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
                   <VStack align="center" spacing={3}>
                     <Box borderRadius="full" p={1.5} bgGradient="linear(to-br, brand.700, accent.500)" boxShadow="0 0 10px rgba(6,68,63,0.3)">
-                      <Avatar size={'xl'} src={require('../Images/Yash.PNG')} name={'Yash'} border="3px solid white" />
+                      <Avatar size={'xl'} src={require('../Images/Yash.png')} name={'Yash'} border="3px solid white" />
                     </Box>
                     <VStack spacing={1} align="center">
                       <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">Yash</Heading>
