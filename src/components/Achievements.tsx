@@ -43,11 +43,13 @@ const AchievementCard = ({
       align={"center"}
       pos={"relative"}
       _hover={{
-        transform: "translateY(-5px)",
-        boxShadow: "xl",
+        transform: "translateY(-8px)",
+        boxShadow: "2xl",
       }}
       transition="all 0.3s"
       height="100%"
+      borderTop="4px solid"
+      borderColor="brand.600"
     >
       <Flex
         w={16}
@@ -55,24 +57,25 @@ const AchievementCard = ({
         align={"center"}
         justify={"center"}
         color={"white"}
-        rounded={"full"}
-        bg={"blue.600"}
+        rounded={"2xl"}
+        bgGradient="linear(135deg, brand.600, brand.800)"
         mb={4}
+        boxShadow="0 8px 20px rgba(72,147,237,0.3)"
       >
         {icon}
       </Flex>
-      <Heading fontSize={"xl"} fontFamily={"body"} textAlign="center" mb={2}>
+      <Heading fontSize={"xl"} fontFamily={"body"} textAlign="center" mb={2} color="brand.900" fontWeight="700">
         {title}
       </Heading>
-      <Text fontWeight={600} color={"blue.600"} mb={4} textAlign="center">
+      <Text fontWeight={600} color={"accent.600"} mb={4} textAlign="center">
         {organization}
       </Text>
       <Divider mb={4} />
       <VStack align="start" spacing={3} w="100%">
         {points.map((point, index) => (
           <HStack key={index} align="start" spacing={2}>
-            <Icon as={FaStar} color="blue.500" mt={1} />
-            <Text textAlign="left">{point}</Text>
+            <Icon as={FaStar} color="accent.500" mt={1} />
+            <Text textAlign="left" color="gray.700">{point}</Text>
           </HStack>
         ))}
       </VStack>
@@ -86,8 +89,24 @@ interface AchievementsProps {
 
 const Achievements: React.FC<AchievementsProps> = ({ id }) => {
   return (
-    <Box id={id} py={20} bg={useColorModeValue("gray.50", "gray.900")}>
-      <Container maxW={"7xl"}>
+    <Box 
+      id={id} 
+      py={28}
+      bgGradient="linear(135deg, #ffffff 0%, #f0f4ff 50%, #fffaf0 100%)"
+      position="relative"
+      overflow="hidden"
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        bgImage: "radial-gradient(circle at 20% 50%, rgba(72,147,237,0.08) 0%, transparent 60%), radial-gradient(circle at 80% 80%, rgba(246,196,69,0.06) 0%, transparent 50%)",
+        zIndex: 0,
+      }}
+    >
+      <Container maxW={"7xl"} position="relative" zIndex={1}>
         <Stack
           as={Box}
           textAlign={"center"}
@@ -98,21 +117,22 @@ const Achievements: React.FC<AchievementsProps> = ({ id }) => {
           }}
         >
           <Heading
-            fontWeight={800}
-            fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
+            fontWeight={900}
+            fontSize={{ base: "2.5xl", sm: "4xl", md: "5xl" }}
             lineHeight={"110%"}
-            color={"blue.600"}
+            color={"brand.900"}
           >
             Professional <br />
-            <Text as={"span"} color={"blue.600"}>
+            <Text as={"span"} bgGradient="linear(90deg, brand.600, accent.500)" bgClip="text" color="transparent">
               Achievements
             </Text>
           </Heading>
           <Text
-            color={useColorModeValue("gray.600", "gray.300")}
-            fontSize={{ base: "lg", md: "xl" }}
+            color="gray.700"
+            fontSize={{ base: "md", md: "xl" }}
             maxW={"3xl"}
             margin="0 auto"
+            fontWeight="500"
           >
             Recognizing excellence in insurance services with a proven track record of success and professional distinctions
           </Text>

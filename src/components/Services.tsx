@@ -10,7 +10,6 @@ import {
   Stack,
   HStack,
   Flex,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import {
   FaShieldAlt,
@@ -64,14 +63,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       ref={cardRef as any}
       maxW={"330px"}
       w={"full"}
-      bg={useColorModeValue("white", "gray.800")}
-      boxShadow={"2xl"}
-      rounded={"lg"}
+      bg="rgba(255,255,255,0.08)"
+      backdropFilter="blur(16px)"
+      boxShadow={"0 8px 32px rgba(0,0,0,0.3)"}
+      rounded={"2xl"}
       p={6}
       overflow={"hidden"}
       transition="transform 0.15s ease, box-shadow 0.15s ease"
       border="1px solid"
-      borderColor={"whiteAlpha.200"}
+      borderColor={"rgba(255,255,255,0.18)"}
       position="relative"
       zIndex={1}
       onMouseMove={handleMouseMove}
@@ -79,32 +79,34 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     >
       <Stack align={"center"} spacing={5}>
         <Flex
-          w={16}
-          h={16}
+          w={20}
+          h={20}
           align={"center"}
           justify={"center"}
           color={"white"}
-          rounded={"full"}
-          bg={"#315098"}
+          rounded={"2xl"}
+          bgGradient="linear(135deg, brand.600, brand.800)"
           mb={1}
+          boxShadow="0 8px 20px rgba(72,147,237,0.3)"
         >
           {icon}
         </Flex>
         <Heading
-          color={useColorModeValue("gray.700", "white")}
-          fontSize={"2xl"}
-          fontFamily={"body"}
+          color="white"
+          fontSize="2xl"
+          fontFamily="body"
+          fontWeight="700"
         >
           {title}
         </Heading>
-        <Text color={"gray.500"} fontSize={"sm"} textAlign={"center"}>
+        <Text color="white" fontSize="md" textAlign={"center"}>
           {text}
         </Text>
         <Stack spacing={3} w={"full"} mt={2}>
           {features.map((feature, index) => (
             <HStack key={index} spacing={2} align={"start"}>
-              <Icon as={FaCheckCircle} color={"#FFD700"} w={5} h={5} mt={1} />
-              <Text fontSize={"sm"}>{feature}</Text>
+              <Icon as={FaCheckCircle} color="accent.400" w={5} h={5} mt={1} />
+              <Text fontSize="sm" color="white" fontWeight="500">{feature}</Text>
             </HStack>
           ))}
         </Stack>

@@ -28,11 +28,22 @@ const Contact: React.FC<ContactProps> = ({ id }) => {  const phoneNumbers = [
     <Box
       id={id}
       as="section"
-      py={16}
-      bgGradient="linear(to-br, white, #e3ad26, blue.500)"
-      boxShadow="md"
+      py={28}
+      bgGradient="linear(135deg, #ffffff 0%, #f0f4ff 50%, #fffaf0 100%)"
+      position="relative"
+      overflow="hidden"
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        bgImage: "radial-gradient(circle at 20% 50%, rgba(72,147,237,0.08) 0%, transparent 60%), radial-gradient(circle at 80% 80%, rgba(246,196,69,0.06) 0%, transparent 50%)",
+        zIndex: 0,
+      }}
     >
-      <Container maxW={"7xl"}>
+      <Container maxW={"7xl"} position="relative" zIndex={1}>
         <VStack
           spacing={4}
           as={Container}
@@ -41,13 +52,13 @@ const Contact: React.FC<ContactProps> = ({ id }) => {  const phoneNumbers = [
           mb={16}
         >
           <Heading
-            fontSize={{ base: "3xl", sm: "4xl" }}
-            fontWeight={"bold"}
+            fontSize={{ base: "2.5xl", sm: "4xl" }}
+            fontWeight={"900"}
             color={"brand.900"}
           >
             Contact Us
           </Heading>
-          <Text color={"gray.600"} fontSize={"xl"}>
+          <Text color={"gray.600"} fontSize={{ base: 'md', md: 'xl' }} fontWeight="500">
             Have questions? Get in touch with our experienced agents.
           </Text>
         </VStack>

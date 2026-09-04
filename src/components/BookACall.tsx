@@ -109,10 +109,16 @@ const BookACall: React.FC<BookACallProps> = ({ id }) => {
 
       <Container maxW="3xl" position="relative" zIndex={1}>
         <VStack spacing={3} mb={12} textAlign="center">
-          <Heading fontSize={{ base: '3xl', sm: '4xl' }} fontWeight="bold" color="white">
+          <Heading 
+            fontSize={{ base: '2.5xl', sm: '4xl' }} 
+            fontWeight="900" 
+            color="white"
+            bgGradient="linear(90deg, white, accent.300)"
+            bgClip="text"
+          >
             Book a Free Consultation
           </Heading>
-          <Text color="whiteAlpha.800" fontSize="xl">
+          <Text color="whiteAlpha.900" fontSize={{ base: 'md', md: 'lg' }} fontWeight="500">
             Fill in your details and our team will reach out to discuss your requirement.
           </Text>
         </VStack>

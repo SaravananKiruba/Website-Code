@@ -73,17 +73,34 @@ const Faq: React.FC<FaqProps> = ({ id }) => {
   ];
 
   return (
-    <Box id={id} as="section" py={16} bg="gray.50">
-      <Container maxW={'7xl'}>
+    <Box 
+      id={id} 
+      as="section" 
+      py={28}
+      bgGradient="linear(135deg, #ffffff 0%, #f0f4ff 50%, #fffaf0 100%)"
+      position="relative"
+      overflow="hidden"
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        bgImage: "radial-gradient(circle at 20% 50%, rgba(72,147,237,0.08) 0%, transparent 60%), radial-gradient(circle at 80% 80%, rgba(246,196,69,0.06) 0%, transparent 50%)",
+        zIndex: 0,
+      }}
+    >
+      <Container maxW={'7xl'} position="relative" zIndex={1}>
         <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'} mb={12}>
           <Heading
-            fontSize={{ base: '3xl', sm: '4xl' }}
-            fontWeight={'bold'}
-            color={'brand.900'}
+            fontSize={{ base: '2.5xl', sm: '4xl' }}
+            fontWeight="900"
+            color="brand.900"
           >
             Frequently Asked Questions
           </Heading>
-          <Text color={'gray.600'} fontSize={'xl'}>
+          <Text color={'gray.700'} fontSize={{ base: 'md', md: 'lg' }} fontWeight="500">
             Get answers to common questions about our insurance services
           </Text>
         </Stack>
@@ -92,7 +109,7 @@ const Faq: React.FC<FaqProps> = ({ id }) => {
           <Accordion allowMultiple>
             {faqItems.map((category, categoryIndex) => (
               <Box key={categoryIndex} mb={6}>
-                <Heading size="md" mb={3} color="brand.800">
+                <Heading size="md" mb={3} color="brand.900" fontWeight="700">
                   {category.category}
                 </Heading>
                 {category.questions.map((faq, faqIndex) => (
@@ -107,14 +124,16 @@ const Faq: React.FC<FaqProps> = ({ id }) => {
                       <AccordionButton 
                         p={4} 
                         _expanded={{ bg: 'brand.50', color: 'brand.900' }}
+                        color="brand.900"
+                        fontWeight="600"
                       >
-                        <Box flex="1" textAlign="left" fontWeight="semibold">
+                        <Box flex="1" textAlign="left">
                           {faq.question}
                         </Box>
                         <AccordionIcon />
                       </AccordionButton>
                     </h2>
-                    <AccordionPanel pb={4} px={4}>
+                    <AccordionPanel pb={4} px={4} color="gray.700">
                       {faq.answer}
                     </AccordionPanel>
                   </AccordionItem>
