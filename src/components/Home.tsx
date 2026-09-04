@@ -1,14 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import {
   Box,
   Container,
   Heading,
   Text,
   SimpleGrid,
-  Flex,
   Icon,
-  useColorModeValue,
   Button,
   Stack,
   Link,
@@ -23,11 +20,6 @@ import {
   FaHeadset,
 } from 'react-icons/fa';
 import HomeSection from '../Images/Home Section.jpg';
-
-const fadeUp           = { hidden: { opacity: 0, y: 40 },              show: { opacity: 1, y: 0,    transition: { duration: 0.6, ease: 'easeOut' as const } } };
-const cardPop          = { hidden: { opacity: 0, y: 30, scale: 0.96 }, show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: 'easeOut' as const } } };
-const staggerContainer = { hidden: {},                                  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } };
-const viewport         = { once: true, amount: 0.15 } as const;
 
 const fadeInUp = keyframes`
   from { opacity: 0; transform: translateY(32px); }
@@ -48,8 +40,6 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ id }) => {
-  const cardBg = useColorModeValue('white', 'gray.700');
-
   return (
     <>
       {/* ── HERO ── */}
