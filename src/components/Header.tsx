@@ -25,16 +25,15 @@ import CompanyLogo from "../Images/Company_Logo.jpeg";
 
 type HeaderProps = {};
 
-const Links = ["Home", "About", "Services", "Documents", "Book a Call", "FAQ", "Reviews", "Refer", "Contact"];
+const Links = ["Home", "Services", "Documents", "About", "Book a Call", "Why Choose Us", "FAQ", "Contact"];
 const NavLinks = {
   Home: "#home",
-  About: "#about",
   Services: "#services",
   Documents: "#documents",
+  About: "#about",
   "Book a Call": "#book-a-call",
+  "Why Choose Us": "#why-choose-us",
   FAQ: "#faq",
-  Reviews: "#reviews",
-  Refer: "#refer",
   Contact: "#contact",
 };
 
@@ -50,9 +49,9 @@ const Header: React.FC<HeaderProps> = () => {
       as="header"
       position="sticky"
       top={0}
-      bg="#f6c445"
+      bgGradient="linear(to-r, #f6c445, #f9d157, #e7b42a)"
       px={4}
-      boxShadow="md"
+      boxShadow="0 8px 24px rgba(0,0,0,0.12)"
       zIndex={10}
     >
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>

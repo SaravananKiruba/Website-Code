@@ -30,19 +30,21 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
   return (
     <Stack direction={'row'} align={'center'} spacing={4}>
       <Flex
-        w={8}
-        h={8}
+        w={10}
+        h={10}
         align={'center'}
         justify={'center'}
-        rounded={'full'}
-        bg={'brand.700'}
+        rounded={'xl'}
+        bgGradient="linear(135deg, brand.600, brand.800)"
         color={'white'}
+        flexShrink={0}
+        boxShadow="0 4px 12px rgba(72,147,237,0.3)"
       >
         {icon}
       </Flex>
-      <Stack>
-        <Text fontWeight={600}>{title}</Text>
-        <Text color={'gray.600'}>{text}</Text>
+      <Stack spacing={0}>
+        <Text fontWeight={700} color="brand.900">{title}</Text>
+        <Text color={'gray.600'} fontSize="sm">{text}</Text>
       </Stack>
     </Stack>
   );
@@ -54,20 +56,38 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ id }) => {
   return (
-    <Box id={id} as="section" py={12} bg="gray.50">
-      <Container maxW={'7xl'}>
+    <Box 
+      id={id} 
+      as="section" 
+      py={28}
+      bgGradient="linear(135deg, #ffffff 0%, #f0f4ff 50%, #fffaf0 100%)"
+      position="relative"
+      overflow="hidden"
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        bgImage: "radial-gradient(circle at 20% 50%, rgba(72,147,237,0.08) 0%, transparent 60%), radial-gradient(circle at 80% 80%, rgba(246,196,69,0.06) 0%, transparent 50%)",
+        zIndex: 0,
+      }}
+    >
+      <Container maxW={'7xl'} position="relative" zIndex={1}>
         <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={staggerContainer}>
         <Box as={motion.div} variants={fadeUp}>
         <Heading
           mb={4}
-          fontSize={{ base: '3xl', md: '4xl' }}
+          fontSize={{ base: '2.5xl', md: '4xl' }}
           textAlign={'center'}
           position={'relative'}
           color={'brand.900'}
+          fontWeight="900"
         >
           Meet Our Team
         </Heading>
-        <Text textAlign="center" color="gray.500" fontSize="lg" mb={12} maxW="2xl" mx="auto">
+        <Text textAlign="center" color="gray.600" fontSize={{ base: 'md', md: 'lg' }} mb={12} maxW="2xl" mx="auto" fontWeight="500">
           Experienced insurance professionals dedicated to securing your future.
         </Text>
         </Box>
@@ -130,7 +150,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                         <Heading fontSize={{ base: 'xl', sm: '2xl' }} fontWeight={600} color={'brand.900'} textAlign="center">
                           A. Jigar
                         </Heading>
-                        <Text fontSize={'sm'} color="#06443f" textAlign="center">
+                        <Text fontSize={'sm'} color="gray.500" textAlign="center">
                           Your Policy Saathi
                         </Text>
                       </VStack>
@@ -171,7 +191,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                         <Heading fontSize={{ base: 'xl', sm: '2xl' }} fontWeight={600} color={'brand.900'} textAlign="center">
                           S. Ashok Kumar
                         </Heading>
-                        <Text fontSize={'sm'} color="#06443f" textAlign="center">
+                        <Text fontSize={'sm'} color="gray.500" textAlign="center">
                           CM Club Member & Senior Sales Manager
                         </Text>
                       </VStack>
@@ -251,7 +271,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                     </Box>
                     <VStack spacing={1} align="center">
                       <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">G. Jackie Kumar Jain</Heading>
-                      <Text fontSize={'xs'} color="#06443f" textAlign="center">Insurance Advisor</Text>
+                      <Text fontSize={'xs'} color="gray.500" textAlign="center">Insurance Advisor</Text>
                     </VStack>
                   </VStack>
                 </Box>
@@ -278,7 +298,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                     </Box>
                     <VStack spacing={1} align="center">
                       <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">Piyush Kumar Jain</Heading>
-                      <Text fontSize={'xs'} color="#06443f" textAlign="center">Insurance Advisor</Text>
+                      <Text fontSize={'xs'} color="gray.500" textAlign="center">Insurance Advisor</Text>
                     </VStack>
                   </VStack>
                 </Box>
@@ -305,7 +325,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
                     </Box>
                     <VStack spacing={1} align="center">
                       <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">Prince Kumar Jain</Heading>
-                      <Text fontSize={'xs'} color="#06443f" textAlign="center">Insurance Advisor</Text>
+                      <Text fontSize={'xs'} color="gray.500" textAlign="center">Insurance Advisor</Text>
                     </VStack>
                   </VStack>
                 </Box>
@@ -327,12 +347,18 @@ const About: React.FC<AboutProps> = ({ id }) => {
                 >
                   <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
                   <VStack align="center" spacing={3}>
-                    <Box borderRadius="full" p={1.5} bgGradient="linear(to-tl, accent.700, brand.500)" boxShadow="0 0 10px rgba(246,196,69,0.4)">
-                      <Avatar size={'xl'} src={require('../Images/Raveena Kumari Jain.png')} name={'Raveena Kumari Jain'} border="3px solid white" />
+                    <Box borderRadius="full" p={2} bgGradient="linear(to-bl, brand.500, accent.700)" boxShadow="0 8px 24px rgba(246,196,69,0.35)">
+                      <Avatar 
+                        size={'2xl'} 
+                        src={require('../Images/Raveena Kumari Jain.png')} 
+                        name={'Raveena Kumari Jain'} 
+                        border="4px solid white"
+                        sx={{ '& img': { objectFit: 'cover', objectPosition: '50% 15%' } }}
+                      />
                     </Box>
                     <VStack spacing={1} align="center">
-                      <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">Raveena Kumari Jain</Heading>
-                      <Text fontSize={'xs'} color="#06443f" textAlign="center">Insurance Advisor</Text>
+                      <Heading fontSize={'lg'} fontWeight={700} color={'brand.900'} textAlign="center">Raveena Kumari Jain</Heading>
+                      <Text fontSize={'xs'} color="gray.500" textAlign="center" fontWeight="600">Insurance Advisor</Text>
                     </VStack>
                   </VStack>
                 </Box>
@@ -354,12 +380,18 @@ const About: React.FC<AboutProps> = ({ id }) => {
                 >
                   <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
                   <VStack align="center" spacing={3}>
-                    <Box borderRadius="full" p={1.5} bgGradient="linear(to-tr, brand.900, accent.400)" boxShadow="0 0 10px rgba(38,25,216,0.3)">
-                      <Avatar size={'xl'} src={require('../Images/S Nemichand Jain.png')} name={'S. Nemichand Jain'} border="3px solid white" />
+                    <Box borderRadius="full" p={2} bgGradient="linear(to-tr, brand.900, accent.400)" boxShadow="0 8px 24px rgba(72,147,237,0.35)">
+                      <Avatar 
+                        size={'2xl'} 
+                        src={require('../Images/S Nemichand Jain.png')} 
+                        name={'S. Nemichand Jain'} 
+                        border="4px solid white"
+                        sx={{ '& img': { objectFit: 'cover', objectPosition: '50% 15%' } }}
+                      />
                     </Box>
                     <VStack spacing={1} align="center">
-                      <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">S. Nemichand Jain</Heading>
-                      <Text fontSize={'xs'} color="#06443f" textAlign="center">Insurance Advisor</Text>
+                      <Heading fontSize={'lg'} fontWeight={700} color={'brand.900'} textAlign="center">S. Nemichand Jain</Heading>
+                      <Text fontSize={'xs'} color="gray.500" textAlign="center" fontWeight="600">Insurance Advisor</Text>
                     </VStack>
                   </VStack>
                 </Box>
@@ -381,12 +413,18 @@ const About: React.FC<AboutProps> = ({ id }) => {
                 >
                   <Box position="absolute" top={0} left={0} right={0} h="3px" bgGradient="linear(to-r, brand.900, accent.500)" />
                   <VStack align="center" spacing={3}>
-                    <Box borderRadius="full" p={1.5} bgGradient="linear(to-br, brand.700, accent.500)" boxShadow="0 0 10px rgba(6,68,63,0.3)">
-                      <Avatar size={'xl'} src={require('../Images/Yash.PNG')} name={'Yash'} border="3px solid white" />
+                    <Box borderRadius="full" p={2} bgGradient="linear(to-br, brand.700, accent.500)" boxShadow="0 8px 24px rgba(72,147,237,0.35)">
+                      <Avatar 
+                        size={'2xl'} 
+                        src={require('../Images/Yash.png')} 
+                        name={'Yash'} 
+                        border="4px solid white"
+                        sx={{ '& img': { objectFit: 'cover', objectPosition: '50% 15%' } }}
+                      />
                     </Box>
                     <VStack spacing={1} align="center">
-                      <Heading fontSize={'md'} fontWeight={600} color={'brand.900'} textAlign="center">Yash</Heading>
-                      <Text fontSize={'xs'} color="#06443f" textAlign="center">Insurance Advisor</Text>
+                      <Heading fontSize={'lg'} fontWeight={700} color={'brand.900'} textAlign="center">Yash</Heading>
+                      <Text fontSize={'xs'} color="gray.500" textAlign="center" fontWeight="600">Insurance Advisor</Text>
                     </VStack>
                   </VStack>
                 </Box>
@@ -394,7 +432,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
               </SimpleGrid>
             </motion.div>
 
-            <Text fontSize={'lg'} color={'gray.600'} pt={2}>
+            <Text fontSize={{ base: 'md', md: 'lg' }} color={'gray.700'} pt={2} fontWeight="500" lineHeight="1.8">
               Our experienced insurance agents at Your Policy Saathi have been helping families and individuals secure their futures 
               with the right insurance plans for over 20 years. For any insurance queries, you can 
               directly contact our agents via WhatsApp.

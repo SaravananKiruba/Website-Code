@@ -139,13 +139,20 @@ const Testimonials: React.FC<TestimonialsProps> = ({ id }) => {
     <Box id={id} as="section">
 
       {/* ── Instagram Showcase ── */}
-      <Box py={20} bg="gray.900">
+      <Box 
+        py={28}
+        bgGradient="linear(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)"
+      >
         <Container maxW="7xl">
           <VStack spacing={3} mb={12} textAlign="center">
-            <Heading fontSize={{ base: '3xl', sm: '4xl' }} fontWeight="bold" color="white">
+            <Heading 
+              fontSize={{ base: '2.5xl', sm: '4xl' }} 
+              fontWeight="900" 
+              color="white"
+            >
               See Us in Action
             </Heading>
-            <Text color="whiteAlpha.700" fontSize="lg" maxW="xl">
+            <Text color="whiteAlpha.800" fontSize={{ base: 'md', md: 'lg' }} maxW="xl" fontWeight="500">
               Real stories from real clients — watch how Your Policy Saathi is changing lives.
             </Text>
             <Link
@@ -154,10 +161,10 @@ const Testimonials: React.FC<TestimonialsProps> = ({ id }) => {
               display="inline-flex"
               alignItems="center"
               gap={2}
-              color="pink.300"
-              fontWeight="semibold"
+              color="accent.400"
+              fontWeight="700"
               fontSize="sm"
-              _hover={{ color: 'pink.200', textDecoration: 'none' }}
+              _hover={{ color: 'accent.300', textDecoration: 'none' }}
             >
               <Icon as={FaInstagram} />
               @your__policy__saathi

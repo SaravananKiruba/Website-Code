@@ -70,16 +70,42 @@ const ReferAFriend: React.FC<ReferAFriendProps> = ({ id }) => {
   };
 
   return (
-    <Box id={id} as="section" py={24} bg="white">
-      <Container maxW="5xl">
+    <Box 
+      id={id} 
+      as="section" 
+      py={28}
+      bgGradient="linear(135deg, #ffffff 0%, #f0f4ff 50%, #fffaf0 100%)"
+      position="relative"
+      overflow="hidden"
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        bgImage: "radial-gradient(circle at 20% 50%, rgba(72,147,237,0.08) 0%, transparent 60%), radial-gradient(circle at 80% 80%, rgba(246,196,69,0.06) 0%, transparent 50%)",
+        zIndex: 0,
+      }}
+    >
+      <Container maxW="5xl" position="relative" zIndex={1}>
         <VStack spacing={4} mb={12} textAlign="center">
           <HStack spacing={3} justify="center">
-            <Icon as={FaUserFriends} w={10} h={10} color="brand.900" />
+            <Icon as={FaUserFriends} w={12} h={12} color="brand.900" />
           </HStack>
-          <Heading fontSize={{ base: '3xl', sm: '4xl' }} fontWeight="bold" color="brand.900">
+          <Heading 
+            fontSize={{ base: '2.5xl', sm: '4xl' }} 
+            fontWeight="900" 
+            color="brand.900"
+          >
             Refer a Friend
           </Heading>
-          <Text color="gray.600" fontSize="xl" maxW="2xl">
+          <Text 
+            color="gray.700" 
+            fontSize={{ base: 'md', md: 'lg' }} 
+            maxW="2xl"
+            fontWeight="500"
+          >
             Know someone who needs the right insurance guidance? Refer them to Your Policy Saathi and help them secure their future.
           </Text>
         </VStack>

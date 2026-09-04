@@ -112,14 +112,35 @@ const DocumentsRequired: React.FC<DocumentsRequiredProps> = ({ id }) => {
   };
 
   return (
-    <Box id={id} as="section" py={24} bg="gray.50">
-      <Container maxW="7xl">
+    <Box 
+      id={id} 
+      as="section" 
+      py={28}
+      bgGradient="linear(135deg, #ffffff 0%, #f0f4ff 50%, #fffaf0 100%)"
+      position="relative"
+      overflow="hidden"
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        bgImage: "radial-gradient(circle at 20% 50%, rgba(72,147,237,0.08) 0%, transparent 60%), radial-gradient(circle at 80% 80%, rgba(246,196,69,0.06) 0%, transparent 50%)",
+        zIndex: 0,
+      }}
+    >
+      <Container maxW="7xl" position="relative" zIndex={1}>
         <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={staggerContainer}>
         <VStack as={motion.div} variants={fadeUp} spacing={4} mb={16} textAlign="center">
-          <Heading fontSize={{ base: '3xl', sm: '4xl' }} fontWeight="bold" color="brand.900">
+          <Heading 
+            fontSize={{ base: '2.5xl', sm: '4xl' }} 
+            fontWeight="900" 
+            color="brand.900"
+          >
             Documents Required
           </Heading>
-          <Text color="gray.600" fontSize="xl" maxW="2xl">
+          <Text color="gray.700" fontSize={{ base: 'md', md: 'lg' }} maxW="2xl" fontWeight="500">
             Quick checklist of what you need before applying. We guide you through every step.
           </Text>
         </VStack>
@@ -153,9 +174,10 @@ const DocumentsRequired: React.FC<DocumentsRequiredProps> = ({ id }) => {
                   <ListItem
                     key={doc}
                     fontSize="sm"
-                    color="gray.600"
+                    color="gray.700"
                     display="flex"
                     alignItems="flex-start"
+                    fontWeight="500"
                   >
                     <ListIcon as={FaCheckCircle} color="accent.600" mt={0.5} flexShrink={0} />
                     {doc}

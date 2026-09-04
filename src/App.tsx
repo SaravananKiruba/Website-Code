@@ -5,6 +5,7 @@ import Home from "./components/Home.tsx";
 import About from "./components/About.tsx";
 import Achievements from "./components/Achievements.tsx";
 import Services from "./components/Services.tsx";
+import WhyChooseUs from "./components/WhyChooseUs.tsx";
 import Partners from "./components/Partners.tsx";
 import DocumentsRequired from "./components/DocumentsRequired.tsx";
 import BookACall from "./components/BookACall.tsx";
@@ -27,6 +28,7 @@ const App: React.FC = () => {
         <Partners id="partners" />
         <Achievements id="achievements" />
         <BookACall id="book-a-call" />
+        <WhyChooseUs id="why-choose-us" />
         <Faq id="faq" />
         <ReferAFriend id="refer" />
         <Testimonials id="reviews" />
